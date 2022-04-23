@@ -41,7 +41,7 @@ function WindowTable:CreateWindow()
 
 	UICorner_5.Parent = Slider
 	
-	local TabHandler {}
+	local TabHandler = {}
 	
 	function TabHandler:CreateTab(tabname)
 		tabname = tabname or "New Tab"

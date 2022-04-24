@@ -1,127 +1,161 @@
 local WindowTable = {}
 
 function WindowTable:CreateWindow()
-	-- Gui to Lua
-	-- Version: 3.2
-
 	-- Instances:
 
-	local Design = Instance.new("ScreenGui")
-	local Main = Instance.new("Frame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local Slider = Instance.new("Frame")
+	local Library = Instance.new("ScreenGui")
+	local allTabs = Instance.new("Frame")
+	local MainFrame = Instance.new("Frame")
+	local mainCorner = Instance.new("UICorner")
+	local allPages = Instance.new("Frame")
+	local mainCorner_2 = Instance.new("UICorner")
 
 	--Properties:
 
-	Design.Name = "Design"
-	Design.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Library.Name = "Library"
+	Library.Parent = game.CoreGui
+	Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	Main.Name = "Main"
-	Main.Parent = Design
-	Main.BackgroundColor3 = Color3.fromRGB(36, 37, 43)
-	Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
-	Main.Position = UDim2.new(0.463217467, 0, 0.260575294, 0)
-	Main.Size = UDim2.new(0, 387, 0, 272)
-	
-	newPage.Name = "newPage"
-	newPage.Parent = game.StarterGui.Design.Main
-	newPage.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-	newPage.Position = UDim2.new(0.0232558139, 0, 0.033088237, 0)
-	newPage.Size = UDim2.new(0, 372, 0, 250)
+	allTabs.Name = "allTabs"
+	allTabs.Parent = Library
+	allTabs.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	allTabs.BorderColor3 = Color3.fromRGB(44, 44, 44)
+	allTabs.Position = UDim2.new(0.295407116, 0, 0.321489006, 0)
+	allTabs.Size = UDim2.new(0, 128, 0, 264)
 
-	UIListLayout.Parent = Main
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	MainFrame.Name = "MainFrame"
+	MainFrame.Parent = Library
+	MainFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	MainFrame.Position = UDim2.new(0.422755748, 0, 0.321489006, 0)
+	MainFrame.Size = UDim2.new(0, 406, 0, 264)
 
-	Slider.Name = "Slider"
-	Slider.Parent = Design
-	Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Slider.Position = UDim2.new(0.767178655, 0, 0.275803715, 0)
-	Slider.Size = UDim2.new(0, 5, 0, 137)
+	mainCorner.CornerRadius = UDim.new(0, 3)
+	mainCorner.Name = "mainCorner"
+	mainCorner.Parent = MainFrame
 
-	UICorner_5.Parent = Slider
+	allPages.Name = "allPages"
+	allPages.Parent = MainFrame
+	allPages.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+	allPages.BorderColor3 = Color3.fromRGB(49, 49, 49)
+	allPages.Position = UDim2.new(0.0368584692, 0, 0.0606162325, 0)
+	allPages.Size = UDim2.new(0, 378, 0, 230)
+
+	mainCorner_2.CornerRadius = UDim.new(0, 3)
+	mainCorner_2.Name = "mainCorner"
+	mainCorner_2.Parent = allPages
 	
 	local TabHandler = {}
-	
+
 	function TabHandler:CreateTab(tabname)
 		tabname = tabname or "New Tab"
-		local Tab = Instance.new("Frame")
-		local TabButton = Instance.new("TextButton")
-		local UICorner = Instance.new("UICorner")
-		local TabButton = Instance.new("TextButton")
-		local UICorner_2 = Instance.new("UICorner")
-		local TabButton = Instance.new("TextButton")
-		local UICorner_3 = Instance.new("UICorner")
-		local TabButton = Instance.new("TextButton")
-		local UICorner_4 = Instance.new("UICorner")
-		local UIListLayout_2 = Instance.new("UIListLayout")
-		local UICorner_5 = Instance.new("UICorner")
+		local allTabs = Instance.new("Frame")
+		local tabButton = Instance.new("TextButton")
+		local ButtonCorner = Instance.new("UICorner")
+		local tabButton_2 = Instance.new("TextButton")
+		local ButtonCorner_2 = Instance.new("UICorner")
+		local tabButton_3 = Instance.new("TextButton")
+		local ButtonCorner_3 = Instance.new("UICorner")
+		local tabButton_4 = Instance.new("TextButton")
+		local ButtonCorner_4 = Instance.new("UICorner")
+		local tabCorner = Instance.new("UICorner")
+		local newPage = Instance.new("ScrollingFrame")
+		local elementsListing = Instance.new("UIListLayout")
 		
-		Tab.Name = "Tab"
-		Tab.Parent = Design
-		Tab.BackgroundColor3 = Color3.fromRGB(36, 37, 43)
-		Tab.BorderColor3 = Color3.fromRGB(255, 255, 255)
-		Tab.Position = UDim2.new(0.341956347, 0, 0.260575294, 0)
-		Tab.Size = UDim2.new(0, 149, 0, 272)
+		tabButton.Name = "tabButton"
+		tabButton.Parent = allTabs
+		tabButton.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton.BorderColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton.Position = UDim2.new(0.103370428, 0, 0.0606162325, 0)
+		tabButton.Size = UDim2.new(0, 108, 0, 36)
+		tabButton.Font = Enum.Font.SourceSans
+		tabButton.Text = "Example"
+		tabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton.TextSize = 23.000
+		tabButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton.TextWrapped = true
 
-		TabButton.Name = "Tab1"
-		TabButton.Parent = Tab
-		TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-		TabButton.Size = UDim2.new(0, 149, 0, 30)
-		TabButton.Font = Enum.Font.SourceSans
-		TabButton.Text = tabname
-		TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TabButton.TextSize = 22.000
+		ButtonCorner.CornerRadius = UDim.new(0, 3)
+		ButtonCorner.Name = "ButtonCorner"
+		ButtonCorner.Parent = tabButton
 
-		UICorner.Parent = TabButton
+		tabButton_2.Name = "tabButton"
+		tabButton_2.Parent = allTabs
+		tabButton_2.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_2.BorderColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_2.Position = UDim2.new(0.103370428, 0, 0.234858662, 0)
+		tabButton_2.Size = UDim2.new(0, 108, 0, 36)
+		tabButton_2.Font = Enum.Font.SourceSans
+		tabButton_2.Text = "Example"
+		tabButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_2.TextSize = 23.000
+		tabButton_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_2.TextWrapped = true
 
-		TabButton.Name = "Tab2"
-		TabButton.Parent = Tab
-		TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-		TabButton.Position = UDim2.new(0, 0, 0.110294119, 0)
-		TabButton.Size = UDim2.new(0, 149, 0, 30)
-		TabButton.Font = Enum.Font.SourceSans
-		TabButton.Text = tabname
-		TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TabButton.TextSize = 22.000
+		ButtonCorner_2.CornerRadius = UDim.new(0, 3)
+		ButtonCorner_2.Name = "ButtonCorner"
+		ButtonCorner_2.Parent = tabButton_2
 
-		UICorner_2.Parent = TabButton
+		tabButton_3.Name = "tabButton"
+		tabButton_3.Parent = allTabs
+		tabButton_3.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_3.BorderColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_3.Position = UDim2.new(0.103370428, 0, 0.405313194, 0)
+		tabButton_3.Size = UDim2.new(0, 108, 0, 36)
+		tabButton_3.Font = Enum.Font.SourceSans
+		tabButton_3.Text = "Example"
+		tabButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_3.TextSize = 23.000
+		tabButton_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_3.TextWrapped = true
 
-		TabButton.Name = "Tab3"
-		TabButton.Parent = Tab
-		TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-		TabButton.Position = UDim2.new(0, 0, 0.220588237, 0)
-		TabButton.Size = UDim2.new(0, 149, 0, 30)
-		TabButton.Font = Enum.Font.SourceSans
-		TabButton.Text = tabname
-		TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TabButton.TextSize = 22.000
+		ButtonCorner_3.CornerRadius = UDim.new(0, 3)
+		ButtonCorner_3.Name = "ButtonCorner"
+		ButtonCorner_3.Parent = tabButton_3
 
-		UICorner_3.Parent = TabButton
+		tabButton_4.Name = "tabButton"
+		tabButton_4.Parent = allTabs
+		tabButton_4.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_4.BorderColor3 = Color3.fromRGB(49, 49, 49)
+		tabButton_4.Position = UDim2.new(0.103370428, 0, 0.57197988, 0)
+		tabButton_4.Size = UDim2.new(0, 108, 0, 36)
+		tabButton_4.Font = Enum.Font.SourceSans
+		tabButton_4.Text = "Example"
+		tabButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_4.TextSize = 23.000
+		tabButton_4.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+		tabButton_4.TextWrapped = true
 
-		TabButton.Name = "Tab4"
-		TabButton.Parent = Tab
-		TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-		TabButton.Position = UDim2.new(0, 0, 0.330882341, 0)
-		TabButton.Size = UDim2.new(0, 149, 0, 30)
-		TabButton.Font = Enum.Font.SourceSans
-		TabButton.Text = tabname
-		TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TabButton.TextSize = 22.000
+		ButtonCorner_4.CornerRadius = UDim.new(0, 3)
+		ButtonCorner_4.Name = "ButtonCorner"
+		ButtonCorner_4.Parent = tabButton_4
 
-		UICorner_4.Parent = TabButton
+		tabCorner.CornerRadius = UDim.new(0, 3)
+		tabCorner.Name = "tabCorner"
+		tabCorner.Parent = allTabs
+		
+		newPage.Name = "newPage"
+		newPage.Parent = allPages
+		newPage.Active = true
+		newPage.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		newPage.BorderColor3 = Color3.fromRGB(49, 49, 49)
+		newPage.Position = UDim2.new(0.0185185187, 0, 0, 0)
+		newPage.Size = UDim2.new(0, 371, 0, 230)
+		newPage.ScrollBarThickness = 8
 
-		UIListLayout_2.Parent = Tab
-		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+		elementsListing.Name = "elementsListing"
+		elementsListing.Parent = newPage
+		elementsListing.SortOrder = Enum.SortOrder.LayoutOrder
+		for i,v in next, pagesFolder:GetChildren() do -- We get all the pages that we added
+			v.Visible = false   -- then we make them invisible 
+		end 
+		newPage.Visible = true  -- We make current page visible but not others
 
+		--Animations Below  -- Optional
+		for i,v in next, allTabs:GetChildren() do   -- We get all the elements inside the frame
+			if v:IsA("TextButton") then -- We can't animate UIListLayout, so we check if its a TextButton
+				game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+					BackgroundColor3 = Color3.fromRGB(115, 49, 37) -- We animate other Tab Buttons and making the current one seem Checked
 	end
-	
-	TabButton.MouseButton1Click:Connect(function()
-		for i,v in next, pagesFolder:GetChildren() do
-			v.Visible = false
-		end
-		newPage.Visible = true
-	end)
 	
 	return TabHandler
 end

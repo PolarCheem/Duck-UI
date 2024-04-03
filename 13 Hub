@@ -1,6 +1,6 @@
-if game.PlaceId == 12701714080 then
+if game.PlaceId == 15561844255 then
 
-	Local CurrentVersion = "13 - Clicker Miner Sim
+	Local CurrentVersion = "13 - caseoh sim"
 
 	local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
@@ -11,12 +11,29 @@ if game.PlaceId == 12701714080 then
     Link = "https://github.com/deeeity/mercury-lib"
 }
 
+local Click = false
+
 	local MainTab = GUI:Tab{
 		Name = "Main",
 		Icon = "rbxassetid://8569322835"
 }
 
+MainTab:Toggle{
+	Name = "Auto Click",
+	StartingState = false,
+	Description = auto clicks for speed,
+	Callback = function(state) 
+	Click = state
+	while Click do
+local args = {
+    [1] = "Mouse"
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("TrainService"):WaitForChild("RF"):WaitForChild("OnClick"):InvokeServer(unpack(args))
+wait()
+	end
+end
+}
 
 
 

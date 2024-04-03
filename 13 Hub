@@ -1,6 +1,6 @@
-if game.PlaceId == 2882332175 then
+if game.PlaceId == 12701714080 then
 
-	Local CurrentVersion = "13 - Be Dead Forever Sim
+	Local CurrentVersion = "13 - Clicker Miner Sim
 
 	local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 

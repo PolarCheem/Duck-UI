@@ -1,6 +1,7 @@
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("JJS Animation hub", "Default")
 
+local tab0 = DrRayLibrary.newTab("Miwa", "ImageIdHere")
 local tab = DrRayLibrary.newTab("Gojo", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Itadori", "ImageIdHere")
 
@@ -16,6 +17,86 @@ animation.AnimationId = "rbxassetid://14702384584"
 -- Load the sound
 local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://411286671"
+sound.Parent = character
+sound.Volume = 1
+
+-- Play the animation and sound
+local animTrack = humanoid:LoadAnimation(animation)
+animTrack:Play()
+sound:Play()
+wait(animTrack.Length) -- Wait for the animation to finish playing
+animTrack:Stop() -- Stop the animation track
+sound:Stop() -- Stop the sound
+end)
+
+tab.newButton("Reversal Red", "plays Red", function()
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://14135387764"
+
+-- Load the sound
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://966888080"
+sound.Parent = character
+sound.Volume = 1
+
+-- Play the animation and sound
+local animTrack = humanoid:LoadAnimation(animation)
+animTrack:Play()
+sound:Play()
+wait(animTrack.Length) -- Wait for the animation to finish playing
+animTrack:Stop() -- Stop the animation track
+sound:Stop() -- Stop the sound
+end)
+
+tab0.newButton("Quick Draw", "plays quick draw", function()
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://17662163909"
+
+-- Load the sound
+local sound = Instance.new("Sound")
+sound.SoundId = ""
+sound.Parent = character
+sound.Volume = 1
+
+-- Play the animation and sound
+local animTrack = humanoid:LoadAnimation(animation)
+animTrack:Play()
+sound:Play()
+wait(animTrack.Length) -- Wait for the animation to finish playing
+animTrack:Stop() -- Stop the animation track
+sound:Stop() -- Stop the sound
+end)
+
+tab0.newButton("Hairpin, "plays Hairpin", function()
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://14232670940"
+
+-- Load the sound
+local sound = Instance.new("Sound")
+sound.SoundId = ""
+sound.Parent = character
+sound.Volume = 1
+
+-- Play the animation and sound
+local animTrack = humanoid:LoadAnimation(animation)
+animTrack:Play()
+sound:Play()
+wait(animTrack.Length) -- Wait for the animation to finish playing
+animTrack:Stop() -- Stop the animation track
+sound:Stop() -- Stop the sound
+end)
+
+tab0.newButton("Exorcise", "plays exorcise", function()
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://14228484629"
+
+-- Load the sound
+local sound = Instance.new("Sound")
+sound.SoundId = ""
 sound.Parent = character
 sound.Volume = 1
 

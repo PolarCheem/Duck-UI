@@ -56,9 +56,9 @@ animation.AnimationId = "rbxassetid://17662163909"
 
 -- Load the sound
 local sound = Instance.new("Sound")
-sound.SoundId = ""
+sound.SoundId = "rbxassetid://411286671"
 sound.Parent = character
-sound.Volume = 1
+sound.Volume = 0
 
 -- Play the animation and sound
 local animTrack = humanoid:LoadAnimation(animation)
@@ -76,9 +76,9 @@ animation.AnimationId = "rbxassetid://14232670940"
 
 -- Load the sound
 local sound = Instance.new("Sound")
-sound.SoundId = ""
+sound.SoundId = "rbxassetid://411286671"
 sound.Parent = character
-sound.Volume = 1
+sound.Volume = 0
 
 -- Play the animation and sound
 local animTrack = humanoid:LoadAnimation(animation)
@@ -96,9 +96,9 @@ animation.AnimationId = "rbxassetid://14228484629"
 
 -- Load the sound
 local sound = Instance.new("Sound")
-sound.SoundId = ""
+sound.SoundId = "rbxassetid://411286671"
 sound.Parent = character
-sound.Volume = 1
+sound.Volume = 0
 
 -- Play the animation and sound
 local animTrack = humanoid:LoadAnimation(animation)

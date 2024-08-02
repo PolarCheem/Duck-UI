@@ -1,9 +1,10 @@
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("JJS Animation hub", "Default")
 
-local tab0 = DrRayLibrary.newTab("Miwa", "ImageIdHere")
 local tab = DrRayLibrary.newTab("Gojo", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Itadori", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("Miwa", "ImageIdHere")
+
 
 local player = game.Players.LocalPlayer
 local character = player.Character
@@ -49,7 +50,7 @@ animTrack:Stop() -- Stop the animation track
 sound:Stop() -- Stop the sound
 end)
 
-tab0.newButton("Quick Draw", "plays quick draw", function()
+tab3.newButton("Quick Draw", "plays quick draw", function()
 -- Load the animation
 local animation = Instance.new("Animation")
 animation.AnimationId = "rbxassetid://17662163909"
@@ -69,7 +70,7 @@ animTrack:Stop() -- Stop the animation track
 sound:Stop() -- Stop the sound
 end)
 
-tab0.newButton("Hairpin, "plays Hairpin", function()
+tab3.newButton("Hairpin, "plays Hairpin", function()
 -- Load the animation
 local animation = Instance.new("Animation")
 animation.AnimationId = "rbxassetid://14232670940"
@@ -89,7 +90,7 @@ animTrack:Stop() -- Stop the animation track
 sound:Stop() -- Stop the sound
 end)
 
-tab0.newButton("Exorcise", "plays exorcise", function()
+tab3.newButton("Exorcise", "plays exorcise", function()
 -- Load the animation
 local animation = Instance.new("Animation")
 animation.AnimationId = "rbxassetid://14228484629"

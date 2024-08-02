@@ -1,0 +1,27 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("JJS Animation hub", "Default")
+
+local tab = DrRayLibrary.newTab("Gojo", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Itadori", "ImageIdHere")
+
+local context = game:GetService("ScriptContext")
+local animationClipProvider = context:WaitForChild("AnimationClipProvider")
+local player = game.Players.LocalPlayer
+local character = player.Character
+local humanoid = character:WaitForChild("Humanoid")
+
+tab.newButton("Lapis Blue", "plays lapis blue", function()
+-- Load the animation
+local animation = animationClipProvider:CreateAnimationClip("rbxassetid://14702384584")
+
+-- Load the sound
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://411286671"
+sound.Parent = character
+sound.Volume = 1
+
+-- Play the animation and sound
+local animTrack = humanoid:LoadAnimation(animation)
+animTrack:Play()
+sound:Play()
+end)

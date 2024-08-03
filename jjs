@@ -1,0 +1,23 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("JUJUTSU SHENANIGANS", "Default")
+
+local tab = DrRayLibrary.newTab("Misc", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Random", "ImageIdHere")
+
+tab.newButton("No stun", "no stun", function()
+-- Get the player's character
+local character = game.Players.LocalPlayer.Character
+
+-- Get the humanoid component
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Loop the WalkSpeed to 23
+while true do
+humanoid.WalkSpeed = 23
+wait()
+end
+end)
+
+tab.newSlider("Hitbox expander", "Epic slider", 1000, false, function(num)
+    print(num)
+end)

@@ -2,9 +2,13 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 local window = DrRayLibrary:Load("JJS", "Default")
 
 local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Settings", "ImageIdHere")
 
+tab2.newInput("Custom Ultimate Name", "Renames your ultimate", function(text)
+local ult = game.Players.Screengui.Main.Ultimate.Title
 
-
+ult.Text = text
+end)
 
 
 

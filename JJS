@@ -2,27 +2,35 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 local window = DrRayLibrary:Load("JJS", "Default")
 
 local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
-local tab2 = DrRayLibrary.newTab("Settings", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Custom", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("Settings", "ImageIdHere")
 
-tab.newInput("Main Colors", "Should format: 10, 10, 10", function(text)
-local mainColor = Color3.fromRGB(text) -- Customize as you wish; these are in RGB format. (mainColor applies to main colors like background, buttons, etc.)
+tab2.newButton("Delete Old Moves", "USE FIRST", function()
+-- Get the Moveset frame
+local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
-window:SetTheme(mainColor)
+-- Get the children from the Moveset frame
+local children = movesetFrame:GetChildren()
+
+-- Delete all children that are frames
+for _, child in pairs(children) do
+    if child:IsA("Frame") then
+        child.Visible = false
+    end
+end
 end)
 
-tab.newInput("Secondary Colors", "should format 10, 10, 10", function(text)
-local secondColor = Color3.fromRGB(text) -- Secondary Color; applies to Toggle when activated and slider background.
-
-window:SetTheme(secondColor)
+tab2.newButton("Miwa Moveset", "Animations only", function()
+    print('Hello!')
 end)
 
-tab2.newInput("Custom Ultimate Name", "Renames your ultimate", function(rename)
+tab3.newInput("Custom Ultimate Name", "Renames your ultimate", function(rename)
 local ult = game.Players.LocalPlayer.PlayerGui.Main.Ultimate.Title
 
 ult.Text = rename
 end)
 
-tab2.newInput("First Move Rename", "Prints your input.", function(rename)
+tab3.newInput("First Move Rename", "Prints your input.", function(rename)
 local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
 local children = movesetFrame:GetChildren()
@@ -37,7 +45,7 @@ end
 end
 end)
 
-tab2.newInput("Second Move Rename", "Prints your input.", function(rename)
+tab3.newInput("Second Move Rename", "Prints your input.", function(rename)
 local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
 local children = movesetFrame:GetChildren()
@@ -52,7 +60,7 @@ end
 end
 end)
 
-tab2.newInput("Third Move Rename", "Prints your input.", function(rename)
+tab3.newInput("Third Move Rename", "Prints your input.", function(rename)
 local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
 local children = movesetFrame:GetChildren()
@@ -67,7 +75,7 @@ end
 end
 end)
 
-tab2.newInput("Fourth Move Rename", "Prints your input.", function(rename)
+tab3.newInput("Fourth Move Rename", "Prints your input.", function(rename)
 local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
 local children = movesetFrame:GetChildren()

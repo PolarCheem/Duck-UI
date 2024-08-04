@@ -4,14 +4,41 @@ local window = DrRayLibrary:Load("JJS", "Default")
 local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Settings", "ImageIdHere")
 
-tab2.newInput("Custom Ultimate Name", "Renames your ultimate", function(text)
+tab2.newInput("Custom Ultimate Name", "Renames your ultimate", function(rename)
 local ult = game.Players.LocalPlayer.PlayerGui.Main.Ultimate.Title
 
-ult.Text = text
+ult.Text = rename
 end)
 
+tab2.newInput("First Move Rename", "Prints your input.", function(rename)
+local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
+local children = movesetFrame:GetChildren()
 
+for _, child in pairs(children) do
+if child:IsA("Frame") and (child.Name == "Lapse Blue" or child.Name == "Cursed Strikes" or child.Name == "Reserve Balls" or child.Name == "Rabbit Escape" or child.Name == "Stockpile") then
+local itemFrame = child:FindFirstChild("ItemName")
+if itemFrame then
+itemFrame.Text = rename
+end
+end
+end
+end)
+
+tab2.newInput("Second Move Rename", "Prints your input.", function(rename)
+local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
+
+local children = movesetFrame:GetChildren()
+
+for _, child in pairs(children) do
+if child:IsA("Frame") and (child.Name == "Reversal Red" or child.Name == "Crushing Blow" or child.Name == "Shutter Doors" or child.Name == "Nue" or child.Name == "Soul Fire") then
+local itemFrame = child:FindFirstChild("ItemName")
+if itemFrame then
+itemFrame.Text = rename
+end
+end
+end
+end)
 
 
 

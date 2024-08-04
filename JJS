@@ -40,7 +40,33 @@ end
 end
 end)
 
+tab2.newInput("Third Move Rename", "Prints your input.", function(rename)
+local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
 
+local children = movesetFrame:GetChildren()
 
+for _, child in pairs(children) do
+if child:IsA("Frame") and (child.Name == "Rapid Punches" or child.Name == "Divergent Fist" or child.Name == "Rough Energy" or child.Name == "Toad" or child.Name == "Focus Strike") then
+local itemFrame = child:FindFirstChild("ItemName")
+if itemFrame then
+itemFrame.Text = rename
+end
+end
+end
+end)
 
+tab2.newInput("Fourth Move Rename", "Prints your input.", function(rename)
+local movesetFrame = game.Players.LocalPlayer.PlayerGui.Main.Moveset
+
+local children = movesetFrame:GetChildren()
+
+for _, child in pairs(children) do
+if child:IsA("Frame") and (child.Name == "Twinfold Kick" or child.Name == "Manji Kick" or child.Name == "Fever Break" or child.Name == "Body Repel" or child.Name == "Divine Dog: Totality") then
+local itemFrame = child:FindFirstChild("ItemName")
+if itemFrame then
+itemFrame.Text = rename
+end
+end
+end
+end)
 

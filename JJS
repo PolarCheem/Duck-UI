@@ -5,7 +5,7 @@ local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Settings", "ImageIdHere")
 
 tab2.newInput("Custom Ultimate Name", "Renames your ultimate", function(text)
-local ult = game.Players.Screengui.Main.Ultimate.Title
+local ult = game.Players.PlayerGui.Main.Ultimate.Title
 
 ult.Text = text
 end)

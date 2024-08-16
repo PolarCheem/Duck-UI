@@ -7,11 +7,9 @@ local tab2 = DrRayLibrary.newTab("Gun", "ImageIdHere")
 tab.newButton("Player esp", "Prints Hello!", function()
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
-local Workspace = game:GetService("Workspace")
 
--- Function to highlight players and the shark, showing name tags
-local function highlightSharksAndPlayers()
-    -- Highlight all players
+-- Function to highlight all players except the local player and show name tags in their team color
+local function highlightOtherPlayers()
     for _, player in ipairs(Players:GetPlayers()) do
         if player ~= localPlayer then
             local character = player.Character
@@ -40,40 +38,12 @@ local function highlightSharksAndPlayers()
             end
         end
     end
-
-    -- Highlight the shark
-    local sharksFolder = Workspace:FindFirstChild("Sharks")
-    if sharksFolder then
-        for _, shark in ipairs(sharksFolder:GetChildren()) do
-            if shark:IsA("Model") then
-                -- Add highlight
-                local highlight = Instance.new("Highlight")
-                highlight.Adornee = shark
-                highlight.FillColor = Color3.new(1, 0, 0) -- Red color for sharks
-                highlight.OutlineColor = Color3.new(0, 0, 0)
-                highlight.Parent = shark
-
-                -- Add name tag
-                local billboard = Instance.new("BillboardGui", shark)
-                billboard.Size = UDim2.new(0, 100, 0, 50)
-                billboard.Adornee = shark:FindFirstChild("Head") -- Assuming the shark model has a "Head" part
-                billboard.AlwaysOnTop = true
-
-                local nameLabel = Instance.new("TextLabel", billboard)
-                nameLabel.Size = UDim2.new(1, 0, 1, 0)
-                nameLabel.BackgroundTransparency = 1
-                nameLabel.Text = "Shark"
-                nameLabel.TextColor3 = Color3.new(1, 0, 0) -- Red color for the shark name tag
-                nameLabel.TextStrokeTransparency = 0
-            end
-        end
-    end
 end
 
 -- Run the highlight function initially and then in a loop
 while true do
-    highlightSharksAndPlayers()
-    wait(3) -- Update every 5 seconds
+    highlightOtherPlayers()
+    wait(5) -- Update every 5 seconds
 end
 end)
 

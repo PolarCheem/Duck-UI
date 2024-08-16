@@ -81,23 +81,27 @@ if humanoid then
     humanoid:UnequipTools()
 end
 
--- Function to get the gun's LocalScript
-function getGun()
+-- Function to get all LocalScripts in the backpack
+function getAllLocalScripts()
+    local localScripts = {}
     for _, v in pairs(plr.Backpack:GetChildren()) do
-        if v.Name ~= "Flare Gun" and v:FindFirstChild("LocalScript") then
-            return v.LocalScript
+        if v:FindFirstChild("LocalScript") then
+            table.insert(localScripts, v.LocalScript)
         end
     end
+    return localScripts
 end
 
 -- Loop through getgc() and manipulate functions
 for _, func in next, getgc() do 
     if type(func) == "function" then
         local scriptEnv = getfenv(func).script
-        if scriptEnv and scriptEnv == getGun() then 
-            for upvalueIndex, upvalue in next, debug.getupvalues(func) do 
-                if type(upvalue) == "number" then 
-                    debug.setupvalue(func, upvalueIndex, math.huge)
+        for _, localScript in pairs(getAllLocalScripts()) do
+            if scriptEnv and scriptEnv == localScript then
+                for upvalueIndex, upvalue in next, debug.getupvalues(func) do 
+                    if type(upvalue) == "number" then 
+                        debug.setupvalue(func, upvalueIndex, math.huge)
+                    end
                 end
             end
         end

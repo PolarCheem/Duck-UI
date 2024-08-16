@@ -1,0 +1,83 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("sharkbite", "Default")
+
+local tab = DrRayLibrary.newTab("ESP", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Gun", "ImageIdHere")
+
+tab.newButton("Player esp", "Prints Hello!", function()
+-- Highlight all players
+local function highlightPlayers()
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        local character = player.Character
+        if character then
+            local highlight = Instance.new("Highlight")
+            highlight.Adornee = character
+            highlight.Parent = character
+        end
+    end
+end
+
+-- Highlight players once
+highlightPlayers()
+end)
+
+tab.newButton("Shark ESP", "simple", function()
+-- Highlight and update every 5 seconds
+local function highlightSharks()
+    local sharksFolder = game.Workspace:FindFirstChild("Sharks")
+    if sharksFolder then
+        for _, shark in ipairs(sharksFolder:GetChildren()) do
+            if shark:IsA("Model") then
+                local highlight = Instance.new("Highlight")
+                highlight.Adornee = shark
+                highlight.Parent = shark
+            end
+        end
+    end
+end
+
+-- Initial highlight
+highlightSharks()
+
+-- Update every 5 seconds
+while wait(5) do
+    highlightSharks()
+end
+end)
+
+tab2.newButton("inf ammo", "hard", function()
+local plr = game:GetService("Players").LocalPlayer
+
+-- Unequip all tools
+local humanoid = plr.Character:FindFirstChild("Humanoid")
+if humanoid then
+    humanoid:UnequipTools()
+end
+
+-- Function to get the gun's LocalScript
+function getGun()
+    for _, v in pairs(plr.Backpack:GetChildren()) do
+        if v.Name ~= "Flare Gun" and v:FindFirstChild("LocalScript") then
+            return v.LocalScript
+        end
+    end
+end
+
+-- Loop through getgc() and manipulate functions
+for _, func in next, getgc() do 
+    if type(func) == "function" then
+        local scriptEnv = getfenv(func).script
+        if scriptEnv and scriptEnv == getGun() then 
+            for upvalueIndex, upvalue in next, debug.getupvalues(func) do 
+                if type(upvalue) == "number" then 
+                    debug.setupvalue(func, upvalueIndex, math.huge)
+                end
+            end
+        end
+    end
+end
+end)
+
+
+
+

@@ -8,15 +8,19 @@ tab.newButton("Player esp", "Prints Hello!", function()
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
--- Function to highlight all players except the local player and show name tags
+-- Function to highlight all players except the local player and show name tags in their team color
 local function highlightOtherPlayers()
     for _, player in ipairs(Players:GetPlayers()) do
         if player ~= localPlayer then
             local character = player.Character
             if character then
+                local teamColor = player.Team and player.Team.TeamColor.Color or Color3.new(1, 1, 1) -- Default to white if no team
+
                 -- Add highlight
                 local highlight = Instance.new("Highlight")
                 highlight.Adornee = character
+                highlight.FillColor = teamColor
+                highlight.OutlineColor = Color3.new(0, 0, 0) -- Optional: black outline for better visibility
                 highlight.Parent = character
 
                 -- Add name tag
@@ -29,7 +33,7 @@ local function highlightOtherPlayers()
                 nameLabel.Size = UDim2.new(1, 0, 1, 0)
                 nameLabel.BackgroundTransparency = 1
                 nameLabel.Text = player.Name
-                nameLabel.TextColor3 = Color3.new(1, 1, 1)
+                nameLabel.TextColor3 = teamColor
                 nameLabel.TextStrokeTransparency = 0
             end
         end
@@ -39,7 +43,7 @@ end
 -- Run the highlight function initially and then in a loop
 while true do
     highlightOtherPlayers()
-    wait(5) -- Update every 5 seconds
+    wait(0) -- Update every 5 seconds
 end
 end)
 

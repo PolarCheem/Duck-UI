@@ -5,21 +5,44 @@ local tab = DrRayLibrary.newTab("ESP", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Gun", "ImageIdHere")
 
 tab.newButton("Player esp", "Prints Hello!", function()
--- Highlight all players
-local function highlightPlayers()
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        local character = player.Character
-        if character then
-            local highlight = Instance.new("Highlight")
-            highlight.Adornee = character
-            highlight.Parent = character
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+-- Function to highlight all players except the local player and show name tags
+local function highlightOtherPlayers()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= localPlayer then
+            local character = player.Character
+            if character then
+                -- Add highlight
+                local highlight = Instance.new("Highlight")
+                highlight.Adornee = character
+                highlight.Parent = character
+
+                -- Add name tag
+                local billboard = Instance.new("BillboardGui", character)
+                billboard.Size = UDim2.new(0, 100, 0, 50)
+                billboard.Adornee = character:FindFirstChild("Head")
+                billboard.AlwaysOnTop = true
+
+                local nameLabel = Instance.new("TextLabel", billboard)
+                nameLabel.Size = UDim2.new(1, 0, 1, 0)
+                nameLabel.BackgroundTransparency = 1
+                nameLabel.Text = player.Name
+                nameLabel.TextColor3 = Color3.new(1, 1, 1)
+                nameLabel.TextStrokeTransparency = 0
+            end
         end
     end
 end
 
--- Highlight players once
-highlightPlayers()
+-- Run the highlight function initially and then in a loop
+while true do
+    highlightOtherPlayers()
+    wait(5) -- Update every 5 seconds
+end
 end)
+
 
 tab.newButton("Shark ESP", "simple", function()
 -- Highlight and update every 5 seconds

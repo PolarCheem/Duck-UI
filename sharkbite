@@ -67,7 +67,7 @@ end
 highlightSharks()
 
 -- Update every 5 seconds
-while wait(0) do
+while wait(1.5) do
     highlightSharks()
 end
 end)

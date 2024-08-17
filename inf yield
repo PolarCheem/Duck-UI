@@ -12020,7 +12020,7 @@ addcmd('hitbox',{},function(args, speaker)
 	end
 end)
 
-addcmd('hitbox',{},function(args, speaker)
+addcmd('loophitbox',{},function(args, speaker)
 while true do
 	local players = getPlayer(args[1], speaker)
 	for i,v in pairs(players) do

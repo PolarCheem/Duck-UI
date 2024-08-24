@@ -1,0 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Best1scripts/VolleyBall-4.2/main/Made-By-Tevfn"))()
+
+wait(0)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/main/curve%20serve"))()

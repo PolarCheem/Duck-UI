@@ -50,6 +50,6 @@ tab3.newSlider("defence Stat", "Epic slider", 10, false, function(num)
 game.Players.LocalPlayer.AttributeValues.Defence.Value = num
 end)
 
-tab.newInput("Change Perk", "Put perk name", function(text)
+tab3.newInput("Change Perk", "Put perk name", function(text)
 game.Players.LocalPlayer.AttributeValues.Perk.Value = text
 end)

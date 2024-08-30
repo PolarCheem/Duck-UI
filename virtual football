@@ -10,10 +10,10 @@ game:GetService("Players").LocalPlayer.Data.Stamina.Value = 999999999999
 end)
 
 tab2.newSlider("Foot Reach", "Epic slider", 100, false, function(num)
-game.Players.LocalPlayer.Character.HitBoxExpansion.Size = Vector3.new(num)
+game.Players.LocalPlayer.Character.HitBoxExpansion.Size = Vector3.new(num, num, num)
 end)
 tab2.newSlider("Block Reach", "Epic slider", 100, false, function(num)
-game.Players.LocalPlayer.Character.Block.Size = Vector3.new(num)
+game.Players.LocalPlayer.Character.Block.Size = Vector3.new(num, num, num)
 end)
 
 tab3.newSlider("Strength Stat", "Epic slider", 10, false, function(num)
@@ -32,8 +32,8 @@ tab3.newSlider("Dribble Stat", "Epic slider", 10, false, function(num)
 game.Players.LocalPlayer.AttributeValues.Dribbling.Value = num
 end)
 
-tab3.newSlider("defense Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Defense.Value = num
+tab3.newSlider("defence Stat", "Epic slider", 10, false, function(num)
+game.Players.LocalPlayer.AttributeValues.Defence.Value = num
 end)
 
 tab.newInput("Change Perk", "Put perk name", function(text)

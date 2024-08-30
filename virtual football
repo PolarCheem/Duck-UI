@@ -5,6 +5,20 @@ local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Foot", "ImageIdHere")
 local tab3 = DrRayLibrary.newTab("Spoof", "ImageIdHere")
 
+local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/Helixia/main/Scripts/notification.lua"))()
+    notification({
+        Title = "Loading...",  
+        Text = "Please wait a second!", 
+        Duration = 2
+    })
+
+local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/Helixia/main/Scripts/notification.lua"))()
+    notification({
+        Title = "Loaded",  
+        Text = "Thx for using", 
+        Duration = 3
+    })
+
 tab.newButton("Inf stamina ", "Prints Hello!", function()
 game:GetService("Players").LocalPlayer.Data.Stamina.Value = 999999999999
 end)

@@ -11,7 +11,7 @@ local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
         Text = "Please wait a second!", 
         Duration = 2
     })
-
+wait(2.3)
 local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/Helixia/main/Scripts/notification.lua"))()
     notification({
         Title = "Loaded",  

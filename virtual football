@@ -52,26 +52,3 @@ tab2.newSlider("Block Reach", "Epic slider", 100, false, function(num)
 game.Players.LocalPlayer.Character.Block.Size = Vector3.new(num, num, num)
 end)
 
-tab3.newSlider("Strength Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Strength.Value = num
-end)
-
-tab3.newSlider("Technique Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Technique.Value = num
-end)
-
-tab3.newSlider("Athleticism Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Athleticism.Value = num
-end)
-
-tab3.newSlider("Dribble Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Dribbling.Value = num
-end)
-
-tab3.newSlider("defence Stat", "Epic slider", 10, false, function(num)
-game.Players.LocalPlayer.AttributeValues.Defence.Value = num
-end)
-
-tab3.newInput("Change Perk", "Put perk name", function(text)
-game.Players.LocalPlayer.AttributeValues.Perk.Value = text
-end)

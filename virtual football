@@ -19,6 +19,28 @@ local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
         Duration = 3
     })
 
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.015, 0, 0.03, 0)
+main.Position = UDim2.new(0.5, 0, 0.48, 0)
+main.AnchorPoint = Vector2.new(0.5, 0.5) -- Center the frame
+main.BackgroundColor3 = Color3.new(1, 1, 1)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 1
+main.Active = true
+main.BackgroundTransparency = 0
+main.Draggable = false
+main.Parent = gui
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = main
+
 tab.newButton("Inf stamina ", "Prints Hello!", function()
 game:GetService("Players").LocalPlayer.Data.Stamina.Value = 999999999999
 end)

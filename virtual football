@@ -5,27 +5,26 @@ local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Foot", "ImageIdHere")
 local tab3 = DrRayLibrary.newTab("Stat Hack", "ImageIdHere")
 
+-- Load notification script only once
 local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/Helixia/main/Scripts/notification.lua"))()
-    notification({
-        Title = "Loading...",  
-        Text = "Please wait a second!", 
-        Duration = 2
-    })
 
-local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/Helixia/main/Scripts/notification.lua"))()
-    notification({
-        Title = "Loaded",  
-        Text = "Thx for using", 
-        Duration = 1
-    })
+notification({
+    Title = "Loading...",
+    Text = "Please wait a second!",
+    Duration = 2
+})
+
+notification({
+    Title = "Loaded",
+    Text = "Thx for using",
+    Duration = 1
+})
 
 local gui = Instance.new("ScreenGui")
 gui.Name = "patrickGui"
 gui.Parent = game.CoreGui
 
---///patrick gui maker///--
-
-
+-- Create the main frame
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0.01, 0, 0.02, 0)
 main.Position = UDim2.new(0.5, 0, 0.48, 0)
@@ -37,83 +36,82 @@ main.Active = true
 main.BackgroundTransparency = 0
 main.Draggable = false
 main.Parent = gui
+
+-- Add UICorner to the main frame
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = main
 
-tab.newButton("Inf stamina ", "Prints Hello!", function()
-game:GetService("Players").LocalPlayer.Data.Stamina.Value = 999999999999
+-- Define tab functionalities
+tab.newButton("Inf stamina", "Prints Hello!", function()
+    game:GetService("Players").LocalPlayer.Data.Stamina.Value = 999999999999
 end)
 
 tab2.newSlider("Foot Reach", "Epic slider", 100, false, function(num)
-game.Players.LocalPlayer.Character.HitBoxExpansion.Size = Vector3.new(num, num, num)
+    game.Players.LocalPlayer.Character.HitBoxExpansion.Size = Vector3.new(num, num, num)
 end)
+
 tab2.newSlider("Block Reach", "Epic slider", 100, false, function(num)
-game.Players.LocalPlayer.Character.Block.Size = Vector3.new(num, num, num)
+    game.Players.LocalPlayer.Character.Block.Size = Vector3.new(num, num, num)
 end)
 
+-- Define input fields for various stats
 tab3.newInput("Strength", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "Strength",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
-end
+    while wait(0) do
+        local args = {
+            [1] = "Strength",
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)
 
 tab3.newInput("Dribble", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "Dribble",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
-end
+    while wait(0) do
+        local args = {
+            [1] = "Dribble",
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)
 
 tab3.newInput("Defence", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "Defence",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
-end
+    while wait(0) do
+        local args = {
+            [1] = "Defence",
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)
 
 tab3.newInput("Technique", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "Technique",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
-end
+    while wait(0) do
+        local args = {
+            [1] = "Technique",
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)
 
 tab3.newInput("Athleticism", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "Athleticism",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
-end
+    while wait(0) do
+        local args = {
+            [1] = "Athleticism",
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)
 
 tab3.newInput("Custom Build Name", "rejoin if messed up", function(text)
-while wait(0) do
-local args = {
-    [1] = "TypeOfPlayerName",
-    [2] = text
-}
-
-game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))end
-end
+    while wait(0) do
+        local args = {
+            [1] = "TypeOfPlayerName", -- Ensure the attribute name is correct
+            [2] = text
+        }
+        game:GetService("ReplicatedStorage").Events.OtherEvents.AttributeValues:FireServer(unpack(args))
+    end
 end)

@@ -24,7 +24,7 @@ authorText.TextColor3 = Color3.fromRGB(255, 255, 255)
 authorText.TextTransparency = 1
 authorText.TextScaled = true
 authorText.Font = Enum.Font.SourceSans
-wair(0.01)
+wait(0.01)
 loadingGui:Destroy()
 
 local screenGui = Instance.new("ScreenGui", coreGui)

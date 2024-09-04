@@ -76,14 +76,14 @@ tab1script.Parent = rightPanel
 tab1script.BackgroundTransparency = 0
 tab1script.Visible = true
 
-local 1Frame = Instance.new("Frame")
-1Frame.Size = UDim2.new(0.2, 0, 0.05, 0)
-1Frame.Position = UDim2.new(0.01, 0, 0.01, 0)
-1Frame.BackgroundColor3 = Color3.fromRGB(20,20,20)
-1Frame.BorderSizePixel = 0
-1Frame.BackgroundTransparency = 0 
-1Frame.Draggable = false
-1Frame.Parent = tab1script
+local frame1 = Instance.new("Frame")
+frame1.Size = UDim2.new(0.2, 0, 0.05, 0)
+frame1.Position = UDim2.new(0.01, 0, 0.01, 0)
+frame1.BackgroundColor3 = Color3.fromRGB(20,20,20)
+frame1.BorderSizePixel = 0
+frame1.BackgroundTransparency = 0 
+frame1.Draggable = false
+frame1.Parent = tab1script
 
 local tab2script = Instance.new("Frame") 
 tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)

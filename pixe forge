@@ -24,7 +24,7 @@ authorText.TextColor3 = Color3.fromRGB(255, 255, 255)
 authorText.TextTransparency = 1
 authorText.TextScaled = true
 authorText.Font = Enum.Font.SourceSans
-wait(0.01)
+wait(20)
 loadingGui:Destroy()
 
 local screenGui = Instance.new("ScreenGui", coreGui)
@@ -51,12 +51,12 @@ tab1.Parent = leftPanel
 
 local tab2 = Instance.new("TextButton")
 tab2.Size = UDim2.new(1, 0, 0.15, 0)
-tab2.Position = UDim2.new(0, 0, 0.2, 0)
+tab2.Position = UDim2.new(0, 0, 0.15, 0)
 tab2.BackgroundColor3 = Color3.fromRGB(23,23,23)
 tab2.BorderSizePixel = 0
 tab2.TextScaled = false
 tab2.TextSize = 25
-tab2.Text = "Tab"
+tab2.Text = "Tab 2"
 tab2.BackgroundTransparency = 0 
 tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
 tab2.Font = Enum.Font.Code

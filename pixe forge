@@ -257,7 +257,7 @@ end
 makeDraggable(iconFrame)
 
 Button1.MouseButton1Click:Connect(function()
-    player.Character.Humanoid.Walkspeed = 50
+    player.Character.Humanoid.WalkSpeed = 50
 end)
 
 tab1.MouseButton1Click:Connect(function()

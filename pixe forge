@@ -66,18 +66,17 @@ rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
 rightPanel.Position = UDim2.new(0.26, 0, 0.1, 0)
 rightPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
-local tab1script = Instance.new("ScrollingFrame") 
+local tab1script = Instance.new("Frame") 
 tab1script.Size = UDim2.new(0.9, 0, 0.8, 0)
 tab1script.Position = UDim2.new(0.05, 0, 0.1, 0)
 tab1script.BackgroundColor3 = Color3.fromRGB(23,23,23)
 tab1script.BorderColor3 = Color3.new(0, 0, 0)
 tab1script.BorderSizePixel = 0
 tab1script.Parent = rightPanel
-tab1script.ScrollBarThickness = 3
 tab1script.BackgroundTransparency = 0
 tab1script.Visible = true
 
-local tab1test = Instance.new("TextLabel", rightPanel)
+local tab1test = Instance.new("TextLabel")
 tab1test.Position = UDim2.new(0, 0, 0, 0)
 tab1test.BackgroundTransparency = 1
 tab1test.TextScaled = true
@@ -87,18 +86,17 @@ tab1test.TextScaled = true
 tab1test.Font = Enum.Font.SourceSans
 tab1test.Parent = tab1script
 
-local tab2script = Instance.new("ScrollingFrame") 
+local tab2script = Instance.new("Frame") 
 tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)
 tab2script.Position = UDim2.new(0.05, 0, 0.1, 0)
 tab2script.BackgroundColor3 = Color3.fromRGB(23,23,23)
 tab2script.BorderColor3 = Color3.new(0, 0, 0)
 tab2script.BorderSizePixel = 0
 tab2script.Parent = rightPanel
-tab2script.ScrollBarThickness = 3
 tab2script.BackgroundTransparency = 0
 tab2script.Visible = false
 
-local tab2test = Instance.new("TextLabel", rightPanel)
+local tab2test = Instance.new("TextLabel")
 tab2test.Position = UDim2.new(0, 0, 0, 0)
 tab2test.BackgroundTransparency = 1
 tab2test.TextScaled = true

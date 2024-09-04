@@ -76,15 +76,16 @@ tab1script.Parent = rightPanel
 tab1script.BackgroundTransparency = 0
 tab1script.Visible = true
 
-local tab1test = Instance.new("TextLabel")
-tab1test.Position = UDim2.new(0, 0, 0, 0)
-tab1test.BackgroundTransparency = 1
-tab1test.TextScaled = true
-tab1test.Text = "tab 1"
-tab1test.TextColor3 = Color3.fromRGB(255, 255, 255)
-tab1test.TextScaled = true
-tab1test.Font = Enum.Font.SourceSans
-tab1test.Parent = tab1script
+local tab1text = Instance.new("TextLabel")
+tab1text.Size = UDim2.new(1, 0, 1, 0)
+tab1text.TextScaled = true
+tab1text.Position = UDim2.new(0, 0, 0, 0)
+tab1text.BorderSizePixel = 0
+tab1text.Text = "tab 1"
+tab1text.BackgroundTransparency = 1
+tab1text.TextColor3 = Color3.new(255, 255, 255)
+tab1text.Font = Enum.Font.Code
+tab1text.Parent = tab1script
 
 local tab2script = Instance.new("Frame") 
 tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)
@@ -96,15 +97,16 @@ tab2script.Parent = rightPanel
 tab2script.BackgroundTransparency = 0
 tab2script.Visible = false
 
-local tab2test = Instance.new("TextLabel")
-tab2test.Position = UDim2.new(0, 0, 0, 0)
-tab2test.BackgroundTransparency = 1
-tab2test.TextScaled = true
-tab2test.Text = "tab 2"
-tab2test.TextColor3 = Color3.fromRGB(255, 255, 255)
-tab2test.TextScaled = true
-tab2test.Font = Enum.Font.SourceSans
-tab2test.Parent = tab2script
+local tab2text = Instance.new("TextLabel")
+tab2text.Size = UDim2.new(1, 0, 1, 0)
+tab2text.TextScaled = true
+tab2text.Position = UDim2.new(0, 0, 0, 0)
+tab2text.BorderSizePixel = 0
+tab2text.Text = "tab 2"
+tab2text.BackgroundTransparency = 1
+tab2text.TextColor3 = Color3.new(255, 255, 255)
+tab2text.Font = Enum.Font.Code
+tab2text.Parent = tab2script
 
 
 local titleLabel = Instance.new("TextLabel", rightPanel)

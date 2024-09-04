@@ -54,12 +54,12 @@ rightPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
 local tab1script = Instance.new("ScrollingFrame") 
 tab1script.Size = UDim2.new(0.9, 0, 0.85, 0)
-tab1script.Position = UDim2.new(0.15, 0, 0.25, 0)
+tab1script.Position = UDim2.new(0.1, 0, 0.15, 0)
 tab1script.BackgroundColor3 = Color3.fromRGB(23,23,23)
 tab1script.BorderColor3 = Color3.new(0, 0, 0)
 tab1script.BorderSizePixel = 0
 tab1script.Parent = rightPanel
-tab1script.ScrollBarThickness = 0
+tab1script.ScrollBarThickness = 0.5
 tab1script.BackgroundTransparency = 0
 
 local titleLabel = Instance.new("TextLabel", rightPanel)

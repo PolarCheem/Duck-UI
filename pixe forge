@@ -24,6 +24,8 @@ authorText.TextColor3 = Color3.fromRGB(255, 255, 255)
 authorText.TextTransparency = 1
 authorText.TextScaled = true
 authorText.Font = Enum.Font.SourceSans
+wair(0.01)
+loadingGui:Destroy()
 
 local screenGui = Instance.new("ScreenGui", coreGui)
 screenGui.Name = "MainGui"
@@ -47,6 +49,19 @@ tab1.TextColor3 = Color3.fromRGB(255, 255, 255)
 tab1.Font = Enum.Font.Code
 tab1.Parent = leftPanel
 
+local tab2 = Instance.new("TextButton")
+tab2.Size = UDim2.new(1, 0, 0.15, 0)
+tab2.Position = UDim2.new(0, 0, 0.2, 0)
+tab2.BackgroundColor3 = Color3.fromRGB(23,23,23)
+tab2.BorderSizePixel = 0
+tab2.TextScaled = false
+tab2.TextSize = 25
+tab2.Text = "Tab"
+tab2.BackgroundTransparency = 0 
+tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+tab2.Font = Enum.Font.Code
+tab2.Parent = leftPanel
+
 local rightPanel = Instance.new("Frame", screenGui)
 rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
 rightPanel.Position = UDim2.new(0.26, 0, 0.1, 0)
@@ -59,7 +74,7 @@ tab1script.BackgroundColor3 = Color3.fromRGB(23,23,23)
 tab1script.BorderColor3 = Color3.new(0, 0, 0)
 tab1script.BorderSizePixel = 0
 tab1script.Parent = rightPanel
-tab1script.ScrollBarThickness = 0.5
+tab1script.ScrollBarThickness = 3
 tab1script.BackgroundTransparency = 0
 
 local titleLabel = Instance.new("TextLabel", rightPanel)

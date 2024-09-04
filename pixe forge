@@ -77,13 +77,26 @@ tab1script.BackgroundTransparency = 0
 tab1script.Visible = true
 
 local frame1 = Instance.new("Frame")
-frame1.Size = UDim2.new(0.35, 0, 0.2, 0)
+frame1.Size = UDim2.new(0.35, 0, 0.23, 0)
 frame1.Position = UDim2.new(0.01, 0, 0.01, 0)
 frame1.BackgroundColor3 = Color3.fromRGB(20,20,20)
 frame1.BorderSizePixel = 0
 frame1.BackgroundTransparency = 0 
 frame1.Draggable = false
 frame1.Parent = tab1script
+
+local TextButton = Instance.new("TextButton")
+TextButton.Size = UDim2.new(0.3, 0, 0.2, 0)
+TextButton.Position = UDim2.new(0.85, 0, 0.5, 0)
+TextButton.BackgroundColor3 = Color3.RGB(23,23,23)
+TextButton.BorderColor3 = Color3.RGB(255,255,255)
+TextButton.BorderSizePixel = 1
+TextButton.Text = "."
+TextButton.BackgroundTransparency = 0
+TextButton.TextColor3 = Color3.RGB(23,23,23)
+TextButton.Font = Enum.Font.Code
+TextButton.Parent = frame1
+
 
 local tab2script = Instance.new("Frame") 
 tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)

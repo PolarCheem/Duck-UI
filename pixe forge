@@ -107,7 +107,8 @@ frame1Text2.TextSize = 12
 frame1Text2.TextScaled = false
 frame1Text2.Position = UDim2.new(-0.1, 0, 0.2, 0)
 frame1Text2.BorderSizePixel = 0
-frame1Text2.Text = "Changes your walkspeed"
+frame1Text2.Text = "Changes your 
+walkspeed"
 frame1Text2.BackgroundTransparency = 1
 frame1Text2.TextColor3 = Color3.fromRGB(255, 255, 255)
 frame1Text2.Font = Enum.Font.Code

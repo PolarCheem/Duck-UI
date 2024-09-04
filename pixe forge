@@ -79,7 +79,7 @@ profileImage.Parent = usernameFrame
 
 local usernameLabel = Instance.new("TextLabel", usernameFrame)
 usernameLabel.Size = UDim2.new(0.8, 0, 0.65, 0)
-usernameLabel.Position = UDim2.new(0.1, 0, 0.1, 0)
+usernameLabel.Position = UDim2.new(0.1, 0, 0.13, 0)
 usernameLabel.BackgroundTransparency = 1
 usernameLabel.Text = player.Name
 usernameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)

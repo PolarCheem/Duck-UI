@@ -35,9 +35,9 @@ leftPanel.Position = UDim2.new(0.04, 0, 0.1, 0)
 leftPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
 local tab1 = Instance.new("TextButton")
-tab1.Size = UDim2.new(0.3, 0, 0.2, 0)
-tab1.Position = UDim2.new(0, 0, 0.15, 0)
-tab1.BackgroundColor3 = Color3.new(30,30,30)
+tab1.Size = UDim2.new(0.6, 0, 0.1, 0)
+tab1.Position = UDim2.new(0, 0, 0, 0)
+tab1.BackgroundColor3 = Color3.fromRGB(30,30,30)
 tab1.BorderSizePixel = 0
 tab1.Text = "Tab"
 tab1.BackgroundTransparency = 0 

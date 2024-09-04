@@ -86,11 +86,11 @@ frame1.Draggable = false
 frame1.Parent = tab1script
 
 local Button1 = Instance.new("TextButton")
-Button1.Size = UDim2.new(-0.25, 0, -0.45, 0)
+Button1.Size = UDim2.new(-0.22, 0, -0.3, 0)
 Button1.Position = UDim2.new(0.85, 0, 0.5, 0)
 Button1.BackgroundColor3 = Color3.fromRGB(23,23,23)
 Button1.BorderColor3 = Color3.fromRGB(255,255,255)
-Button1.BorderSizePixel = 1
+Button1.BorderSizePixel = 0
 Button1.Text = "+"
 Button1.TextScaled = true
 Button1.BackgroundTransparency = 0

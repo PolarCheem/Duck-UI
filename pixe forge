@@ -32,7 +32,7 @@ screenGui.Enabled = false
 local leftPanel = Instance.new("Frame", screenGui)
 leftPanel.Size = UDim2.new(0.2, 0, 0.8, 0)
 leftPanel.Position = UDim2.new(0.04, 0, 0.1, 0)
-leftPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+leftPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
 local rightPanel = Instance.new("Frame", screenGui)
 rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
@@ -99,10 +99,11 @@ local iconGui = Instance.new("ScreenGui", coreGui)
 iconGui.Name = "IconGui"
 
 local iconFrame = Instance.new("Frame", iconGui)
-iconFrame.Size = UDim2.new(0.05, 0, 0.05, 0)
-iconFrame.Position = UDim2.new(0.45, 0, 0.9, 0)
+iconFrame.Size = UDim2.new(0.1, 0, 0.1, 0)
+iconFrame.Position = UDim2.new(0, 0, 0, 0)
 iconFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 iconFrame.BorderSizePixel = 2
+iconFrame.Draggable = true
 iconFrame.BorderColor3 = Color3.fromRGB(128, 0, 128)
 
 iconGui.Enabled = false

@@ -86,8 +86,8 @@ frame1.Draggable = false
 frame1.Parent = tab1script
 
 local Button1 = Instance.new("TextButton")
-Button1.Size = UDim2.new(-0.22, 0, -0.48, 0)
-Button1.Position = UDim2.new(0.92, 0, 0.65, 0)
+Button1.Size = UDim2.new(-0.20, 0, -0.48, 0)
+Button1.Position = UDim2.new(0.92, 0, 0.68, 0)
 Button1.BackgroundColor3 = Color3.fromRGB(23,23,23)
 Button1.BorderColor3 = Color3.fromRGB(255,255,255)
 Button1.BorderSizePixel = 0

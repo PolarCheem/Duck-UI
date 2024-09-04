@@ -294,7 +294,7 @@ Button1.MouseButton1Click:Connect(function()
 end)
 
 Button2.MouseButton1Click:Connect(function()
-    player.Character.Humanoid.JumpPower = 50
+    player.Character.Humanoid.JumpPower = 100
 end)
 
 tab1.MouseButton1Click:Connect(function()

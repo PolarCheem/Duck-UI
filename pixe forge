@@ -91,6 +91,7 @@ corner1.Parent = frame1
 
 local frame1Text = Instance.new("TextLabel")
 frame1Text.Size = UDim2.new(0.15, 0, 0.1, 0)
+frame1Text.TextSize = 12
 frame1Text.TextScaled = false
 frame1Text.Position = UDim2.new(0.08, 0, 0.08, 0)
 frame1Text.BorderSizePixel = 0
@@ -101,7 +102,7 @@ frame1Text.Font = Enum.Font.Code
 frame1Text.Parent = frame1
 
 local Button1 = Instance.new("TextButton")
-Button1.Size = UDim2.new(-0.20, 0, -0.48, 0)
+Button1.Size = UDim2.new(-0.18, 0, -0.48, 0)
 Button1.Position = UDim2.new(0.92, 0, 0.68, 0)
 Button1.BackgroundColor3 = Color3.fromRGB(23,23,23)
 Button1.BorderSizePixel = 1

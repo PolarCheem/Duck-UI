@@ -31,12 +31,12 @@ screenGui.Enabled = false
 
 local leftPanel = Instance.new("Frame", screenGui)
 leftPanel.Size = UDim2.new(0.2, 0, 0.8, 0)
-leftPanel.Position = UDim2.new(0.01, 0, 0.1, 0)
+leftPanel.Position = UDim2.new(0.04, 0, 0.1, 0)
 leftPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 
 local rightPanel = Instance.new("Frame", screenGui)
 rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
-rightPanel.Position = UDim2.new(0.22, 0, 0.1, 0)
+rightPanel.Position = UDim2.new(0.26, 0, 0.1, 0)
 rightPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
 local titleLabel = Instance.new("TextLabel", rightPanel)

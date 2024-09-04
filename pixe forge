@@ -99,12 +99,16 @@ local iconGui = Instance.new("ScreenGui", coreGui)
 iconGui.Name = "IconGui"
 
 local iconFrame = Instance.new("Frame", iconGui)
-iconFrame.Size = UDim2.new(0.1, 0, 0.1, 0)
+iconFrame.Size = UDim2.new(0.5, 0, 0.1, 0)
 iconFrame.Position = UDim2.new(0, 0, 0, 0)
-iconFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+iconFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 iconFrame.BorderSizePixel = 2
 iconFrame.Draggable = true
 iconFrame.BorderColor3 = Color3.fromRGB(128, 0, 128)
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 10)
+corner.Parent = iconFrame
 
 iconGui.Enabled = false
 

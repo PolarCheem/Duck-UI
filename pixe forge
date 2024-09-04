@@ -90,7 +90,7 @@ corner1.CornerRadius = UDim.new(0, 6)
 corner1.Parent = frame1
 
 local frame1Text = Instance.new("TextLabel")
-frame1Text.Size = UDim2.new(0.35, 0, 0.25, 0)
+frame1Text.Size = UDim2.new(0.35, 0, 0.35, 0)
 frame1Text.TextSize = 14
 frame1Text.TextScaled = false
 frame1Text.Position = UDim2.new(0.15, 0, 0.1, 0)

@@ -75,7 +75,7 @@ tab1script.BorderSizePixel = 0
 tab1script.Parent = rightPanel
 tab1script.ScrollBarThickness = 3
 tab1script.BackgroundTransparency = 0
-tab1script.Enabled = true
+tab1script.Visible = true
 
 local tab1test = Instance.new("TextLabel", rightPanel)
 tab1test.Position = UDim2.new(0, 0, 0, 0)
@@ -96,7 +96,7 @@ tab2script.BorderSizePixel = 0
 tab2script.Parent = rightPanel
 tab2script.ScrollBarThickness = 3
 tab2script.BackgroundTransparency = 0
-tab2script.Enabled = false
+tab2script.Visible = false
 
 local tab2test = Instance.new("TextLabel", rightPanel)
 tab2test.Position = UDim2.new(0, 0, 0, 0)
@@ -231,13 +231,13 @@ end
 makeDraggable(iconFrame)
 
 tab1.MouseButton1Click:Connect(function()
-    tab2script.Enabled = false
-    tab1script.Enabled = true
+    tab2script.Visible = false
+    tab1script.Visible = true
 end)
 
 tab2.MouseButton1Click:Connect(function()
-    tab2script.Enabled = true
-    tab1script.Enabled = false
+    tab2script.Visible = true
+    tab1script.Visible = false
 end)
 
 closeButton.MouseButton1Click:Connect(function()

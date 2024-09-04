@@ -1,0 +1,191 @@
+local player = game.Players.LocalPlayer
+local coreGui = game:GetService("CoreGui")
+local tweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+
+local loadingGui = Instance.new("ScreenGui", coreGui)
+loadingGui.Name = "LoadingGui"
+
+local loadingText = Instance.new("TextLabel", loadingGui)
+loadingText.Size = UDim2.new(0.4, 0, 0.1, 0)
+loadingText.Position = UDim2.new(0.3, 0, 0.45, 0)
+loadingText.BackgroundTransparency = 1
+loadingText.Text = ""
+loadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadingText.TextScaled = true
+loadingText.Font = Enum.Font.SourceSansBold
+
+local authorText = Instance.new("TextLabel", loadingGui)
+authorText.Size = UDim2.new(0.4, 0, 0.05, 0)
+authorText.Position = UDim2.new(0.3, 0, 0.55, 0)
+authorText.BackgroundTransparency = 1
+authorText.Text = "Made by NotRealNull and 14"
+authorText.TextColor3 = Color3.fromRGB(255, 255, 255)
+authorText.TextTransparency = 1
+authorText.TextScaled = true
+authorText.Font = Enum.Font.SourceSans
+
+local screenGui = Instance.new("ScreenGui", coreGui)
+screenGui.Name = "MainGui"
+screenGui.Enabled = false
+
+local leftPanel = Instance.new("Frame", screenGui)
+leftPanel.Size = UDim2.new(0.2, 0, 0.8, 0)
+leftPanel.Position = UDim2.new(0.01, 0, 0.1, 0)
+leftPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+
+local rightPanel = Instance.new("Frame", screenGui)
+rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
+rightPanel.Position = UDim2.new(0.22, 0, 0.1, 0)
+rightPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+
+local titleLabel = Instance.new("TextLabel", rightPanel)
+titleLabel.Size = UDim2.new(0.3, 0, 0.1, 0)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Pixel Forge (Private)"
+titleLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+titleLabel.TextScaled = true
+titleLabel.Font = Enum.Font.SourceSans
+
+local closeButton = Instance.new("TextButton", rightPanel)
+closeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
+closeButton.Position = UDim2.new(0.95, 0, 0, 0)
+closeButton.Text = "X"
+closeButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local minimizeButton = Instance.new("TextButton", rightPanel)
+minimizeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
+minimizeButton.Position = UDim2.new(0.9, 0, 0, 0)
+minimizeButton.Text = "-"
+minimizeButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local usernameFrame = Instance.new("Frame", rightPanel)
+usernameFrame.Size = UDim2.new(0.25, 0, 0.1, 0)
+usernameFrame.Position = UDim2.new(0, 0, 0.8, 0)
+usernameFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+
+local profileImage = Instance.new("ImageLabel", usernameFrame)
+profileImage.Size = UDim2.new(0.2, 0, 1, 0)
+profileImage.Position = UDim2.new(0, 0, 0, 0)
+profileImage.BackgroundTransparency = 1
+
+local usernameLabel = Instance.new("TextLabel", usernameFrame)
+usernameLabel.Size = UDim2.new(0.8, 0, 1, 0)
+usernameLabel.Position = UDim2.new(0.2, 0, 0, 0)
+usernameLabel.BackgroundTransparency = 1
+usernameLabel.Text = player.Name
+usernameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+usernameLabel.TextScaled = true
+
+local function setAvatarImage(userId, imageLabel)
+    local thumbType = Enum.ThumbnailType.HeadShot
+    local thumbSize = Enum.ThumbnailSize.Size420x420
+    local content, isReady = game.Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+    imageLabel.Image = content
+end
+
+setAvatarImage(player.UserId, profileImage)
+
+local iconGui = Instance.new("ScreenGui", coreGui)
+iconGui.Name = "IconGui"
+
+local iconFrame = Instance.new("Frame", iconGui)
+iconFrame.Size = UDim2.new(0.05, 0, 0.05, 0)
+iconFrame.Position = UDim2.new(0.45, 0, 0.9, 0)
+iconFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+iconFrame.BorderSizePixel = 2
+iconFrame.BorderColor3 = Color3.fromRGB(128, 0, 128)
+
+iconGui.Enabled = false
+
+local function makeDraggable(guiObject)
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+    local holdTime = 0.5
+    local isHeld = false
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        guiObject.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+
+    guiObject.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = guiObject.Position
+            isHeld = false
+
+            wait(holdTime)
+            if dragging then
+                isHeld = true
+            end
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    guiObject.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    userInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+end
+
+makeDraggable(iconFrame)
+
+closeButton.MouseButton1Click:Connect(function()
+    screenGui.Destroy()
+    iconGui:Destroy()
+end)
+
+minimizeButton.MouseButton1Click:Connect(function()
+    screenGui.Visible = false
+    iconGui.Visible = true
+end)
+
+iconFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        if not isHeld then
+            screenGui.Enabled = true
+            iconGui.Enabled = false
+        end
+    end
+end)
+
+coroutine.wrap(function()
+    for i = 1, #("Pixel Forge") do
+        loadingText.Text = string.sub("Pixel Forge", 1, i)
+        wait(0.1)
+    end
+    wait(1)
+
+    tweenService:Create(authorText, TweenInfo.new(2), {TextTransparency = 0}):Play()
+
+    wait(5)
+
+    local fadeOutLoadingText = tweenService:Create(loadingText, TweenInfo.new(2), {TextTransparency = 1})
+    local fadeOutAuthorText = tweenService:Create(authorText, TweenInfo.new(2), {TextTransparency = 1})
+    fadeOutLoadingText:Play()
+    fadeOutAuthorText:Play()
+
+    fadeOutLoadingText.Completed:Connect(function()
+        loadingGui.Enabled = false
+        screenGui.Enabled = true
+    end)
+end)()

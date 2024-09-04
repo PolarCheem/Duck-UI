@@ -150,13 +150,13 @@ end
 makeDraggable(iconFrame)
 
 closeButton.MouseButton1Click:Connect(function()
-    screenGui.Destroy()
+    screenGui:Destroy()
     iconGui:Destroy()
 end)
 
 minimizeButton.MouseButton1Click:Connect(function()
-    screenGui.Visible = false
-    iconGui.Visible = true
+    screenGui.Enabled = false
+    iconGui.Enabled = true
 end)
 
 iconFrame.InputEnded:Connect(function(input)

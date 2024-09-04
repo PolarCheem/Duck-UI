@@ -34,6 +34,17 @@ leftPanel.Size = UDim2.new(0.2, 0, 0.8, 0)
 leftPanel.Position = UDim2.new(0.04, 0, 0.1, 0)
 leftPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 
+local tab1 = Instance.new("TextButton")
+tab1.Size = UDim2.new(0.3, 0, 0.2, 0)
+tab1.Position = UDim2.new(0, 0, 0.15, 0)
+tab1.BackgroundColor3 = Color3.new(30,30,30)
+tab1.BorderSizePixel = 0
+tab1.Text = "Tab"
+tab1.BackgroundTransparency = 0 
+tab1.TextColor3 = Color3.new(255, 255, 255)
+tab1.Font = Enum.Font.Code
+tab1.Parent = leftPanel
+
 local rightPanel = Instance.new("Frame", screenGui)
 rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
 rightPanel.Position = UDim2.new(0.26, 0, 0.1, 0)
@@ -53,8 +64,6 @@ local closeButton = Instance.new("TextButton", rightPanel)
 closeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
 closeButton.Position = UDim2.new(0.95, 0, 0, 0)
 closeButton.Text = "X"
-closeButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
-closeButton.BorderSizePixel = 0
 closeButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeButton.Parent = rightPanel
@@ -63,7 +72,6 @@ local minimizeButton = Instance.new("TextButton", rightPanel)
 minimizeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
 minimizeButton.Position = UDim2.new(0.9, 0, 0, 0)
 minimizeButton.Text = "-"
-closeButton.BorderSizePixel = 0
 minimizeButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
 minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 

@@ -89,6 +89,17 @@ local corner1 = Instance.new("UICorner")
 corner1.CornerRadius = UDim.new(0, 6)
 corner1.Parent = frame1
 
+local frame1Text = Instance.new("TextLabel")
+frame1Text.Size = UDim2.new(0.15, 0, 0.1, 0)
+frame1Text.TextScaled = false
+frame1Text.Position = UDim2.new(0.08, 0, 0.08, 0)
+frame1Text.BorderSizePixel = 0
+frame1Text.Text = "Walkspeed"
+frame1Text.BackgroundTransparency = 1
+frame1Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+frame1Text.Font = Enum.Font.Code
+frame1Text.Parent = frame1
+
 local Button1 = Instance.new("TextButton")
 Button1.Size = UDim2.new(-0.20, 0, -0.48, 0)
 Button1.Position = UDim2.new(0.92, 0, 0.68, 0)
@@ -100,10 +111,6 @@ Button1.BackgroundTransparency = 0
 Button1.TextColor3 = Color3.fromRGB(255,255,255)
 Button1.Font = Enum.Font.Code
 Button1.Parent = frame1
-
-local corner2 = Instance.new("UICorner")
-corner2.CornerRadius = UDim.new(0, 10)
-corner2.Parent = Button1
 
 local tab2script = Instance.new("Frame") 
 tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)

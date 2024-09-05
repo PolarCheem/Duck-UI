@@ -7,9 +7,9 @@ gui2.Name = "funny"
 gui2.Parent = game.CoreGui
 
 local main = Instance.new("Frame")
-main.Size = UDim2.new(0, 58, 0, 416)  -- Size of the main frame
-main.Position = UDim2.new(0, 691, 0, -40)  -- Initial position of the main frame
-main.BackgroundColor3 = Color3.fromRGB(24, 25, 33)  -- Background color
+main.Size = UDim2.new(0, 58, 0, 416)  
+main.Position = UDim2.new(0, 691, 0, -40)  
+main.BackgroundColor3 = Color3.fromRGB(24, 25, 33)  
 main.BorderColor3 = Color3.new(0, 0, 0)
 main.BorderSizePixel = 0
 main.Active = true
@@ -18,8 +18,8 @@ main.Draggable = false
 main.Parent = gui
 
 local ImageButton = Instance.new("ImageButton")
-ImageButton.Size = UDim2.new(0, 30, 0, 30)  -- Size of the ImageButton
-ImageButton.Position = UDim2.new(0, 14, 0, 309)  -- Position relative to the main frame
+ImageButton.Size = UDim2.new(0, 30, 0, 30) 
+ImageButton.Position = UDim2.new(0, 14, 0, 309) 
 ImageButton.BackgroundColor3 = Color3.fromRGB(41, 45, 58)
 ImageButton.ImageColor3 = Color3.new(1, 0, 0)
 ImageButton.Image = "rbxassetid://0"
@@ -28,12 +28,12 @@ ImageButton.BackgroundTransparency = 0
 ImageButton.Parent = main
 
 local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 10)  -- Corner radius
+UICorner.CornerRadius = UDim.new(0, 10) 
 UICorner.Parent = ImageButton
 
 local ImageLabel = Instance.new("ImageLabel")
 ImageLabel.Size = UDim2.new(0, 13, 0, 13)
-ImageLabel.Position = UDim2.new(0.5, -6.5, 0.5, -6.5)  -- Centered ImageLabel
+ImageLabel.Position = UDim2.new(0.5, -6.5, 0.5, -6.5) 
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.Image = "rbxassetid://13711943220"
@@ -42,9 +42,9 @@ ImageLabel.ScaleType = Enum.ScaleType.Stretch
 ImageLabel.Parent = ImageButton
 
 local guiopen = Instance.new("ImageButton")
-guiopen.Size = UDim2.new(0, 45, 0, 45)  -- Size of the guiopen button
-guiopen.Position = UDim2.new(0, 352, 0, 7)  -- Position of the guiopen button
-guiopen.BackgroundColor3 = Color3.fromRGB(41, 45, 58)  -- Background color
+guiopen.Size = UDim2.new(0, 45, 0, 45)  
+guiopen.Position = UDim2.new(0, 352, 0, 7)  
+guiopen.BackgroundColor3 = Color3.fromRGB(41, 45, 58)  
 guiopen.BorderColor3 = Color3.fromRGB(255,255,255)
 guiopen.BorderSizePixel = 1
 guiopen.Image = "rbxassetid://0"
@@ -54,31 +54,28 @@ guiopen.Draggable = true
 guiopen.Parent = gui2
 
 local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 20)  -- Corner radius
+UICorner.CornerRadius = UDim.new(0, 20) 
 UICorner.Parent = guiopen
 
 -- Create a TweenInfo object
 local tweenInfo = TweenInfo.new(
-    1,  -- Duration in seconds
-    Enum.EasingStyle.Quad,  -- Easing style
-    Enum.EasingDirection.InOut,  -- Easing direction
-    0,  -- Number of times to repeat (0 means play once)
+    1,  
+    Enum.EasingStyle.Quad, 
+    Enum.EasingDirection.InOut,  
+    0,  
     false,  -- Reverses the tween (false means no reverse)
-    0  -- Delay time before starting the tween
+    0 
 )
 
--- Create the target position for the tween
 local goalOpen = {Position = UDim2.new(0, 691, 0, -40)}
-local goalClose = {Position = UDim2.new(0, 1000, 0, -40)}  -- Adjust as needed for the desired end position
+local goalClose = {Position = UDim2.new(0, 1000, 0, -40)} 
 
--- Create the tween
 local tweenOpen = TweenService:Create(main, tweenInfo, goalOpen)
 local tweenClose = TweenService:Create(main, tweenInfo, goalClose)
 
 ImageButton.MouseButton1Click:Connect(function()
     tweenClose:Play()
     ImageButton.Visible = false
-		wait(1)
     guiopen.Visible = true
 end)
 

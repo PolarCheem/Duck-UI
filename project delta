@@ -55,6 +55,13 @@ guiopen.BackgroundTransparency = 0
 guiopen.Draggable = true
 guiopen.Parent = gui2
 
+local stroke = Instance.new("Stroke")
+stroke.Color = Color3.fromRGB(255,255,255)
+stroke.Thickness = 3
+stroke.Transparency = 0
+stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+stroke.Parent = guiopen
+
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 20) 
 UICorner.Parent = guiopen

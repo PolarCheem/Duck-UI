@@ -75,10 +75,12 @@ local tween = TweenService:Create(main, tweenInfo, goal)
 
 ImageButton.MouseButton1Click:Connect(function()
 	tween:Play()
+	ImageButton.Visible = false
 	guiopen.Visible = true
 end)
 
 guiopen.MouseButton1Click:Connect(function()
-	main.Size = Vector3.new(0, 58, 0, 416)
+	main.Size = UDim2.new(0, 58, 0, 416)
 	guiopen.Visible = false
+	ImageButton.Visible = true
 end)

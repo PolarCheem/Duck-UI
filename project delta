@@ -68,7 +68,7 @@ local tweenInfo = TweenInfo.new(
 )
 
 -- Create the target size for the tween
-local goal = {Size = UDim2.new(0, 0, 0, -40)}
+local goal = {Size = UDim2.new(0, 0, 0, 416)}
 
 -- Create the tween
 local tween = TweenService:Create(main, tweenInfo, goal)
@@ -79,5 +79,6 @@ ImageButton.MouseButton1Click:Connect(function()
 end)
 
 guiopen.MouseButton1Click:Connect(function()
-	main.Visible = true
+	main.Size = Vector3.new(0, 58, 0, 416)
+	guiopen.Visible = false
 end)

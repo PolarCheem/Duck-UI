@@ -8,7 +8,7 @@ gui2.Parent = game.CoreGui
 
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0, 58, 0, 416)  -- Size of the main frame
-main.Position = UDim2.new(0, 691, 0, -40)  -- Position of the main frame
+main.Position = UDim2.new(0, 691, 0, -40)  -- Initial position of the main frame
 main.BackgroundColor3 = Color3.fromRGB(24, 25, 33)  -- Background color
 main.BorderColor3 = Color3.new(0, 0, 0)
 main.BorderSizePixel = 0
@@ -67,20 +67,23 @@ local tweenInfo = TweenInfo.new(
     0  -- Delay time before starting the tween
 )
 
--- Create the target size for the tween
-local goal = {Size = UDim2.new(0, 0, 0, 416)}
+-- Create the target position for the tween
+local goalOpen = {Position = UDim2.new(0, 691, 0, -40)}
+local goalClose = {Position = UDim2.new(0, 1000, 0, -40)}  -- Adjust as needed for the desired end position
 
 -- Create the tween
-local tween = TweenService:Create(main, tweenInfo, goal)
+local tweenOpen = TweenService:Create(main, tweenInfo, goalOpen)
+local tweenClose = TweenService:Create(main, tweenInfo, goalClose)
 
 ImageButton.MouseButton1Click:Connect(function()
-	tween:Play()
-	ImageButton.Visible = false
-	guiopen.Visible = true
+    tweenClose:Play()
+    ImageButton.Visible = false
+		wait(1)
+    guiopen.Visible = true
 end)
 
 guiopen.MouseButton1Click:Connect(function()
-	main.Size = UDim2.new(0, 58, 0, 416)
-	guiopen.Visible = false
-	ImageButton.Visible = true
+    tweenOpen:Play()
+    guiopen.Visible = false
+    ImageButton.Visible = true
 end)

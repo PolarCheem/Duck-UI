@@ -57,7 +57,7 @@ guiopen.Parent = gui2
 
 local stroke = Instance.new("UIStroke")
 stroke.Color = Color3.fromRGB(255,255,255)
-stroke.Thickness = 3
+stroke.Thickness = 1
 stroke.Transparency = 0
 stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 stroke.Parent = guiopen

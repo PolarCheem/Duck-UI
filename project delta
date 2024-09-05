@@ -65,7 +65,7 @@ local tweenInfo = TweenInfo.new(
     Enum.EasingStyle.Quad, 
     Enum.EasingDirection.InOut,  
     0,  
-    false,  -- Reverses the tween (false means no reverse)
+    false, 
     0 
 )
 

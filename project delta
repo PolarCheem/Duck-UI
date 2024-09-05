@@ -6,6 +6,8 @@ local gui2 = Instance.new("ScreenGui")
 gui2.Name = "funny"
 gui2.Parent = game.CoreGui
 
+game.CoreGui.TopBarApp.TopBarFrame.RightFrame.Visible = false
+
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0, 58, 0, 416)  
 main.Position = UDim2.new(0, 691, 0, -40)  
@@ -74,13 +76,15 @@ local tweenOpen = TweenService:Create(main, tweenInfo, goalOpen)
 local tweenClose = TweenService:Create(main, tweenInfo, goalClose)
 
 ImageButton.MouseButton1Click:Connect(function()
-    tweenClose:Play()
+    game.CoreGui.TopBarApp.TopBarFrame.RightFrame.Visible = true
+		tweenClose:Play()
     ImageButton.Visible = false
     guiopen.Visible = true
 end)
 
 guiopen.MouseButton1Click:Connect(function()
-    tweenOpen:Play()
+    game.CoreGui.TopBarApp.TopBarFrame.RightFrame.Visible = false
+		tweenOpen:Play()
     guiopen.Visible = false
     ImageButton.Visible = true
 end)

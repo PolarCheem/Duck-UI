@@ -41,9 +41,9 @@ ImageLabel.ScaleType = Enum.ScaleType.Stretch
 ImageLabel.Parent = ImageButton
 
 local guiopen = Instance.new("ImageButton")
-guiopen.Size = UDim2.new(0, 0, 0, 0)  -- Size of the main frame
-guiopen.Position = UDim2.new(0, 0, 0, 0)  -- Position of the main frame
-guiopen.BackgroundColor3 = Color3.fromRGB(24, 25, 33)  -- Background color
+guiopen.Size = UDim2.new(0, 45, 0, 45)  -- Size of the guiopen button
+guiopen.Position = UDim2.new(0, 352, 0, 7)  -- Position of the guiopen button
+guiopen.BackgroundColor3 = Color3.fromRGB(41, 45, 58)  -- Background color
 guiopen.BorderColor3 = Color3.fromRGB(0, 0, 0)
 guiopen.BorderSizePixel = 1
 guiopen.Image = "rbxassetid://0"

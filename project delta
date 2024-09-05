@@ -1,10 +1,10 @@
 local TweenService = game:GetService("TweenService")
 local gui = Instance.new("ScreenGui")
-gui.Name = "iconGui"
-gui.Parent = game.CoreGui
-local gui2 = Instance.new("ScreenGui")
-gui2.Name = "funny"
+gui2.Name = "iconGui"
 gui2.Parent = game.CoreGui
+local gui2 = Instance.new("ScreenGui")
+gui.Name = "funny"
+gui.Parent = game.CoreGui
 
 game.CoreGui.TopBarApp.TopBarFrame.RightFrame.Visible = false
 

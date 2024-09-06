@@ -40,12 +40,12 @@ tab.newSlider("Range", "Epic slider", 1, false, function(num)
 delayms = num
 end)
 
-Workspace.ChildAdded:Connect(function(Child)
-if Child:IsA("BasePart") and Child.name == "Football" then
+ball.ChildAdded:Connect(function(Child)
+if Child:IsA("BasePart") and Child.name == "TPS" then
 task.spawn(function()
 while task.wait(0) do
-local LeftArm = Character:WaitForChild("Left Arm")
-local RightArm = Character:WaitForChild("Right Arm")
+local LeftArm = Character:WaitForChild("Left Leg")
+local RightArm = Character:WaitForChild("Right Leg")
 local Distance = (HRP.Position - Child.Position).Magnitude
 if Distance <= msrange then
 firetouchinterest(LeftArm ,Child ,0)

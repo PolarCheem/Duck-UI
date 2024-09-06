@@ -9,7 +9,7 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer or Players.PlayerAdded:Wait(0)
 local Character = Player.Character or Player.CharacterAdded:Wait(0)
 local HRP = Character.HumanoidRootPart or Character:WaitForChild("HumanoidRootPart")
-local ball = Workspace.TPSSystem
+local ballfolder = Workspace.TPSSystem
 
 local mson = false
 local msrange = 5
@@ -40,7 +40,7 @@ tab.newSlider("Range", "Epic slider", 1, false, function(num)
 delayms = num
 end)
 
-ball.ChildAdded:Connect(function(Child)
+ballfolder.ChildAdded:Connect(function(Child)
 if Child:IsA("BasePart") and Child.name == "TPS" then
 task.spawn(function()
 while task.wait(0) do

@@ -9,6 +9,7 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer or Players.PlayerAdded:Wait(0)
 local Character = Player.Character or Player.CharacterAdded:Wait(0)
 local HRP = Character.HumanoidRootPart or Character:WaitForChild("HumanoidRootPart")
+local ball = Workspace.TPSSystem
 
 local mson = false
 local msrange = 5

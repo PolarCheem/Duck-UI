@@ -1,0 +1,61 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("ff2 test", "Default")
+
+local tab = DrRayLibrary.newTab("mag", "ImageIdHere")
+
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer or Players.PlayerAdded:Wait(0)
+local Character = Player.Character or Player.CharacterAdded:Wait(0)
+local HRP = Character.HumanoidRootPart or Character:WaitForChild("HumanoidRootPart")
+
+local mson = false
+local msrange = 5
+local delayon = false
+local delayms = 0.1
+
+tab.newToggle("MS", "Toggle! (prints the state)", false, function(toggleState)
+    if toggleState then
+        mson = true
+    else
+        mson = false
+    end
+end)
+
+tab.newSlider("Range", "Epic slider", 25, false, function(num)
+msrange = num
+end)
+
+tab.newToggle("Delay", "Toggle! (prints the state)", false, function(toggleState)
+    if toggleState then
+        delayon = true
+    else
+        delayon = false
+    end
+end)
+
+tab.newSlider("Range", "Epic slider", 1, false, function(num)
+delayms = num
+end)
+
+Workspace.ChildAdded:Connect(function(Child)
+if Child:IsA("BasePart") and Child.name == "Football" then
+task.spawn(function()
+while task.wait(0) do
+local LeftArm = Character:WaitForChild("Left Arm")
+local RightArm = Character:WaitForChild("Right Arm")
+local Distance = (HRP.Position - Child.Position).Magnitude
+if Distance <= msrange then
+firetouchinterest(LeftArm ,Child ,0)
+firetouchinterest(RightArm ,Child ,0)
+task.wait(0)
+firetouchinterest(LeftArm ,Child ,1)
+firetouchinterest(RightArm ,Child ,1)
+end
+end
+end
+end
+end)
+end)
+

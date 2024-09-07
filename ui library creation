@@ -1,79 +1,319 @@
 _G.Main = {}
 
 function _G.Main:New(Title)
-	local ScreenGui = Instance.new("ScreenGui")
-	local Frame = Instance.new("Frame")
-	local Frame_2 = Instance.new("Frame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local TextLabel = Instance.new("TextLabel")
+local speed = false
+local defaultWalkSpeed = 16
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Name = Title
+gui.Parent = game.CoreGui
 
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	ScreenGui.ResetOnSpawn = false
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.415, 0, 0.94, 0)
+main.Position = UDim2.new(0, 211, 0, 0)
+main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = true
+main.Draggable = false
+main.Parent = gui
 
-	Frame.Parent = ScreenGui
-	Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-	Frame.Position = UDim2.new(0.05, 0, 0.27, 0)
-	Frame.Size = UDim2.new(0, 397, 0, 395)
+local tabframe = Instance.new("Frame")
+tabframe.Size = UDim2.new(1, 0, 0.008, 0)
+tabframe.Position = UDim2.new(0, 0, 0.08, 0)
+tabframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+tabframe.BorderColor3 = Color3.new(0, 0, 0)
+tabframe.BorderSizePixel = 0
+tabframe.Active = true
+tabframe.Draggable = false
+tabframe.Parent = main
 
-	Frame_2.Parent = Frame
-	Frame_2.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-	Frame_2.BorderSizePixel = 0
-	Frame_2.Position = UDim2.new(0.06, 0, 0.14, 0)
-	Frame_2.Size = UDim2.new(0, 347, 0, 298)
+local ToggleFrame = Instance.new("Frame")
+ToggleFrame.Size = UDim2.new(0.94, 0, 0.08, 0)
+ToggleFrame.Position = UDim2.new(0.03, 0, 0.1, 0)
+ToggleFrame.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+ToggleFrame.BorderColor3 = Color3.new(0, 0, 0)
+ToggleFrame.BorderSizePixel = 0
+ToggleFrame.Parent = main
 
-	UIListLayout.Parent = Frame_2
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 10)
+-- Fixed: Made button visible and adjusted its position and size
+local togglebutton = Instance.new("ImageButton")
+togglebutton.Size = UDim2.new(0.075, 0, 0.75, 0)
+togglebutton.Position = UDim2.new(0.88, 0, 0.13, 0) -- Adjusted position for visibility
+togglebutton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+togglebutton.ImageColor3 = Color3.new(1, 0, 0)
+togglebutton.Image = "rbxassetid://0"
+togglebutton.BorderSizePixel = 1
+togglebutton.BorderColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton.Visible = true -- Changed to true
+togglebutton.ImageTransparency = 1 -- Set transparency to 0 to make it visible
+togglebutton.BackgroundTransparency = 0
+togglebutton.Parent = ToggleFrame
+togglebutton.Draggable = false
 
-	TextLabel.Parent = Frame
-	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.BackgroundTransparency = 1
-	TextLabel.Position = UDim2.new(0.15, 0, 0.02, 0)
-	TextLabel.Size = UDim2.new(0, 274, 0, 40)
-	TextLabel.ZIndex = 2
-	TextLabel.Font = Enum.Font.GothamBold
-	TextLabel.Text = Title
-	TextLabel.TextColor3 = Color3.fromRGB(232, 232, 232)
-	TextLabel.TextScaled = true
-	TextLabel.TextWrapped = true
+local togglebutton2 = Instance.new("ImageButton")
+togglebutton2.Size = UDim2.new(0.075, 0, 0.75, 0)
+togglebutton2.Position = UDim2.new(0.88, 0, 0.13, 0) -- Adjusted position for visibility
+togglebutton2.BackgroundColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton2.ImageColor3 = Color3.new(1, 0, 0)
+togglebutton2.Image = "rbxassetid://0"
+togglebutton2.BorderSizePixel = 0
+togglebutton2.BorderColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton2.Visible = false -- Changed to true
+togglebutton2.ImageTransparency = 1 -- Set transparency to 0 to make it visible
+togglebutton2.BackgroundTransparency = 0
+togglebutton2.Parent = ToggleFrame
+togglebutton2.Draggable = false
 
-	-- Drag functionality
-	local function enableDrag()
-		local script = Instance.new('LocalScript', Frame)
-		script.Parent.Active = true
-		script.Parent.Draggable = true
-	end
-	coroutine.wrap(enableDrag)()
+local toggletext = Instance.new("TextLabel")
+toggletext.Size = UDim2.new(0.3, 0, 0.2, 0)
+toggletext.Position = UDim2.new(0.35, 0, 0.45, 0)
+toggletext.BackgroundColor3 = Color3.new(0, 0, 0)
+toggletext.BorderColor3 = Color3.new(0, 0, 0)
+toggletext.BorderSizePixel = 0
+toggletext.Text = "Walkspeed"
+toggletext.TextSize = 12
+toggletext.BackgroundTransparency = 1
+toggletext.TextColor3 = Color3.new(255, 255, 255)
+toggletext.Font = Enum.Font.Code
+toggletext.Parent = ToggleFrame
 
-	_G.Frame = {}
+local SliderFrame = Instance.new("Frame")
+SliderFrame.Size = UDim2.new(0.94, 0, 0.08, 0)
+SliderFrame.Position = UDim2.new(0.03, 0, 0.2, 0)
+SliderFrame.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+SliderFrame.BorderColor3 = Color3.new(0, 0, 0)
+SliderFrame.BorderSizePixel = 0
+SliderFrame.Parent = main
 
-	function _G.Frame:Button(Name, Call)
-		local TextButton = Instance.new("TextButton")
+local Slider1 = Instance.new("Frame")
+Slider1.Size = UDim2.new(0.94, 0, 0.6, 0)
+Slider1.Position = UDim2.new(0.03, 0, 0.2, 0)
+Slider1.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Slider1.BorderColor3 = Color3.fromRGB(68, 152, 197)
+Slider1.BorderSizePixel = 0
+Slider1.Parent = SliderFrame
 
-		TextButton.Parent = Frame_2
-		TextButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-		TextButton.BorderSizePixel = 0
-		TextButton.Size = UDim2.new(0, 200, 0, 50)
-		TextButton.Font = Enum.Font.SourceSansBold
-		TextButton.Text = Name
-		TextButton.TextColor3 = Color3.fromRGB(235, 235, 235)
-		TextButton.TextScaled = true
-		TextButton.TextWrapped = true
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Slider1
 
-		TextButton.MouseButton1Click:Connect(function()
-			pcall(Call)
-		end)
-	end
+local sliderstroke = Instance.new("UIStroke")
+sliderstroke.Color = Color3.fromRGB(68,152,197)
+sliderstroke.Thickness = 1
+sliderstroke.Parent = Slider1
 
-	return _G.Frame
+local Slider2 = Instance.new("Frame")
+Slider2.Size = UDim2.new(0, 0, 0.6, 0)
+Slider2.Position = UDim2.new(0.03, 0, 0.2, 0)
+Slider2.BackgroundColor3 = Color3.fromRGB(68,152,197)
+Slider2.BorderColor3 = Color3.fromRGB(68, 152, 197)
+Slider2.BorderSizePixel = 0
+Slider2.Parent = SliderFrame
+
+local slidervalue = Instance.new("TextLabel")
+slidervalue.Size = UDim2.new(0.3, 0, 0.2, 0)
+slidervalue.Position = UDim2.new(0.35, 0, 0.37, 0)
+slidervalue.BackgroundColor3 = Color3.new(0, 0, 0)
+slidervalue.BorderColor3 = Color3.new(0, 0, 0)
+slidervalue.BorderSizePixel = 0
+slidervalue.Text = "16"
+slidervalue.TextSize = 12
+slidervalue.BackgroundTransparency = 1
+slidervalue.TextColor3 = Color3.fromRGB(255,255,255)
+slidervalue.Font = Enum.Font.Code
+slidervalue.Parent = SliderFrame
+
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Slider2
+
+local Button2 = Instance.new("TextButton")
+Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
+Button2.Position = UDim2.new(0.03, 0, 0.1, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Button2.BorderColor3 = Color3.new(0, 0, 0)
+Button2.BorderSizePixel = 0
+Button2.Text = "JumpPower"
+Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button2.Font = Enum.Font.Code
+Button2.TextSize = 12
+Button2.Parent = main
+Button2.Visible = false
+
+local Tab1 = Instance.new("TextButton")
+Tab1.Size = UDim2.new(0.1, 0, 0.05, 0)
+Tab1.Position = UDim2.new(0.03, 0, 0.014, 0)
+Tab1.BackgroundColor3 = Color3.new(0, 0, 0)
+Tab1.BorderColor3 = Color3.new(0, 0, 0)
+Tab1.BorderSizePixel = 0
+Tab1.Text = "Walk"
+Tab1.TextColor3 = Color3.fromRGB(68, 152, 197)
+Tab1.Font = Enum.Font.Code
+Tab1.TextSize = 14
+Tab1.Parent = main
+Tab1.BackgroundTransparency = 1
+
+local Tab2 = Instance.new("TextButton")
+Tab2.Size = UDim2.new(0.1, 0, 0.05, 0)
+Tab2.Position = UDim2.new(0.15, 0, 0.014, 0)
+Tab2.BackgroundColor3 = Color3.new(0, 0, 0)
+Tab2.BorderColor3 = Color3.new(0, 0, 0)
+Tab2.BorderSizePixel = 0
+Tab2.Text = "Jump"
+Tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab2.Font = Enum.Font.Code
+Tab2.TextSize = 14
+Tab2.Parent = main
+Tab2.BackgroundTransparency = 1
+
+local close = Instance.new("TextButton")
+close.Size = UDim2.new(0.1, 0, 0.05, 0)
+close.Position = UDim2.new(0.9, 0, 0.02, 0)
+close.BackgroundColor3 = Color3.new(0, 0, 0)
+close.BorderColor3 = Color3.new(0, 0, 0)
+close.BorderSizePixel = 0
+close.Text = "-"
+close.TextSize = 18
+close.BackgroundTransparency = 1
+close.TextColor3 = Color3.new(255, 255, 255)
+close.Font = Enum.Font.Code
+close.Parent = main
+
+local open = Instance.new("ImageButton")
+open.Size = UDim2.new(0, 40, 0, 40)
+open.Position = UDim2.new(0, 211, 0, 0)
+open.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+open.ImageColor3 = Color3.new(1, 0, 0)
+open.Image = "rbxassetid://0"
+open.Visible = false
+open.ImageTransparency = 0 -- Set transparency to 0 to make it visible
+open.BackgroundTransparency = 0
+open.Parent = gui
+open.Draggable = true
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = open
+
+close.MouseButton1Click:Connect(function()
+    open.Visible = true
+    main.Visible = false
+end)
+
+open.MouseButton1Click:Connect(function()
+    open.Visible = false
+    main.Visible = true
+end)
+
+-- Slider functionality starts here
+local UIS = game:GetService("UserInputService")
+local isSliding = false
+local minValue = 0 -- Minimum slider value
+local maxValue = 100 -- Maximum slider value
+
+-- Function to update slider value
+local function updateSlider(input)
+    -- Only update if togglebutton2 is visible
+    if not togglebutton2.Visible then
+        return
+    end
+
+    local sliderAbsPos = Slider1.AbsolutePosition.X
+    local sliderWidth = Slider1.AbsoluteSize.X
+    local touchPos = input.Position.X
+    local relativePos = math.clamp((touchPos - sliderAbsPos) / sliderWidth, 0, 1)
+
+    -- Update Slider2 size based on touch position
+    Slider2.Size = UDim2.new(relativePos, 0, 0.6, 0)
+
+    -- Update the displayed value
+    local value = math.floor(relativePos * (maxValue - minValue) + minValue)
+    slidervalue.Text = tostring(value)
+
+    -- Apply the WalkSpeed based on the slider value
+    local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = value
+    end
+
+    -- Set Slider2 size to match Slider1 when value reaches 100
+    if value == maxValue then
+        Slider2.Size = UDim2.new(0.94, 0, 0.6, 0)
+    end
 end
 
--- Example usage
+-- Touch input events to start and stop sliding
+Slider1.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        isSliding = true
+        updateSlider(input)
+    end
+end)
+
+UIS.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        isSliding = false
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if isSliding and input.UserInputType == Enum.UserInputType.Touch then
+        updateSlider(input)
+    end
+end)
+
+-- Ensure WalkSpeed gets updated when player spawns
+local function onCharacterAdded(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    humanoid.WalkSpeed = tonumber(slidervalue.Text)
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+
+-- Apply initial WalkSpeed if the character is already spawned
+if player.Character then
+    onCharacterAdded(player.Character)
+end
+-- Slider functionality ends here
+end
+
+_G.Frame = {}
+
+function _G.Frame:Button(Name,Call)
+local Button2 = Instance.new("TextButton")
+Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
+Button2.Position = UDim2.new(0.03, 0, 0.1, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Button2.BorderColor3 = Color3.new(0, 0, 0)
+Button2.BorderSizePixel = 0
+Button2.Text = Name
+Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button2.Font = Enum.Font.Code
+Button2.TextSize = 12
+Button2.Parent = main
+
+TextButton.MouseButton1Click:Connect(function()
+pcall(Call)
+end)
+end
+
+return _G.Frame
+end
+
+--Script Here
+
 local Frame1 = _G.Main:New("Test")
 
-Frame1:Button("Text Button 1", function()
+Frame1:Button("Text Button 1",function()
 	print("Hello")
 end)
+
+Frame1:Button("Text Button 2",function()
+	print("Hello 2")
+end)
+
+--End
 
 return _G.Main

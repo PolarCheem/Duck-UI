@@ -294,7 +294,7 @@ Button2.Font = Enum.Font.Code
 Button2.TextSize = 12
 Button2.Parent = main
 
-TextButton.MouseButton1Click:Connect(function()
+Button2.MouseButton1Click:Connect(function()
 pcall(Call)
 end)
 end

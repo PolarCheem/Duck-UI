@@ -16,23 +16,18 @@ function _G.Main:New(Title)
     main.Parent = gui
 
     local tabframe = Instance.new("Frame")
-    tabframe.Size = UDim2.new(1, 0, 0.008, 0)
-    tabframe.Position = UDim2.new(0, 0, 0.08, 0)
+    tabframe.Size = UDim2.new(1, 0, 0.1, 0) -- Increased height to hold tabs
+    tabframe.Position = UDim2.new(0, 0, 0, 0)
     tabframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
     tabframe.BorderSizePixel = 0
-    tabframe.Active = true
-    tabframe.Draggable = false
     tabframe.Parent = main
 
-    local Tab1 = Instance.new("TextButton")
-    Tab1.Size = UDim2.new(0.1, 0, 0.05, 0)
-    Tab1.Position = UDim2.new(0.03, 0, 0.014, 0)
-    Tab1.BackgroundTransparency = 1
-    Tab1.Text = "Walk"
-    Tab1.TextColor3 = Color3.fromRGB(68, 152, 197)
-    Tab1.Font = Enum.Font.Code
-    Tab1.TextSize = 14
-    Tab1.Parent = main
+    local contentFrame = Instance.new("Frame")
+    contentFrame.Size = UDim2.new(1, 0, 0.9, 0)
+    contentFrame.Position = UDim2.new(0, 0, 0.1, 0)
+    contentFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+    contentFrame.BorderSizePixel = 0
+    contentFrame.Parent = main
 
     local close = Instance.new("TextButton")
     close.Size = UDim2.new(0.1, 0, 0.05, 0)
@@ -70,6 +65,58 @@ function _G.Main:New(Title)
         main.Visible = true
     end)
 
+    _G.Tabs = {}
+    local activeTab = nil
+    local activeTabButton = nil
+    local tabXOffset = 0.03 -- Starting X offset for the tabs
+    local tabWidth = 0.15 -- Width of each tab
+
+    function _G.Tabs:CreateTab(Name)
+        local TabButton = Instance.new("TextButton")
+        TabButton.Size = UDim2.new(tabWidth, 0, 0.9, 0)
+        TabButton.Position = UDim2.new(tabXOffset, 0, 0.05, 0)
+        TabButton.BackgroundTransparency = 1 
+        TabButton.Text = Name
+        TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)  
+        TabButton.Font = Enum.Font.Code
+        TabButton.TextSize = 14
+        TabButton.Parent = tabframe
+
+        
+        local TabContent = Instance.new("Frame")
+        TabContent.Size = UDim2.new(1, 0, 1, 0)
+        TabContent.Position = UDim2.new(0, 0, 0, 0)
+        TabContent.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+        TabContent.Visible = false
+        TabContent.Parent = contentFrame
+
+        
+        TabButton.MouseButton1Click:Connect(function()
+            if activeTab then
+                activeTab.Visible = false
+                activeTabButton.TextColor3 = Color3.fromRGB(255, 255, 255) 
+            end
+            TabContent.Visible = true
+            TabButton.TextColor3 = Color3.fromRGB(0, 85, 255) 
+            activeTab = TabContent
+            activeTabButton = TabButton
+        end)
+
+        
+        tabXOffset = tabXOffset + tabWidth
+
+        return TabContent
+    end
+
+    return _G.Tabs
+end
+
+-- Script Usage
+local Tabs = _G.Main:New("Test Tabs")
+
+local Tab1 = Tabs:CreateTab("Tab 1")
+local Tab2 = Tabs:CreateTab("Tab 2")
+
     _G.Frame = {}
 
     local buttonYOffset = 0.1 
@@ -100,11 +147,11 @@ end
 
 local Frame1 = _G.Main:New("Test")
 
-Frame1:Button("hello 1", function()
+Tab1:Button("hello 1", function()
     print("Hello")
 end)
 
-Frame1:Button("hello 2", function()
+Tab2:Button("hello 2", function()
     print("Hello 2")
 end)
 

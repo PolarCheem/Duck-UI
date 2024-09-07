@@ -100,15 +100,15 @@ end
 
 local Frame1 = _G.Main:New("Test")
 
-Frame1:Button("Text Button 1", function()
+Frame1:Button("hello 1", function()
     print("Hello")
 end)
 
-Frame1:Button("Text Button 2", function()
+Frame1:Button("hello 2", function()
     print("Hello 2")
 end)
 
-Frame1:Button("Text Button 3", function()
+Frame1:Button("hello 3", function()
     print("Hello 3")
 end)
 

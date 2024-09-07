@@ -1,5 +1,222 @@
 _G.Main = {}
 
 function _G.Main:New(Title)
+local speed = false
+local defaultWalkSpeed = 16
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Name = "gui"
+gui.Parent = game.CoreGui
 
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.415, 0, 0.94, 0)
+main.Position = UDim2.new(0, 211, 0, 0)
+main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = true
+main.Draggable = false
+main.Parent = gui
+
+local tabframe = Instance.new("Frame")
+tabframe.Size = UDim2.new(1, 0, 0.008, 0)
+tabframe.Position = UDim2.new(0, 0, 0.08, 0)
+tabframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+tabframe.BorderColor3 = Color3.new(0, 0, 0)
+tabframe.BorderSizePixel = 0
+tabframe.Active = true
+tabframe.Draggable = false
+tabframe.Parent = main
+
+local ToggleFrame = Instance.new("Frame")
+ToggleFrame.Size = UDim2.new(0.94, 0, 0.08, 0)
+ToggleFrame.Position = UDim2.new(0.03, 0, 0.1, 0)
+ToggleFrame.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+ToggleFrame.BorderColor3 = Color3.new(0, 0, 0)
+ToggleFrame.BorderSizePixel = 0
+ToggleFrame.Parent = main
+
+-- Fixed: Made button visible and adjusted its position and size
+local togglebutton = Instance.new("ImageButton")
+togglebutton.Size = UDim2.new(0.075, 0, 0.75, 0)
+togglebutton.Position = UDim2.new(0.88, 0, 0.13, 0) -- Adjusted position for visibility
+togglebutton.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+togglebutton.ImageColor3 = Color3.new(1, 0, 0)
+togglebutton.Image = "rbxassetid://0"
+togglebutton.BorderSizePixel = 1
+togglebutton.BorderColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton.Visible = true -- Changed to true
+togglebutton.ImageTransparency = 1 -- Set transparency to 0 to make it visible
+togglebutton.BackgroundTransparency = 0
+togglebutton.Parent = ToggleFrame
+togglebutton.Draggable = false
+
+local togglebutton2 = Instance.new("ImageButton")
+togglebutton2.Size = UDim2.new(0.075, 0, 0.75, 0)
+togglebutton2.Position = UDim2.new(0.88, 0, 0.13, 0) -- Adjusted position for visibility
+togglebutton2.BackgroundColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton2.ImageColor3 = Color3.new(1, 0, 0)
+togglebutton2.Image = "rbxassetid://0"
+togglebutton2.BorderSizePixel = 0
+togglebutton2.BorderColor3 = Color3.fromRGB(68, 152, 197)
+togglebutton2.Visible = false -- Changed to true
+togglebutton2.ImageTransparency = 1 -- Set transparency to 0 to make it visible
+togglebutton2.BackgroundTransparency = 0
+togglebutton2.Parent = ToggleFrame
+togglebutton2.Draggable = false
+
+local toggletext = Instance.new("TextLabel")
+toggletext.Size = UDim2.new(0.3, 0, 0.2, 0)
+toggletext.Position = UDim2.new(0.35, 0, 0.45, 0)
+toggletext.BackgroundColor3 = Color3.new(0, 0, 0)
+toggletext.BorderColor3 = Color3.new(0, 0, 0)
+toggletext.BorderSizePixel = 0
+toggletext.Text = "Walkspeed"
+toggletext.TextSize = 12
+toggletext.BackgroundTransparency = 1
+toggletext.TextColor3 = Color3.new(255, 255, 255)
+toggletext.Font = Enum.Font.Code
+toggletext.Parent = ToggleFrame
+
+local SliderFrame = Instance.new("Frame")
+SliderFrame.Size = UDim2.new(0.94, 0, 0.08, 0)
+SliderFrame.Position = UDim2.new(0.03, 0, 0.2, 0)
+SliderFrame.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+SliderFrame.BorderColor3 = Color3.new(0, 0, 0)
+SliderFrame.BorderSizePixel = 0
+SliderFrame.Parent = main
+
+local Slider1 = Instance.new("Frame")
+Slider1.Size = UDim2.new(0.94, 0, 0.6, 0)
+Slider1.Position = UDim2.new(0.03, 0, 0.2, 0)
+Slider1.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Slider1.BorderColor3 = Color3.fromRGB(68, 152, 197)
+Slider1.BorderSizePixel = 0
+Slider1.Parent = SliderFrame
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Slider1
+
+local sliderstroke = Instance.new("UIStroke")
+sliderstroke.Color = Color3.fromRGB(68,152,197)
+sliderstroke.Thickness = 1
+sliderstroke.Parent = Slider1
+
+local Slider2 = Instance.new("Frame")
+Slider2.Size = UDim2.new(0, 0, 0.6, 0)
+Slider2.Position = UDim2.new(0.03, 0, 0.2, 0)
+Slider2.BackgroundColor3 = Color3.fromRGB(68,152,197)
+Slider2.BorderColor3 = Color3.fromRGB(68, 152, 197)
+Slider2.BorderSizePixel = 0
+Slider2.Parent = SliderFrame
+
+local slidervalue = Instance.new("TextLabel")
+slidervalue.Size = UDim2.new(0.3, 0, 0.2, 0)
+slidervalue.Position = UDim2.new(0.35, 0, 0.37, 0)
+slidervalue.BackgroundColor3 = Color3.new(0, 0, 0)
+slidervalue.BorderColor3 = Color3.new(0, 0, 0)
+slidervalue.BorderSizePixel = 0
+slidervalue.Text = "16"
+slidervalue.TextSize = 12
+slidervalue.BackgroundTransparency = 1
+slidervalue.TextColor3 = Color3.fromRGB(255,255,255)
+slidervalue.Font = Enum.Font.Code
+slidervalue.Parent = SliderFrame
+
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Slider2
+
+local Button2 = Instance.new("TextButton")
+Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
+Button2.Position = UDim2.new(0.03, 0, 0.1, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Button2.BorderColor3 = Color3.new(0, 0, 0)
+Button2.BorderSizePixel = 0
+Button2.Text = "JumpPower"
+Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button2.Font = Enum.Font.Code
+Button2.TextSize = 12
+Button2.Parent = main
+Button2.Visible = false
+
+local Tab1 = Instance.new("TextButton")
+Tab1.Size = UDim2.new(0.1, 0, 0.05, 0)
+Tab1.Position = UDim2.new(0.03, 0, 0.014, 0)
+Tab1.BackgroundColor3 = Color3.new(0, 0, 0)
+Tab1.BorderColor3 = Color3.new(0, 0, 0)
+Tab1.BorderSizePixel = 0
+Tab1.Text = "Walk"
+Tab1.TextColor3 = Color3.fromRGB(68, 152, 197)
+Tab1.Font = Enum.Font.Code
+Tab1.TextSize = 14
+Tab1.Parent = main
+Tab1.BackgroundTransparency = 1
+
+local Tab2 = Instance.new("TextButton")
+Tab2.Size = UDim2.new(0.1, 0, 0.05, 0)
+Tab2.Position = UDim2.new(0.15, 0, 0.014, 0)
+Tab2.BackgroundColor3 = Color3.new(0, 0, 0)
+Tab2.BorderColor3 = Color3.new(0, 0, 0)
+Tab2.BorderSizePixel = 0
+Tab2.Text = "Jump"
+Tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab2.Font = Enum.Font.Code
+Tab2.TextSize = 14
+Tab2.Parent = main
+Tab2.BackgroundTransparency = 1
+
+local close = Instance.new("TextButton")
+close.Size = UDim2.new(0.1, 0, 0.05, 0)
+close.Position = UDim2.new(0.9, 0, 0.02, 0)
+close.BackgroundColor3 = Color3.new(0, 0, 0)
+close.BorderColor3 = Color3.new(0, 0, 0)
+close.BorderSizePixel = 0
+close.Text = "-"
+close.TextSize = 18
+close.BackgroundTransparency = 1
+close.TextColor3 = Color3.new(255, 255, 255)
+close.Font = Enum.Font.Code
+close.Parent = main
+
+local open = Instance.new("ImageButton")
+open.Size = UDim2.new(0, 40, 0, 40)
+open.Position = UDim2.new(0, 211, 0, 0)
+open.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+open.ImageColor3 = Color3.new(1, 0, 0)
+open.Image = "rbxassetid://0"
+open.Visible = false
+open.ImageTransparency = 0 -- Set transparency to 0 to make it visible
+open.BackgroundTransparency = 0
+open.Parent = gui
+open.Draggable = true
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = open
+end
+
+G.Frame = {}
+
+function _G.Frame:Button(Name,Call)
+local Button2 = Instance.new("TextButton")
+Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
+Button2.Position = UDim2.new(0.03, 0, 0.1, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Button2.BorderColor3 = Color3.new(0, 0, 0)
+Button2.BorderSizePixel = 0
+Button2.Text = "JumpPower"
+Button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button2.Font = Enum.Font.Code
+Button2.TextSize = 12
+Button2.Parent = main
+Button2.Visible = false
+
+Button2.MouseButton1Click:Connect(function()
+			
+pcall(Call)
+			
+		end)
 end

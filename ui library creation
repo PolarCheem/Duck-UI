@@ -1,9 +1,6 @@
 _G.Main = {}
 
 function _G.Main:New(Title)
-    local speed = false
-		local UIListLayout = Instance.new("UIListLayout")
-    local defaultWalkSpeed = 16
     local player = game.Players.LocalPlayer
     local gui = Instance.new("ScreenGui")
     gui.Name = Title
@@ -75,10 +72,13 @@ function _G.Main:New(Title)
 
     _G.Frame = {}
 
+    local buttonYOffset = 0.1 
+    local buttonHeight = 0.09 
+
     function _G.Frame:Button(Name, Call)
         local Button2 = Instance.new("TextButton")
         Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
-        Button2.Position = UDim2.new(0.03, 0, 0.1, 0)
+        Button2.Position = UDim2.new(0.03, 0, buttonYOffset, 0)
         Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
         Button2.BorderSizePixel = 0
         Button2.Text = Name
@@ -86,20 +86,18 @@ function _G.Main:New(Title)
         Button2.Font = Enum.Font.Code
         Button2.TextSize = 12
         Button2.Parent = main
-				UIListLayout.Parent = Button2
-				UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-				UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-				UIListLayout.Padding = UDim.new(0, 10)
 
         Button2.MouseButton1Click:Connect(function()
             pcall(Call)
         end)
+
+        
+        buttonYOffset = buttonYOffset + buttonHeight
     end
 
     return _G.Frame
 end
 
--- Script Usage
 local Frame1 = _G.Main:New("Test")
 
 Frame1:Button("Text Button 1", function()
@@ -108,6 +106,10 @@ end)
 
 Frame1:Button("Text Button 2", function()
     print("Hello 2")
+end)
+
+Frame1:Button("Text Button 3", function()
+    print("Hello 3")
 end)
 
 return _G.Main

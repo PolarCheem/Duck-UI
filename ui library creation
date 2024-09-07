@@ -1,5 +1,335 @@
 _G.Main = {}
 
 function _G.Main:New(Title)
+local player = game.Players.LocalPlayer
+local coreGui = game:GetService("CoreGui")
+local tweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+
+local loadingGui = Instance.new("ScreenGui", coreGui)
+loadingGui.Name = "LoadingGui"
+
+local loadingText = Instance.new("TextLabel", loadingGui)
+loadingText.Size = UDim2.new(0.4, 0, 0.1, 0)
+loadingText.Position = UDim2.new(0.3, 0, 0.45, 0)
+loadingText.BackgroundTransparency = 1
+loadingText.Text = ""
+loadingText.TextColor3 = Color3.fromRGB(20,20,20)
+loadingText.TextScaled = true
+loadingText.Font = Enum.Font.SourceSansBold
+
+local authorText = Instance.new("TextLabel", loadingGui)
+authorText.Size = UDim2.new(0.4, 0, 0.05, 0)
+authorText.Position = UDim2.new(0.3, 0, 0.55, 0)
+authorText.BackgroundTransparency = 1
+authorText.Text = "Made by NotRealNull and 14"
+authorText.TextColor3 = Color3.fromRGB(20,20,20)
+authorText.TextTransparency = 1
+authorText.TextScaled = true
+authorText.Font = Enum.Font.SourceSans
+
+
+local screenGui = Instance.new("ScreenGui", coreGui)
+screenGui.Name = "MainGui"
+screenGui.Enabled = false
+
+local leftPanel = Instance.new("Frame", screenGui)
+leftPanel.Size = UDim2.new(0.2, 0, 0.8, 0)
+leftPanel.Position = UDim2.new(0.04, 0, 0.1, 0)
+leftPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+
+local tab1 = Instance.new("TextButton")
+tab1.Size = UDim2.new(1, 0, 0.15, 0)
+tab1.Position = UDim2.new(0, 0, 0, 0)
+tab1.BackgroundColor3 = Color3.fromRGB(23,23,23)
+tab1.BorderSizePixel = 0
+tab1.TextScaled = false
+tab1.TextSize = 25
+tab1.Text = "Tab"
+tab1.BackgroundTransparency = 0 
+tab1.TextColor3 = Color3.fromRGB(255, 255, 255)
+tab1.Font = Enum.Font.Code
+tab1.Parent = leftPanel
+
+local tab2 = Instance.new("TextButton")
+tab2.Size = UDim2.new(1, 0, 0.15, 0)
+tab2.Position = UDim2.new(0, 0, 0.15, 0)
+tab2.BackgroundColor3 = Color3.fromRGB(23,23,23)
+tab2.BorderSizePixel = 0
+tab2.TextScaled = false
+tab2.TextSize = 25
+tab2.Text = "Tab 2"
+tab2.BackgroundTransparency = 0 
+tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+tab2.Font = Enum.Font.Code
+tab2.Parent = leftPanel
+
+local rightPanel = Instance.new("Frame", screenGui)
+rightPanel.Size = UDim2.new(0.7, 0, 0.8, 0)
+rightPanel.Position = UDim2.new(0.26, 0, 0.1, 0)
+rightPanel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+
+local tab1script = Instance.new("Frame") 
+tab1script.Size = UDim2.new(0.9, 0, 0.8, 0)
+tab1script.Position = UDim2.new(0.05, 0, 0.1, 0)
+tab1script.BackgroundColor3 = Color3.fromRGB(23,23,23)
+tab1script.BorderColor3 = Color3.new(0, 0, 0)
+tab1script.BorderSizePixel = 0
+tab1script.Parent = rightPanel
+tab1script.BackgroundTransparency = 0
+tab1script.Visible = true
+
+local frame2 = Instance.new("Frame")
+frame2.Size = UDim2.new(0.35, 0, 0.18, 0)
+frame2.Position = UDim2.new(0.38, 0, 0.01, 0)
+frame2.BackgroundColor3 = Color3.fromRGB(20,20,20)
+frame2.BorderSizePixel = 0
+frame2.BackgroundTransparency = 0 
+frame2.Draggable = false
+frame2.Parent = tab1script
+
+local frame2Text = Instance.new("TextLabel")
+frame2Text.Size = UDim2.new(0.35, 0, 0.4, 0)
+frame2Text.TextSize = 14
+frame2Text.TextScaled = false
+frame2Text.Position = UDim2.new(0.15, 0, 0.1, 0)
+frame2Text.BorderSizePixel = 0
+frame2Text.Text = "Jumppower"
+frame2Text.BackgroundTransparency = 1
+frame2Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+frame2Text.Font = Enum.Font.Code
+frame2Text.Parent = frame2
+
+local Button2 = Instance.new("TextButton")
+Button2.Size = UDim2.new(-0.18, 0, -0.48, 0)
+Button2.Position = UDim2.new(0.92, 0, 0.68, 0)
+Button2.BackgroundColor3 = Color3.fromRGB(23,23,23)
+Button2.BorderSizePixel = 0
+Button2.Text = "+"
+Button2.TextScaled = true
+Button2.BackgroundTransparency = 0
+Button2.TextColor3 = Color3.fromRGB(255,255,255)
+Button2.Font = Enum.Font.Code
+Button2.Parent = frame2
+
+local tab2script = Instance.new("Frame") 
+tab2script.Size = UDim2.new(0.9, 0, 0.8, 0)
+tab2script.Position = UDim2.new(0.05, 0, 0.1, 0)
+tab2script.BackgroundColor3 = Color3.fromRGB(23,23,23)
+tab2script.BorderColor3 = Color3.new(0, 0, 0)
+tab2script.BorderSizePixel = 0
+tab2script.Parent = rightPanel
+tab2script.BackgroundTransparency = 0
+tab2script.Visible = false
+
+local tab2text = Instance.new("TextLabel")
+tab2text.Size = UDim2.new(1, 0, 1, 0)
+tab2text.TextScaled = true
+tab2text.Position = UDim2.new(0, 0, 0, 0)
+tab2text.BorderSizePixel = 0
+tab2text.Text = "tab 2"
+tab2text.BackgroundTransparency = 1
+tab2text.TextColor3 = Color3.new(255, 255, 255)
+tab2text.Font = Enum.Font.Code
+tab2text.Parent = tab2script
+
+
+local titleLabel = Instance.new("TextLabel", rightPanel)
+titleLabel.Size = UDim2.new(0.3, 0, 0.1, 0)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = Title
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextScaled = true
+titleLabel.Font = Enum.Font.SourceSans
+titleLabel.Parent = rightPanel
+
+local closeButton = Instance.new("TextButton", rightPanel)
+closeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
+closeButton.Position = UDim2.new(0.95, 0, 0, 0)
+closeButton.Text = "X"
+closeButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.Parent = rightPanel
+
+local minimizeButton = Instance.new("TextButton", rightPanel)
+minimizeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
+minimizeButton.Position = UDim2.new(0.9, 0, 0, 0)
+minimizeButton.Text = "-"
+minimizeButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
+minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local iconGui = Instance.new("ScreenGui", coreGui)
+iconGui.Name = "IconGui"
+
+local iconFrame = Instance.new("Frame", iconGui)
+iconFrame.Size = UDim2.new(0.05, 0, 0.1, 0)
+iconFrame.Position = UDim2.new(0, 0, 0, 0)
+iconFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+iconFrame.BorderSizePixel = 2
+iconFrame.Draggable = true
+iconFrame.BorderColor3 = Color3.fromRGB(128, 0, 128)
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 10)
+corner.Parent = iconFrame
+
+iconGui.Enabled = false
+
+local function makeDraggable(guiObject)
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+    local holdTime = 0.5
+    local isHeld = false
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        guiObject.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+
+    guiObject.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = guiObject.Position
+            isHeld = false
+
+            wait(holdTime)
+            if dragging then
+                isHeld = true
+            end
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    guiObject.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    userInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+end
+
+makeDraggable(iconFrame)
+
+tab1.MouseButton1Click:Connect(function()
+    tab2script.Visible = false
+    tab1script.Visible = true
+end)
+
+tab2.MouseButton1Click:Connect(function()
+    tab2script.Visible = true
+    tab1script.Visible = false
+end)
+
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+    iconGui:Destroy()
+end)
+
+minimizeButton.MouseButton1Click:Connect(function()
+    screenGui.Enabled = false
+    iconGui.Enabled = true
+end)
+
+iconFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        if not isHeld then
+            screenGui.Enabled = true
+            iconGui.Enabled = false
+        end
+    end
+end)
+
+coroutine.wrap(function()
+    for i = 1, #("Pixel Forge") do
+        loadingText.Text = string.sub("Pixel Forge", 1, i)
+        wait(0.1)
+    end
+    wait(1)
+
+    tweenService:Create(authorText, TweenInfo.new(2), {TextTransparency = 0}):Play()
+
+    wait(5)
+
+    local fadeOutLoadingText = tweenService:Create(loadingText, TweenInfo.new(2), {TextTransparency = 1})
+    local fadeOutAuthorText = tweenService:Create(authorText, TweenInfo.new(2), {TextTransparency = 1})
+    fadeOutLoadingText:Play()
+    fadeOutAuthorText:Play()
+
+    fadeOutLoadingText.Completed:Connect(function()
+        loadingGui.Enabled = false
+        screenGui.Enabled = true
+    end)
+end)()
+end
+
+_G.Frame = {}
+	
+function _G.Frame:Button(Name,Call)
+
+local frame1 = Instance.new("Frame")
+frame1.Size = UDim2.new(0.35, 0, 0.18, 0)
+frame1.Position = UDim2.new(0.01, 0, 0.01, 0)
+frame1.BackgroundColor3 = Color3.fromRGB(20,20,20)
+frame1.BorderSizePixel = 1
+frame1.BackgroundTransparency = 0 
+frame1.Draggable = false
+frame1.Parent = tab1script
+
+local corner1 = Instance.new("UICorner")
+corner1.CornerRadius = UDim.new(0, 6)
+corner1.Parent = frame1
+
+local frame1Text = Instance.new("TextLabel")
+frame1Text.Size = UDim2.new(0.35, 0, 0.4, 0)
+frame1Text.TextSize = 14
+frame1Text.TextScaled = false
+frame1Text.Position = UDim2.new(0.15, 0, 0.1, 0)
+frame1Text.BorderSizePixel = 0
+frame1Text.Text = Name
+frame1Text.BackgroundTransparency = 1
+frame1Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+frame1Text.Font = Enum.Font.Code
+frame1Text.Parent = frame1
+
+local Button1 = Instance.new("TextButton")
+Button1.Size = UDim2.new(-0.18, 0, -0.48, 0)
+Button1.Position = UDim2.new(0.92, 0, 0.68, 0)
+Button1.BackgroundColor3 = Color3.fromRGB(23,23,23)
+Button1.BorderSizePixel = 0
+Button1.Text = "+"
+Button1.TextScaled = true
+Button1.BackgroundTransparency = 0
+Button1.TextColor3 = Color3.fromRGB(255,255,255)
+Button1.Font = Enum.Font.Code
+Button1.Parent = frame1
+
+Button1.MouseButton1Click:Connect(function()
+pcall(Call)
+end)
+end
+
+return _G.Frame
 
 end
+
+local Frame1 = _G.Main:New("Test")
+
+Frame1:Button("Text Button 1",function()
+	print("Hello")
+end)
+
+return _G.Main

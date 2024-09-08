@@ -127,8 +127,8 @@ end
 
 local Tabs = _G.Main:New("Tabs")
 
-local Tab1 = Tabs:CreateTab("Tab 1 test")
-local Tab2 = Tabs:CreateTab("Tab 2 test")
+local Tab1 = Tabs:CreateTab("Tab 1")
+local Tab2 = Tabs:CreateTab("Tab 2")
 
 _G.Frame = {}
 

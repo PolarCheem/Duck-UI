@@ -15,19 +15,21 @@ function _G.Main:New(Title)
     main.Draggable = false
     main.Parent = gui
 
-    local designframe = Instance.new("Frame")
-    designframe.Size = UDim2.new(1, 0, 0.08, 0) -- Increased height to hold tabs
+		local designframe = Instance.new("Frame")
+    designframe.Size = UDim2.new(1, 0, 0.08, 0)
     designframe.Position = UDim2.new(0, 0, 0.008, 0)
     designframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+    designframe.BackgroundTransparency = 0
     designframe.BorderSizePixel = 0
     designframe.Parent = main
 
+
     local tabframe = Instance.new("Frame")
-    tabframe.Size = UDim2.new(1, 0, 0.1, 0) -- Increased height to hold tabs
+    tabframe.Size = UDim2.new(1, 0, 0.1, 0)
     tabframe.Position = UDim2.new(0, 0, 0, 0)
     tabframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+    tabframe.BackgroundTransparency = 1 
     tabframe.BorderSizePixel = 0
-		tabframe.BackgroundTransparency = 1
     tabframe.Parent = main
 
     local contentFrame = Instance.new("Frame")
@@ -97,7 +99,10 @@ function _G.Main:New(Title)
         TabContent.Visible = false
         TabContent.Parent = contentFrame
 
-        TabContent.ButtonYOffset = 0.1
+        
+        TabContent:SetAttribute("buttonYOffset", 0.02) 
+        TabContent:SetAttribute("buttonHeight", 0.09)
+        TabContent:SetAttribute("initialButtonYOffset", 0.02) 
 
         TabButton.MouseButton1Click:Connect(function()
             if activeTab then
@@ -111,12 +116,12 @@ function _G.Main:New(Title)
         end)
 
         tabXOffset = tabXOffset + tabWidth
-
         return TabContent
     end
 
     return _G.Tabs
 end
+
 
 local Tabs = _G.Main:New("Test Tabs")
 
@@ -125,12 +130,13 @@ local Tab2 = Tabs:CreateTab("Tab 2")
 
 _G.Frame = {}
 
-local buttonHeight = 0.09
-
 function _G.Frame:Button(Name, Call, ParentTab)
+    local buttonYOffset = ParentTab:GetAttribute("initialButtonYOffset")
+    local buttonHeight = ParentTab:GetAttribute("buttonHeight")
+
     local Button2 = Instance.new("TextButton")
     Button2.Size = UDim2.new(0.94, 0, 0.08, 0)
-    Button2.Position = UDim2.new(0.03, 0, ParentTab.ButtonYOffset, 0)
+    Button2.Position = UDim2.new(0.03, 0, buttonYOffset, 0)
     Button2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
     Button2.BorderSizePixel = 0
     Button2.Text = Name
@@ -143,7 +149,8 @@ function _G.Frame:Button(Name, Call, ParentTab)
         pcall(Call)
     end)
 
-    ParentTab.ButtonYOffset = ParentTab.ButtonYOffset + buttonHeight
+    
+    ParentTab:SetAttribute("initialButtonYOffset", buttonYOffset + buttonHeight)
 end
 
 _G.Frame:Button("hello 1", function()

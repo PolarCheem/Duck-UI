@@ -17,7 +17,7 @@ function _G.Main:New(Title)
 
 		local designframe = Instance.new("Frame")
     designframe.Size = UDim2.new(1, 0, 0.01, 0)
-    designframe.Position = UDim2.new(0, 0, 0.1, 0)
+    designframe.Position = UDim2.new(0, 0, 0.085, 0)
     designframe.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
     designframe.BackgroundTransparency = 0
     designframe.BorderSizePixel = 0

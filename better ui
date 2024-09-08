@@ -77,7 +77,7 @@ UIListLayout.Parent = tabframe
 
 local contentframe = Instance.new("ScrollingFrame")
 contentframe.Size = UDim2.new(0.75, 0, 0.725, 0)
-contentframe.Position = UDim2.new(0.25, 0, 0.135, 0)
+contentframe.Position = UDim2.new(0.25, 0, 0.14, 0)
 contentframe.BackgroundColor3 = Color3.fromRGB(17,17,17)
 contentframe.BorderColor3 = Color3.new(0, 0, 0)
 contentframe.BorderSizePixel = 0

@@ -55,18 +55,31 @@ tabframe.Parent = main
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.15, 0)
-Tab.BackgroundColor3 = Color3.fromRGB(50,50,50)
+Tab.BackgroundColor3 = Color3.fromRGB(81,131,104)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.TextSize = 15
 Tab.Text = "Tab 1"
-Tab.BackgroundTransparency = 0
+Tab.BackgroundTransparency = 1
 Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
+
+local ui2 = Instance.new("UICorner")
+ui2.CornerRadius = UDim.new(0, 10)
+ui2.Parent = Tab
 
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 10)
 UIListLayout.Parent = tabframe
+
+local contentframe = Instance.new("ScrollingFrame")
+contentframe.Size = UDim2.new(0.75, 0, 0.73, 0)
+contentframe.Position = UDim2.new(1, 0, 0.73, 0)
+contentframe.BackgroundColor3 = Color3.fromRGB(255,255,255)
+contentframe.BorderColor3 = Color3.new(0, 0, 0)
+contentframe.BorderSizePixel = 0
+contentframe.Parent = main
+contentframe.BackgroundTransparency = 0 

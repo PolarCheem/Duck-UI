@@ -125,10 +125,10 @@ function _G.Main:New(Title)
 end
 
 
-local Tabs = _G.Main:New("Test Tabs")
+local Tabs = _G.Main:New("Tabs")
 
-local Tab1 = Tabs:CreateTab("Tab 1")
-local Tab2 = Tabs:CreateTab("Tab 2")
+local Tab1 = Tabs:CreateTab("Tab 1 test")
+local Tab2 = Tabs:CreateTab("Tab 2 test")
 
 _G.Frame = {}
 
@@ -155,12 +155,12 @@ function _G.Frame:Button(Name, Call, ParentTab)
     ParentTab:SetAttribute("initialButtonYOffset", buttonYOffset + buttonHeight)
 end
 
-_G.Frame:Button("hello 1", function()
-    print("Hello")
+_G.Frame:Button("Walkspeed button", function()
+    player.Character.Humanoid.WalkSpeed = 50
 end, Tab1)
 
 _G.Frame:Button("hello 2", function()
-    print("Hello 2")
+    player.Character.Humanoid.JumpPower = 100
 end, Tab2)
 
 return _G.Main

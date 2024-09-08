@@ -156,11 +156,21 @@ function _G.Frame:Button(Name, Call, ParentTab)
 end
 
 _G.Frame:Button("Walkspeed button", function()
-    player.Character.Humanoid.WalkSpeed = 50
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        humanoid.WalkSpeed = 50
+    end
 end, Tab1)
 
 _G.Frame:Button("hello 2", function()
-    player.Character.Humanoid.JumpPower = 100
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        humanoid.JumpPower = 100
+    end
 end, Tab2)
 
 return _G.Main

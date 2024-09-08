@@ -59,12 +59,12 @@ UIListLayout.Padding = UDim.new(0, 10)
 UIListLayout.Parent = tabframe
 
 local Tab = Instance.new("TextButton")
-Tab.Size = UDim2.new(0.9, 0, 0.12, 0)
+Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.15, 0)
 Tab.BackgroundColor3 = Color3.fromRGB(50,50,50)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
-Tab.TextScaled = true
+Tab.TextSize = 15
 Tab.Text = "Tab 1"
 Tab.BackgroundTransparency = 0
 Tab.TextColor3 = Color3.fromRGB(255, 255, 255)

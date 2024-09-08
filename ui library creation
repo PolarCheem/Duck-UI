@@ -90,6 +90,7 @@ function _G.Main:New(Title)
         TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
         TabButton.Font = Enum.Font.Code
         TabButton.TextSize = 14
+				TabButton.BorderSizePixel = 0
         TabButton.Parent = tabframe
 
         local TabContent = Instance.new("Frame")

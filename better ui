@@ -57,3 +57,15 @@ UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 10)
 UIListLayout.Parent = tabframe
+
+local Tab = Instance.new("TextButton")
+Tab.Size = UDim2.new(0.3, 0, 0.2, 0)
+Tab.Position = UDim2.new(0.05, 0, 0.1, 0)
+Tab.BackgroundColor3 = Color3.fromRGB(50,50,50)
+Tab.BorderColor3 = Color3.new(0, 0, 0)
+Tab.BorderSizePixel = 0
+Tab.Text = "Tab 1"
+Tab.BackgroundTransparency = 0
+Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.Font = Enum.Font.Code
+Tab.Parent = tabframe

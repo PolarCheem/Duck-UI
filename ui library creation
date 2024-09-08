@@ -98,6 +98,7 @@ function _G.Main:New(Title)
         TabContent.Position = UDim2.new(0, 0, 0, 0)
         TabContent.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
         TabContent.Visible = false
+				TabContent.BorderSizePixel = 0
         TabContent.Parent = contentFrame
 
         

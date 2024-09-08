@@ -1,0 +1,59 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "ui"
+gui.Parent = game.CoreGui
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.7, 0, 0.8, 0)
+main.Position = UDim2.new(0.3, 0, 0, 0)
+main.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+main.BorderColor3 = Color3.new(0, 0, 0)
+main.BorderSizePixel = 0
+main.Active = true
+main.BackgroundTransparency = 0
+main.Draggable = true
+main.Parent = gui
+
+local ui1 = Instance.new("UICorner")
+ui1.CornerRadius = UDim.new(0, 10)
+ui1.Parent = main
+
+
+local line1 = Instance.new("Frame")
+line1.Size = UDim2.new(1, 0, 0.005, 0)
+line1.Position = UDim2.new(0, 0, 0.135, 0)
+line1.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+line1.BorderSizePixel = 0
+line1.Active = true
+line1.BackgroundTransparency = 0
+line1.Parent = main
+
+local line2 = Instance.new("Frame")
+line2.Size = UDim2.new(1, 0, 0.005, 0)
+line2.Position = UDim2.new(0, 0, 0.865, 0)
+line2.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+line2.BorderSizePixel = 0
+line2.Active = true
+line2.BackgroundTransparency = 0
+line2.Parent = main
+
+local line3 = Instance.new("Frame")
+line3.Size = UDim2.new(0.005, 0, 0.73, 0)
+line3.Position = UDim2.new(0.25, 0, 0.135, 0)
+line3.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+line3.BorderSizePixel = 0
+line3.Active = true
+line3.BackgroundTransparency = 0
+line3.Parent = main
+
+local tabframe = Instance.new("Frame")
+tabframe.Size = UDim2.new(0.25, 0, 0.73, 0)
+tabframe.Position = UDim2.new(0, 0, 0.135, 0)
+tabframe.BorderSizePixel = 0
+tabframe.BackgroundTransparency = 1
+tabframe.Parent = main
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 10)
+UIListLayout.Parent = tabframe

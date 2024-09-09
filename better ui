@@ -85,7 +85,7 @@ ui2.Parent = Tab
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 7)
+UIListLayout.Padding = UDim.new(0, 5)
 UIListLayout.Parent = tabframe
 
 local contentframe = Instance.new("ScrollingFrame")
@@ -95,6 +95,7 @@ contentframe.BackgroundColor3 = Color3.fromRGB(13,13,13)
 contentframe.BorderColor3 = Color3.new(0, 0, 0)
 contentframe.BorderSizePixel = 0
 contentframe.Parent = main
+contentframe.Draggable = true
 contentframe.BackgroundTransparency = 0 
 contentframe.ScrollBarThickness = 0
 

@@ -61,7 +61,7 @@ Tab.BorderSizePixel = 0
 Tab.TextSize = 15
 Tab.Text = "Tab 1"
 Tab.BackgroundTransparency = 1
-Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.TextColor3 = Color3.fromRGB(126,126,126)
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
@@ -74,7 +74,7 @@ Tab2.BorderSizePixel = 0
 Tab2.TextSize = 15
 Tab2.Text = "Tab 2"
 Tab2.BackgroundTransparency = 1
-Tab2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab2.TextColor3 = Color3.fromRGB(126,126,126)
 Tab2.Font = Enum.Font.Code
 Tab2.Parent = tabframe
 
@@ -85,7 +85,7 @@ ui2.Parent = Tab
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 10)
+UIListLayout.Padding = UDim.new(0, 7)
 UIListLayout.Parent = tabframe
 
 local contentframe = Instance.new("ScrollingFrame")

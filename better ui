@@ -117,7 +117,7 @@ UIListLayout2.Padding = UDim.new(0, 10)
 UIListLayout2.Parent = contentframe
 
 local label = Instance.new("TextLabel")
-label.Size = UDim2.new(0.9, 0, 0.025, 0)
+label.Size = UDim2.new(0.9, 0, 0.03, 0)
 label.Position = UDim2.new(0.05, 0, 0.02, 0)
 label.BorderSizePixel = 0
 label.Text = "label"

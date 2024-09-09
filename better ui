@@ -13,6 +13,45 @@ main.BackgroundTransparency = 0
 main.Draggable = true
 main.Parent = gui
 
+local close = Instance.new("TextButton")
+close.Size = UDim2.new(0.1, 0, 0.05, 0)
+close.Position = UDim2.new(0.9, 0, 0.02, 0)
+close.BackgroundColor3 = Color3.new(0, 0, 0)
+close.BorderColor3 = Color3.new(0, 0, 0)
+close.BorderSizePixel = 0
+close.Text = "-"
+close.TextSize = 18
+close.BackgroundTransparency = 1
+close.TextColor3 = Color3.new(255, 255, 255)
+close.Font = Enum.Font.Code
+close.Parent = main
+
+local open = Instance.new("ImageButton")
+open.Size = UDim2.new(0, 40, 0, 40)
+open.Position = UDim2.new(0, 211, 0, 0)
+open.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+open.ImageColor3 = Color3.new(1, 0, 0)
+open.Image = "rbxassetid://0"
+open.Visible = false
+open.ImageTransparency = 0 -- Set transparency to 0 to make it visible
+open.BackgroundTransparency = 0
+open.Parent = gui
+open.Draggable = true
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = open
+
+close.MouseButton1Click:Connect(function()
+    open.Visible = true
+    main.Visible = false
+end)
+
+open.MouseButton1Click:Connect(function()
+    open.Visible = false
+    main.Visible = true
+end)
+
 local guiname = Instance.new("TextLabel")
 guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
 guiname.Position = UDim2.new(0.05, 0, 0.02, 0)

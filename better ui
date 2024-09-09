@@ -15,10 +15,10 @@ main.Parent = gui
 
 local guiname = Instance.new("TextLabel")
 guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
-guiname.Position = UDim2.new(0.005, 0, 0.005, 0)
+guiname.Position = UDim2.new(0.1, 0, 0.01, 0)
 guiname.BorderSizePixel = 0
 guiname.Text = "Title"
-guiname.TextSize = 20
+guiname.TextSize = 23
 guiname.BackgroundTransparency = 1
 guiname.TextColor3 = Color3.fromRGB(126,126,126)
 guiname.Font = Enum.Font.Code

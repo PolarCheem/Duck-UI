@@ -65,7 +65,7 @@ Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
-local Tab = Instance.new("TextButton")
+local Tab2 = Instance.new("TextButton")
 Tab2.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab2.Position = UDim2.new(0.12, 0, 0.15, 0)
 Tab2.BackgroundColor3 = Color3.fromRGB(81,131,104)

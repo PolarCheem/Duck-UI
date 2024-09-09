@@ -15,7 +15,7 @@ main.Parent = gui
 
 local guiname = Instance.new("TextLabel")
 guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
-guiname.Position = UDim2.new(0.01, 0, 0.05, 0)
+guiname.Position = UDim2.new(0.05, 0, 0.01, 0)
 guiname.BorderSizePixel = 0
 guiname.Text = "Title"
 guiname.TextSize = 23

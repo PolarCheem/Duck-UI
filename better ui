@@ -161,3 +161,26 @@ local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)
 ui3.Parent = Button
 end
+_G.Frame = {}
+
+function _G.Frame:Button(Name, pcall))
+local Button = Instance.new("TextButton")
+Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+Button.Position = UDim2.new(0.01, 0, 0.5, 0)
+Button.BackgroundColor3 = Color3.fromRGB(9,9,9)
+Button.BorderSizePixel = 0
+Button.TextSize = 12.5
+Button.Text = Name
+Button.BackgroundTransparency = 0 
+Button.TextColor3 = Color3.fromRGB(126,126,126)
+Button.Font = Enum.Font.Code
+Button.Parent = contentframe
+
+local ui3 = Instance.new("UICorner")
+ui3.CornerRadius = UDim.new(0, 10)
+ui3.Parent = Button
+
+    Button.MouseButton1Click:Connect(function()
+        pcall(Call)
+    end)
+end

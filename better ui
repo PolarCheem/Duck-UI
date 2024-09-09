@@ -99,20 +99,24 @@ contentframe.Draggable = true
 contentframe.BackgroundTransparency = 0 
 contentframe.ScrollBarThickness = 0
 
-local UIListLayout = Instance.new("UIListLayout")
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 10)
-UIListLayout.Parent = contentframe
+local UIListLayout2 = Instance.new("UIListLayout")
+UIListLayout2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout2.Padding = UDim.new(0, 10)
+UIListLayout2.Parent = contentframe
 
 local Button = Instance.new("TextButton")
 Button.Size = UDim2.new(0.9, 0, 0.05, 0)
 Button.Position = UDim2.new(0.01, 0, 0.5, 0)
 Button.BackgroundColor3 = Color3.fromRGB(9,9,9)
 Button.BorderSizePixel = 0
-Button.TextSize = 12
+Button.TextSize = 12.5
 Button.Text = "Button"
 Button.BackgroundTransparency = 0 
 Button.TextColor3 = Color3.fromRGB(126,126,126)
 Button.Font = Enum.Font.Code
 Button.Parent = contentframe
+
+local ui3 = Instance.new("UICorner")
+ui3.CornerRadius = UDim.new(0, 10)
+ui3.Parent = Button

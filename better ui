@@ -15,14 +15,14 @@ main.Parent = gui
 
 local close = Instance.new("TextButton")
 close.Size = UDim2.new(0.1, 0, 0.05, 0)
-close.Position = UDim2.new(0.9, 0, 0.02, 0)
+close.Position = UDim2.new(0.9, 0, 0.03, 0)
 close.BackgroundColor3 = Color3.new(0, 0, 0)
 close.BorderColor3 = Color3.new(0, 0, 0)
 close.BorderSizePixel = 0
 close.Text = "-"
 close.TextSize = 25
 close.BackgroundTransparency = 1
-close.TextColor3 = Color3.new(255, 255, 255)
+close.TextColor3 = Color3.fromRGB(126,126,126)
 close.Font = Enum.Font.Code
 close.Parent = main
 

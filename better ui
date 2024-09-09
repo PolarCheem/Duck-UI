@@ -1,3 +1,6 @@
+_G.Main = {}
+
+function _G.Main:New(Title)
 local gui = Instance.new("ScreenGui")
 gui.Name = "ui"
 gui.Parent = game.CoreGui
@@ -56,7 +59,7 @@ local guiname = Instance.new("TextLabel")
 guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
 guiname.Position = UDim2.new(0.05, 0, 0.02, 0)
 guiname.BorderSizePixel = 0
-guiname.Text = "Title"
+guiname.Text = Title
 guiname.TextSize = 23
 guiname.BackgroundTransparency = 1
 guiname.TextColor3 = Color3.fromRGB(126,126,126)
@@ -157,3 +160,4 @@ Button.Parent = contentframe
 local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)
 ui3.Parent = Button
+end

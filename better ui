@@ -148,7 +148,7 @@ UIListLayout2.Parent = contentframe
 end
 _G.Frame = {}
 
-function _G.Frame:Button(Name, Call)
+function _G.Frame:Button(Name,Call)
 local Button = Instance.new("TextButton")
 Button.Size = UDim2.new(0.9, 0, 0.05, 0)
 Button.Position = UDim2.new(0.01, 0, 0.5, 0)
@@ -169,7 +169,10 @@ ui3.Parent = Button
         pcall(Call)
     end)
 end
+return _G.Frame
+end
+local Frame = _G.Main:New("Test")
 
-_G.Frame:Button("Button", function()
-print("wata")
+Frame:Button("Text Button 1",function()
+	print("Hello")
 end)

@@ -13,6 +13,16 @@ main.BackgroundTransparency = 0
 main.Draggable = true
 main.Parent = gui
 
+local guiname = Instance.new("TextLabel")
+guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
+guiname.Position = UDim2.new(0.005, 0, 0.005, 0)
+guiname.BorderSizePixel = 0
+guiname.Text = "Title"
+guiname.BackgroundTransparency = 1
+guiname.TextColor3 = Color3.fromRGB(126,126,126)
+guiname.Font = Enum.Font.Code
+guiname.Parent = main
+
 local ui1 = Instance.new("UICorner")
 ui1.CornerRadius = UDim.new(0, 10)
 ui1.Parent = main

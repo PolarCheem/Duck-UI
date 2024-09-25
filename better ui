@@ -159,10 +159,11 @@ Tab.Parent = tabframe
 Tab.MouseButton1Click:Connect(function()
 		Tab.BackgroundTransparency = 0
 		contentframe1.Visible = true
+		Tab.TextColor3 = Color3.fromRGB(0,0,0)
 end)
 
 local ui2 = Instance.new("UICorner")
-ui2.CornerRadius = UDim.new(0, 10)
+ui2.CornerRadius = UDim.new(0, 5)
 ui2.Parent = Tab
 
 local UIListLayout = Instance.new("UIListLayout")

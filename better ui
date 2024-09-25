@@ -42,8 +42,8 @@ ui3.CornerRadius = UDim.new(0, 10)
 ui3.Parent = Button
 
 local close = Instance.new("TextButton")
-close.Size = UDim2.new(0, 30, 0, 30)
-close.Position = UDim2.new(0.9, 0, 0.03, 0)
+close.Size = UDim2.new(0, 25, 0, 25)
+close.Position = UDim2.new(0.9, 0, 0.015, 0)
 close.BackgroundColor3 = Color3.fromRGB(126,126,126)
 close.BorderColor3 = Color3.new(0, 0, 0)
 close.BorderSizePixel = 0
@@ -69,6 +69,11 @@ open.Draggable = true
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = open
+
+local UICornercloss = Instance.new("UICorner")
+UICornerclose.CornerRadius = UDim.new(0, 10)
+UICornerclose.Parent = close
+
 
 close.MouseButton1Click:Connect(function()
     open.Visible = true

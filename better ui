@@ -15,7 +15,7 @@ main.Parent = gui
 
 local contentframe = Instance.new("ScrollingFrame")
 contentframe.Size = UDim2.new(0.745, 0, 0.725, 0)
-contentframe.Position = UDim2.new(0.255, 0, 0.14, 0)
+contentframe.Position = UDim2.new(0.255, 0, 0.137, 0)
 contentframe.BackgroundColor3 = Color3.fromRGB(13,13,13)
 contentframe.BorderColor3 = Color3.new(0, 0, 0)
 contentframe.BorderSizePixel = 0

@@ -60,6 +60,11 @@ closebutton.Font = Enum.Font.Code
 closebutton.Parent = guiname
 closebutton.TextSize = 21.5
 
+closebutton.MouseButton1Click:Connect(function()
+    openbutton.Visible = true
+    mainframe.Visible = false
+end)
+
 local openbutton = Instance.new("TextButton")
 openbutton.Size = UDim2.new(0, 40, 0, 40)
 openbutton.Position = UDim2.new(0.35, 0, 0, 0)
@@ -71,7 +76,13 @@ openbutton.TextColor3 = Color3.fromRGB(22,21,25)
 openbutton.Font = Enum.Font.Code
 openbutton.Parent = gui
 openbutton.Draggable = true
+openbutton.Visible = false
 openbutton.TextSize = 0
+
+openbutton.MouseButton1Click:Connect(function()
+    openbutton.Visible = false
+    mainframe.Visible = true
+end)
 
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 5)

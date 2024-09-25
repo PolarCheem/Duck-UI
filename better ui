@@ -1,6 +1,3 @@
-_G.Main = {}
-
-function _G.Main:New(Title)
 local gui = Instance.new("ScreenGui")
 gui.Name = "ui"
 gui.Parent = game.CoreGui
@@ -15,6 +12,34 @@ main.Active = true
 main.BackgroundTransparency = 0
 main.Draggable = true
 main.Parent = gui
+
+local contentframe = Instance.new("ScrollingFrame")
+contentframe.Size = UDim2.new(0.745, 0, 0.725, 0)
+contentframe.Position = UDim2.new(0.255, 0, 0.14, 0)
+contentframe.BackgroundColor3 = Color3.fromRGB(13,13,13)
+contentframe.BorderColor3 = Color3.new(0, 0, 0)
+contentframe.BorderSizePixel = 0
+contentframe.Parent = main
+contentframe.Draggable = true
+contentframe.BackgroundTransparency = 0 
+contentframe.ScrollBarThickness = 0
+
+
+local Button = Instance.new("TextButton")
+Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+Button.Position = UDim2.new(0.01, 0, 0.5, 0)
+Button.BackgroundColor3 = Color3.fromRGB(9,9,9)
+Button.BorderSizePixel = 0
+Button.TextSize = 12.5
+Button.Text = Name
+Button.BackgroundTransparency = 0 
+Button.TextColor3 = Color3.fromRGB(126,126,126)
+Button.Font = Enum.Font.Code
+Button.Parent = contentframe
+
+local ui3 = Instance.new("UICorner")
+ui3.CornerRadius = UDim.new(0, 10)
+ui3.Parent = Button
 
 local close = Instance.new("TextButton")
 close.Size = UDim2.new(0.1, 0, 0.05, 0)
@@ -54,17 +79,6 @@ open.MouseButton1Click:Connect(function()
     open.Visible = false
     main.Visible = true
 end)
-
-local guiname = Instance.new("TextLabel")
-guiname.Size = UDim2.new(0.1, 0, 0.1, 0)
-guiname.Position = UDim2.new(0.05, 0, 0.02, 0)
-guiname.BorderSizePixel = 0
-guiname.Text = Title
-guiname.TextSize = 23
-guiname.BackgroundTransparency = 1
-guiname.TextColor3 = Color3.fromRGB(126,126,126)
-guiname.Font = Enum.Font.Code
-guiname.Parent = main
 
 local ui1 = Instance.new("UICorner")
 ui1.CornerRadius = UDim.new(0, 10)
@@ -129,52 +143,3 @@ UIListLayout.Padding = UDim.new(0, 5)
 UIListLayout.Parent = tabframe
 
 
-end
-_G.Frame = {}
-
-function _G.Frame:Button(Name,Call)
-local Button = Instance.new("TextButton")
-Button.Size = UDim2.new(0.9, 0, 0.05, 0)
-Button.Position = UDim2.new(0.01, 0, 0.5, 0)
-Button.BackgroundColor3 = Color3.fromRGB(9,9,9)
-Button.BorderSizePixel = 0
-Button.TextSize = 12.5
-Button.Text = Name
-Button.BackgroundTransparency = 0 
-Button.TextColor3 = Color3.fromRGB(126,126,126)
-Button.Font = Enum.Font.Code
-Button.Parent = contentframe
-
-local ui3 = Instance.new("UICorner")
-ui3.CornerRadius = UDim.new(0, 10)
-ui3.Parent = Button
-
-local contentframe = Instance.new("ScrollingFrame")
-contentframe.Size = UDim2.new(0.745, 0, 0.725, 0)
-contentframe.Position = UDim2.new(0.255, 0, 0.14, 0)
-contentframe.BackgroundColor3 = Color3.fromRGB(13,13,13)
-contentframe.BorderColor3 = Color3.new(0, 0, 0)
-contentframe.BorderSizePixel = 0
-contentframe.Parent = main
-contentframe.Draggable = true
-contentframe.BackgroundTransparency = 0 
-contentframe.ScrollBarThickness = 0
-
-local UIListLayout2 = Instance.new("UIListLayout")
-UIListLayout2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout2.Padding = UDim.new(0, 10)
-UIListLayout2.Parent = contentframe
-
-
-    Button.MouseButton1Click:Connect(function()
-        pcall(Call)
-    end)
-end
-return _G.Frame
-end
-local Frame = _G.Main:New("Test")
-
-Frame:Button("Text Button 1",function()
-	print("Hello")
-end)

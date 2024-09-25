@@ -63,13 +63,13 @@ ui3.Parent = Button
 local close = Instance.new("TextButton")
 close.Size = UDim2.new(0, 25, 0, 25)
 close.Position = UDim2.new(0.92, 0, 0.017, 0)
-close.BackgroundColor3 = Color3.fromRGB(80,11,136)
+close.BackgroundColor3 = Color3.fromRGB(42,14,73)
 close.BorderColor3 = Color3.new(0, 0, 0)
 close.BorderSizePixel = 0
 close.Text = "."
 close.TextSize = 0
-close.BackgroundTransparency = 0.5
-close.TextColor3 = Color3.fromRGB(80,11,136)
+close.BackgroundTransparency = 0
+close.TextColor3 = Color3.fromRGB(42,14,73)
 close.Font = Enum.Font.Code
 close.Parent = main
 
@@ -146,7 +146,7 @@ tabframe.Parent = main
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.05, 0)
-Tab.BackgroundColor3 = Color3.fromRGB(80,11,136)
+Tab.BackgroundColor3 = Color3.fromRGB(42,14,73)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.TextSize = 15
@@ -157,7 +157,7 @@ Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
 Tab.MouseButton1Click:Connect(function()
-		Tab.BackgroundTransparency = 0.5
+		Tab.BackgroundTransparency = 0
 		contentframe1.Visible = true
 end)
 

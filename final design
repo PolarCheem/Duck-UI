@@ -14,7 +14,7 @@ mainframe.Draggable = true
 mainframe.Parent = gui
 
 
-local tabframe = Instance.new("Frame")
+local tabframe = Instance.new("ScrollingFrame")
 tabframe.Size = UDim2.new(0.28, 0, 1.15, 0)
 tabframe.Position = UDim2.new(-0.3, 0, -0.15, 0)
 tabframe.BackgroundColor3 = Color3.fromRGB(22,21,25)

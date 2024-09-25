@@ -42,7 +42,7 @@ ui3.CornerRadius = UDim.new(0, 10)
 ui3.Parent = Button
 
 local close = Instance.new("TextButton")
-close.Size = UDim2.new(0.1, 0, 0.05, 0)
+close.Size = UDim2.new(30, 0, 30, 0)
 close.Position = UDim2.new(0.9, 0, 0.03, 0)
 close.BackgroundColor3 = Color3.fromRGB(126,126,126)
 close.BorderColor3 = Color3.new(0, 0, 0)

@@ -66,7 +66,7 @@ close.Position = UDim2.new(0.92, 0, 0.017, 0)
 close.BackgroundColor3 = Color3.fromRGB(80,11,136)
 close.BorderColor3 = Color3.new(0, 0, 0)
 close.BorderSizePixel = 0
-close.Text = "-"
+close.Text = ">"
 close.TextSize = 25
 close.BackgroundTransparency = 0.5
 close.TextColor3 = Color3.fromRGB(126,126,126)
@@ -143,15 +143,9 @@ tabframe.BorderSizePixel = 0
 tabframe.BackgroundTransparency = 1
 tabframe.Parent = main
 
-local UIListLayout = Instance.new("UIListLayout")
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 3)
-UIListLayout.Parent = tabframe
-
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
-Tab.Position = UDim2.new(0.12, 0, 0.15, 0)
+Tab.Position = UDim2.new(0.12, 0, 0.05, 0)
 Tab.BackgroundColor3 = Color3.fromRGB(80,11,136)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
@@ -166,6 +160,12 @@ Tab.MouseButton1Click:Connect(function()
 		Tab.BackgroundTransparency = 0.5
 		contentframe1.Visible = true
 end)
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 3)
+UIListLayout.Parent = tabframe
 
 local ui2 = Instance.new("UICorner")
 ui2.CornerRadius = UDim.new(0, 5)

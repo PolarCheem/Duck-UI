@@ -8,13 +8,11 @@ mainframe.Position = UDim2.new(0.3, 0, 0.25, 0)
 mainframe.BackgroundColor3 = Color3.fromRGB(22,21,25)
 mainframe.BorderColor3 = Color3.new(0, 0, 0)
 mainframe.BorderSizePixel = 0
-mainframe.Active = true
-mainframe.BackgroundTransparency = 0 
-mainframe.Draggable = true
 mainframe.Parent = gui
+mainframe.BackgroundTransparency = 0 
 
 
-local tabframe = Instance.new("ScrollingFrame")
+local tabframe = Instance.new("Frame")
 tabframe.Size = UDim2.new(0.28, 0, 1.15, 0)
 tabframe.Position = UDim2.new(-0.3, 0, -0.15, 0)
 tabframe.BackgroundColor3 = Color3.fromRGB(22,21,25)

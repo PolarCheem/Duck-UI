@@ -57,16 +57,14 @@ Toggle.Font = Enum.Font.Code
 Toggle.Parent = contentframe1
 
 local toggle1 = Instance.new("ImageButton")
-toggle1.Size = UDim2.new(0.3, 0, 0.2, 0)
-toggle1.Position = UDim2.new(0.5, 0, 0.5, 0)
+toggle1.Size = UDim2.new(0, 25, 0, 25)
+toggle1.Position = UDim2.new(0.95, 0, 0.35, 0)
 toggle1.BackgroundColor3 = Color3.new(0, 0, 0)
 toggle1.ImageColor3 = Color3.new(1, 0, 0)
 toggle1.Image = "rbxassetid://0"
+Toggle.BorderSizePixel = 1
 toggle1.ImageTransparency = 1
-toggle1.ScaleType = Enum.ScaleType.Sliced
 toggle1.Parent = Toggle
-
-
 toggle1.BackgroundTransparency = 0 
 
 

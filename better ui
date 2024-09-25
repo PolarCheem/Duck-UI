@@ -70,7 +70,7 @@ local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = open
 
-local UICornercloss = Instance.new("UICorner")
+local UICornerclose = Instance.new("UICorner")
 UICornerclose.CornerRadius = UDim.new(0, 10)
 UICornerclose.Parent = close
 

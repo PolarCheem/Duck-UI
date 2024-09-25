@@ -152,7 +152,7 @@ UIListLayout.Parent = tabframe
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.15, 0)
-Tab.BackgroundColor3 = Color3.fromRGB(81,131,104)
+Tab.BackgroundColor3 = Color3.fromRGB(80,11,136)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.TextSize = 15
@@ -165,7 +165,7 @@ Tab.Parent = tabframe
 Tab.MouseButton1Click:Connect(function()
 		Tab.BackgroundTransparency = 0
 		contentframe1.Visible = true
-		Tab.TextColor3 = Color3.fromRGB(0,0,0)
+		Tab.TextColor3 = Color3.fromRGB(255,255,255)
 end)
 
 local ui2 = Instance.new("UICorner")

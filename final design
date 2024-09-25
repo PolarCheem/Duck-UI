@@ -24,6 +24,12 @@ tabframe.Active = true
 tabframe.BackgroundTransparency = 0 
 tabframe.Parent = mainframe
 
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 3)
+UIListLayout.Parent = tabframe
+
 local guiname = Instance.new("Frame")
 guiname.Size = UDim2.new(1, 0, 0.11, 0)
 guiname.Position = UDim2.new(0, 0, -0.15, 0)

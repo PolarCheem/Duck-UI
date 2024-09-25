@@ -1,0 +1,92 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "CoreRobloxUI"
+gui.Parent = game.CoreGui
+
+local mainframe = Instance.new("Frame")
+mainframe.Size = UDim2.new(0.5, 0, 0.65, 0)
+mainframe.Position = UDim2.new(0.3, 0, 0.25, 0)
+mainframe.BackgroundColor3 = Color3.fromRGB(22,21,25)
+mainframe.BorderColor3 = Color3.new(0, 0, 0)
+mainframe.BorderSizePixel = 0
+mainframe.Active = true
+mainframe.BackgroundTransparency = 0 
+mainframe.Draggable = true
+mainframe.Parent = gui
+
+
+local tabframe = Instance.new("Frame")
+tabframe.Size = UDim2.new(0.28, 0, 1.15, 0)
+tabframe.Position = UDim2.new(-0.3, 0, -0.15, 0)
+tabframe.BackgroundColor3 = Color3.fromRGB(22,21,25)
+tabframe.BorderColor3 = Color3.new(0, 0, 0)
+tabframe.BorderSizePixel = 0
+tabframe.Active = true
+tabframe.BackgroundTransparency = 0 
+tabframe.Parent = mainframe
+
+local guiname = Instance.new("Frame")
+guiname.Size = UDim2.new(1, 0, 0.11, 0)
+guiname.Position = UDim2.new(0, 0, -0.15, 0)
+guiname.BackgroundColor3 = Color3.fromRGB(22,21,25)
+guiname.BorderColor3 = Color3.new(0, 0, 0)
+guiname.BorderSizePixel = 0
+guiname.Active = true
+guiname.BackgroundTransparency = 0 
+guiname.Parent = mainframe
+
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = mainframe
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = tabframe
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = guiname
+
+local closebutton = Instance.new("TextButton")
+closebutton.Size = UDim2.new(0.1, 0, 0.4, 0)
+closebutton.Position = UDim2.new(0.9, 0, 0.3, 0)
+closebutton.BackgroundColor3 = Color3.new(0, 0, 0)
+closebutton.BorderColor3 = Color3.new(0, 0, 0)
+closebutton.BorderSizePixel = 0
+closebutton.Text = ">"
+closebutton.BackgroundTransparency = 1 
+closebutton.TextColor3 = Color3.fromRGB(80,80,80)
+closebutton.Font = Enum.Font.Code
+closebutton.Parent = guiname
+closebutton.TextSize = 21.5
+
+local openbutton = Instance.new("TextButton")
+openbutton.Size = UDim2.new(0, 40, 0, 40)
+openbutton.Position = UDim2.new(0.35, 0, 0, 0)
+openbutton.BackgroundColor3 = Color3.fromRGB(22,21,25)
+openbutton.BorderColor3 = Color3.new(0, 0, 0)
+openbutton.BorderSizePixel = 0
+openbutton.BackgroundTransparency = 0 
+openbutton.TextColor3 = Color3.fromRGB(22,21,25)
+openbutton.Font = Enum.Font.Code
+openbutton.Parent = gui
+openbutton.Draggable = true
+openbutton.TextSize = 0
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = openbutton
+
+local name = Instance.new("TextLabel")
+name.Size = UDim2.new(0.3, 0, 0.2, 0)
+name.Position = UDim2.new(0.35, 0, 0.35, 0)
+name.BackgroundColor3 = Color3.new(0, 0, 0)
+name.BorderColor3 = Color3.new(0, 0, 0)
+name.BorderSizePixel = 1
+name.Text = "Text"
+name.BackgroundTransparency = 1
+name.TextColor3 = Color3.fromRGB(54,16,99)
+name.Font = Enum.Font.Code
+name.Parent = guiname
+name.TextSize = 15
+

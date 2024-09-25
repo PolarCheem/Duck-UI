@@ -143,6 +143,12 @@ tabframe.BorderSizePixel = 0
 tabframe.BackgroundTransparency = 1
 tabframe.Parent = main
 
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 3)
+UIListLayout.Parent = tabframe
+
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.15, 0)
@@ -165,11 +171,5 @@ end)
 local ui2 = Instance.new("UICorner")
 ui2.CornerRadius = UDim.new(0, 5)
 ui2.Parent = Tab
-
-local UIListLayout = Instance.new("UIListLayout")
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 5)
-UIListLayout.Parent = tabframe
 
 

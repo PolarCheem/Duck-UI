@@ -163,9 +163,8 @@ Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
 Tab.MouseButton1Click:Connect(function()
-		Tab.BackgroundTransparency = 0
+		Tab.BackgroundTransparency = 0.5
 		contentframe1.Visible = true
-		Tab.TextColor3 = Color3.fromRGB(255,255,255)
 end)
 
 local ui2 = Instance.new("UICorner")

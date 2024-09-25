@@ -43,7 +43,7 @@ ui3.Parent = Button
 
 local close = Instance.new("TextButton")
 close.Size = UDim2.new(0, 25, 0, 25)
-close.Position = UDim2.new(0.92, 0, 0.015, 0)
+close.Position = UDim2.new(0.92, 0, 0.017, 0)
 close.BackgroundColor3 = Color3.fromRGB(126,126,126)
 close.BorderColor3 = Color3.new(0, 0, 0)
 close.BorderSizePixel = 0

@@ -13,16 +13,17 @@ main.BackgroundTransparency = 0
 main.Draggable = true
 main.Parent = gui
 
-local contentframe = Instance.new("ScrollingFrame")
-contentframe.Size = UDim2.new(0.745, 0, 0.725, 0)
-contentframe.Position = UDim2.new(0.255, 0, 0.137, 0)
-contentframe.BackgroundColor3 = Color3.fromRGB(13,13,13)
-contentframe.BorderColor3 = Color3.new(0, 0, 0)
-contentframe.BorderSizePixel = 0
-contentframe.Parent = main
-contentframe.Draggable = true
-contentframe.BackgroundTransparency = 0 
-contentframe.ScrollBarThickness = 0
+local contentframe1 = Instance.new("ScrollingFrame")
+contentframe1.Size = UDim2.new(0.745, 0, 0.725, 0)
+contentframe1.Position = UDim2.new(0.255, 0, 0.137, 0)
+contentframe1.BackgroundColor3 = Color3.fromRGB(13,13,13)
+contentframe1.BorderColor3 = Color3.new(0, 0, 0)
+contentframe1.BorderSizePixel = 0
+contentframe1.Parent = main
+contentframe1.Visible = false
+contentframe1.Draggable = true
+contentframe1.BackgroundTransparency = 0 
+contentframe1.ScrollBarThickness = 0
 
 
 local Button = Instance.new("TextButton")
@@ -35,13 +36,13 @@ Button.Text = "Button"
 Button.BackgroundTransparency = 0 
 Button.TextColor3 = Color3.fromRGB(126,126,126)
 Button.Font = Enum.Font.Code
-Button.Parent = contentframe
+Button.Parent = contentframe1
 
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 5)
-UIListLayout.Parent = contentframe
+UIListLayout.Parent = contentframe1
 
 local Toggle = Instance.new("TextButton")
 Toggle.Size = UDim2.new(0.9, 0, 0.05, 0)
@@ -49,11 +50,11 @@ Toggle.Position = UDim2.new(0.01, 0, 0.01, 0)
 Toggle.BackgroundColor3 = Color3.fromRGB(9,9,9)
 Toggle.BorderSizePixel = 0
 Toggle.TextSize = 12.5
-Toggle.Text = "Button"
+Toggle.Text = "Toggle"
 Toggle.BackgroundTransparency = 0 
 Toggle.TextColor3 = Color3.fromRGB(126,126,126)
 Toggle.Font = Enum.Font.Code
-Toggle.Parent = contentframe
+Toggle.Parent = contentframe1
 
 local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)
@@ -154,6 +155,11 @@ Tab.BackgroundTransparency = 1
 Tab.TextColor3 = Color3.fromRGB(126,126,126)
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
+
+Tab.MouseButton1Click:Connect(function()
+		Tab.BackgroundTransparency = 0
+		contentframe1.Visible = true
+end)
 
 local ui2 = Instance.new("UICorner")
 ui2.CornerRadius = UDim.new(0, 10)

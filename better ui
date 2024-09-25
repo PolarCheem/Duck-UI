@@ -69,7 +69,7 @@ close.BorderSizePixel = 0
 close.Text = ">"
 close.TextSize = 25
 close.BackgroundTransparency = 0.5
-close.TextColor3 = Color3.fromRGB(126,126,126)
+close.TextColor3 = Color3.fromRGB(80,11,136)
 close.Font = Enum.Font.Code
 close.Parent = main
 

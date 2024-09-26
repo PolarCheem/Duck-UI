@@ -211,12 +211,12 @@ end
 toggle1.MouseButton1Click:Connect(function()
     toggle1.Visible = false
     toggle2.Visible = true
-		local toggle = true
+		toggle = true
 end)
 
 toggle2.MouseButton1Click:Connect(function()
     toggle1.Visible = true
     toggle2.Visible = false
-		local toggle = false
+		toggle = false
 		print("off")
 end)

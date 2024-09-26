@@ -69,9 +69,9 @@ toggle1.TextColor3 = Color3.new(255, 255, 255)
 toggle1.Font = Enum.Font.Code
 toggle1.Parent = Toggle
 
-local uitoggle1 = Instance.new("UICorner")
-ui3.CornerRadius = UDim.new(0, 5)
-ui3.Parent = toggle1
+local toggleui = Instance.new("UICorner")
+toggleui.CornerRadius = UDim.new(0, 5)
+toggleui.Parent = toggle1
 
 local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)

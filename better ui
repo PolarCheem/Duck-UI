@@ -58,12 +58,16 @@ Toggle.Parent = contentframe1
 
 local toggle1 = Instance.new("TextButton")
 toggle1.Size = UDim2.new(0, 25, 0, 25)
-toggle1.Position = UDim2.new(0.95, 0, 0.35, 0)
-toggle1.BackgroundColor3 = Color3.new(0, 0, 0)
+toggle1.Position = UDim2.new(0.95, 0, 0.4, 0)
+toggle1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+toggle1.BorderColor3 = Color3.fromRGB(80,80,80)
 toggle1.BorderSizePixel = 1
-toggle1.Parent = Toggle
+toggle1.Text = "."
+toggle1.TextSize = 0
 toggle1.BackgroundTransparency = 0 
-
+toggle1.TextColor3 = Color3.new(255, 255, 255)
+toggle1.Font = Enum.Font.Code
+toggle1.Parent = Toggle
 
 local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)

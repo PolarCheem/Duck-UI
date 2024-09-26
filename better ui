@@ -57,8 +57,8 @@ Toggle.Font = Enum.Font.Code
 Toggle.Parent = contentframe1
 
 local toggle1 = Instance.new("TextButton")
-toggle1.Size = UDim2.new(0, 25, 0, 25)
-toggle1.Position = UDim2.new(0.95, 0, 0.4, 0)
+toggle1.Size = UDim2.new(0, 10, 0, 10)
+toggle1.Position = UDim2.new(0.95, 0, 0.2, 0)
 toggle1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 toggle1.BorderColor3 = Color3.fromRGB(80,80,80)
 toggle1.BorderSizePixel = 1

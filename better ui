@@ -82,7 +82,7 @@ toggle2.Text = "."
 toggle2.TextColor3 = Color3.fromRGB(42,14,73)
 toggle2.BackgroundTransparency = 0
 toggle2.Visible = false
-toggle2.Parent = Toggle2
+toggle2.Parent = Toggle
 
 local toggleui2 = Instance.new("UICorner")
 toggleui2.CornerRadius = UDim.new(0, 5)

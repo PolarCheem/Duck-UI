@@ -203,16 +203,19 @@ local ui2 = Instance.new("UICorner")
 ui2.CornerRadius = UDim.new(0, 5)
 ui2.Parent = Tab
 
-if toggle == true then
-    print("on")
-    task.wait(0)
+
+local function spamPrintOn()
+    while toggle do
+        print("on")
+        task.wait(0)  
+    end
 end
 
 toggle1.MouseButton1Click:Connect(function()
     toggle1.Visible = false
     toggle2.Visible = true
     toggle = true
-    print("on")  
+    spamPrintOn()  
 end)
 
 toggle2.MouseButton1Click:Connect(function()

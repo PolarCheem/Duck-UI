@@ -1,3 +1,4 @@
+local toggle = false
 local gui = Instance.new("ScreenGui")
 gui.Name = "ui"
 gui.Parent = game.CoreGui
@@ -68,6 +69,21 @@ toggle1.Parent = Toggle
 local toggleui = Instance.new("UICorner")
 toggleui.CornerRadius = UDim.new(0, 5)
 toggleui.Parent = toggle1
+
+local toggle2 = Instance.new("TextButton")
+toggle2.Size = UDim2.new(0, 18, 0, 18)
+toggle2.Position = UDim2.new(0.915, 0, 0.2, 0)
+toggle2.BackgroundColor3 = Color3.fromRGB(42,14,73)
+toggle2.BorderColor3 = Color3.fromRGB(80,80,80)
+toggle2.Text = "."
+toggle2.TextColor3 = Color3.fromRGB(42,14,73)
+toggle2.BackgroundTransparency = 0
+toggle2.Visible = false
+toggle2.Parent = Toggle2
+
+local toggleui2 = Instance.new("UICorner")
+toggleui2.CornerRadius = UDim.new(0, 5)
+toggleui2.Parent = toggle2
 
 local ui3 = Instance.new("UICorner")
 ui3.CornerRadius = UDim.new(0, 10)

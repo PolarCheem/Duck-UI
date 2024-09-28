@@ -1,0 +1,20 @@
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local part = char:WaitForChild("GAMEOBJECTS"):WaitForChild("6045dcb3-99d4-4d8a-9572-cbcc73a7df5f") -- Ensure this is lowercase
+local DISTANCE_THRESHOLD = 25 -- Distance threshold in studs
+local legreach = true -- Toggle to control the loop
+
+while legreach do
+    task.wait(0.25)
+
+    for _, football in ipairs(workspace:GetDescendants()) do
+        if football.Name == "Football" and football:IsA("Part") then
+            local distanceToPart = (football.Position - part.Position).Magnitude
+
+            if distanceToPart <= DISTANCE_THRESHOLD then
+                firetouchinterest(part, football, 0) 
+                firetouchinterest(part, football, 1) 
+            end
+        end
+    end
+end

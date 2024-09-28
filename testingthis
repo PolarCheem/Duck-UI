@@ -12,8 +12,8 @@ while legreach do
             local distanceToPart = (football.Position - part.Position).Magnitude
 
             if distanceToPart <= DISTANCE_THRESHOLD then
-                firetouchinterest(part, football, 0) 
-                firetouchinterest(part, football, 1) 
+                firetouchinterest(football, part, 0) 
+                firetouchinterest(football, part, 1) 
             end
         end
     end

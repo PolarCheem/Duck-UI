@@ -3,32 +3,11 @@ local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarChee
 local win = lib:Create("RobloxCoreGui", "FF2")
 
 local Config = {
-    JumpBoostEnabled = false,
-    JumpBoostAmount = 0,
-    AngleEnhancerEnabled = false,
-    AngleEnhancerValue = 0,
     MagnetEnabled = false,
     FootballDistanceCatch = 10,
     Pull_Vector = false,
     Football_Vector = 0
 }
-
--- functions
-local function applyJumpBoost(character)
-    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-    local humanoid = character:WaitForChild("Humanoid")
-
-    humanoidRootPart.Touched:Connect(function(hit)
-        if Config.JumpBoostEnabled and hit:IsA("BasePart") and humanoid:GetState() == Enum.HumanoidStateType.Jumping then
-            task.wait(0.01)
-            humanoidRootPart.Velocity = Vector3.new(
-                humanoidRootPart.Velocity.X,
-                humanoidRootPart.Velocity.Y + Config.JumpBoostAmount,
-                humanoidRootPart.Velocity.Z
-            )
-        end
-    end)
-end
 
 local function enableMagnet()
     local player = game:GetService("Players").LocalPlayer
@@ -70,29 +49,6 @@ local magnetTab = win:tab("Catch", true)
 local angleEnhancerTab = win:tab("Angle Enhancer", false)
 local jumpBoostTab = win:tab("Player", false)
 
--- jump tab
-jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
-    Config.JumpBoostEnabled = value
-end)
-
-jumpBoostTab:input("Jump Boost Amount", "", false, function(value)
-    local numValue = tonumber(value) or 0
-    Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
-end)
-
--- angle tab
-
-angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
-    Config.AngleEnhancerEnabled = value
-end)
-
-angleEnhancerTab:input("Angle Enhancer Amount", "", false, function(value)
-    local numValue = tonumber(value) or 0
-    Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
-end)
-
--- mag tab
-
 magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     Config.MagnetEnabled = value
     if Config.MagnetEnabled then
@@ -111,42 +67,7 @@ end)
 
 magnetTab:input("Vector Distance", "", false, function(value)
     local numValue = tonumber(value) or 0
-    Config.Football_Vector = math.clamp(numValue, 0, 100) -- Set a max value for clarity
-end)
-
--- misc tab
-
-local MiscTab = win:tab("Misc", false)
-
-MiscTab:toggle("Anti Admin", true, function(v)
-    if v then
-        local moderators = {
-            "2618937233503944727",
-            "209187780079648778",
-            "265544447129812992",
-            "677964655821324329",
-            "469043698110562304",
-            "792145568586792979",
-            "490537796940070915",
-            "678699048844132362",
-            "837514415480897607",
-            "417141199564963840",
-            "580140563295109148",
-            "231225289718497281",
-            "719258236930228346",
-            "345362950380322829",
-            "513196564236468226",
-            "241945212463742986",
-            "153379470164623360",
-        }
-
-        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-            if table.find(moderators, player.UserId) then
-                game:GetService("Players").LocalPlayer:Kick("An Admin has joined! Make sure to keep this enabled for extra caution next time!")
-            end
-        end
-    end
-    print("Anti Admin loaded")
+    Config.Football_Vector = math.clamp(numValue, 0, 100)
 end)
 
 local fullbright = false

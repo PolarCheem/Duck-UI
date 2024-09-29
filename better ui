@@ -188,8 +188,13 @@ Tab.TextColor3 = Color3.fromRGB(126,126,126)
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
+local Tab1 = Instance.new("UIGradient")
+Tab1.ColorSequence = {Color3.fromRGB(42,14,73), Color3.fromRGB(42,14,73), Color3.fromRGB(0,0,0)}
+Tab1.Transparency = 0
+Tab1.Rotation = 90
+Tab1.Parent = Tab
+
 Tab.MouseButton1Click:Connect(function()
-		Tab.BackgroundTransparency = 0
 		contentframe1.Visible = true
 end)
 

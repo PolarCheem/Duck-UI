@@ -86,7 +86,7 @@ angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, f
     Config.AngleEnhancerEnabled = value
 end)
 
-angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...", false, function(value)
+angleEnhancerTab:input("Angle Enhancer Amount", "", false, function(value)
     local numValue = tonumber(value) or 0
     Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
 end)
@@ -100,16 +100,16 @@ magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     end
 end)
 
-magnetTab:input("Magnet Distance", "Enter catch distance...", false, function(value)
+magnetTab:input("Magnet Distance", "", false, function(value)
     local numValue = tonumber(value) or 10
-    Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
+    Config.FootballDistanceCatch = math.clamp(numValue, 0, 100)
 end)
 
 magnetTab:toggle("Vector Toggle", false, function(value)
     Config.Pull_Vector = value
 end)
 
-magnetTab:input("Vector Distance", "Enter catch distance...", false, function(value)
+magnetTab:input("Vector Distance", "", false, function(value)
     local numValue = tonumber(value) or 0
     Config.Football_Vector = math.clamp(numValue, 0, 100) -- Set a max value for clarity
 end)

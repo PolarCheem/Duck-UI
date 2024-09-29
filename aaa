@@ -289,4 +289,87 @@ function Library:Create(name, keybind)
     return Window
 end
 
+local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
+local freakTab = myLibrary:tab("Freak", true)
+local secTab = myLibrary:tab("Second", false)
+local thirdTab = myLibrary:tab("Third", false)
+
+-- Button in freakTab
+freakTab:button("Click Me", function()
+    print("Button Clicked!")
+end)
+
+local toggleFreak = false
+
+-- Toggle in freakTab
+freakTab:toggle("Enable toggle", false, function(toggled)
+    toggleFreak = toggled
+    if toggleFreak then
+        print("Toggle ON")
+        while toggleFreak do
+            print("Toggle loop running in Freak Tab")
+            wait(1)
+        end
+    else
+        print("Toggle OFF")
+    end
+end)
+
+-- Input in freakTab
+freakTab:input("Input your text:", "Type here...", true, function(inputText)
+    print("Input Text from Freak Tab: " .. inputText)
+end)
+
+-- Button in secTab
+secTab:button("Second Button", function()
+    print("Second Button Clicked!")
+end)
+
+local toggleSec = false
+
+-- Toggle in secTab
+secTab:toggle("Enable second toggle", false, function(toggled)
+    toggleSec = toggled
+    if toggleSec then
+        print("Second Toggle ON")
+        while toggleSec do
+            print("Toggle loop running in Second Tab")
+            wait(1)
+        end
+    else
+        print("Second Toggle OFF")
+    end
+end)
+
+-- Input in secTab
+secTab:input("Input for Second Tab:", "Type something...", true, function(inputText)
+    print("Second Tab Input: " .. inputText)
+end)
+
+-- Button in thirdTab
+thirdTab:button("Third Button", function()
+    print("Third Button Clicked!")
+end)
+
+local toggleThird = false
+
+-- Toggle in thirdTab
+thirdTab:toggle("Enable third toggle", false, function(toggled)
+    toggleThird = toggled
+    if toggleThird then
+        print("Third Toggle ON")
+        while toggleThird do
+            print("Toggle loop running in Third Tab")
+            wait(1)
+        end
+    else
+        print("Third Toggle OFF")
+    end
+end)
+
+-- Input in thirdTab
+thirdTab:input("Input for Third Tab:", "Type something...", true, function(inputText)
+    print("Third Tab Input: " .. inputText)
+end)
+
 return Library

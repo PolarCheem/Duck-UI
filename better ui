@@ -194,7 +194,7 @@ tabGradient.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(1, Color3.fromRGB(13,13,13))   -- End color
 }
 tabGradient.Transparency = NumberSequence.new(0) -- Optional: Adjust transparency
-tabGradient.Rotation = 180 -- Optional: Adjust the angle of the gradient
+tabGradient.Rotation = 270 -- Optional: Adjust the angle of the gradient
 tabGradient.Parent = Tab -- Parent the gradient to the Tab button
 
 

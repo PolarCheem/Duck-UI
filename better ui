@@ -178,21 +178,25 @@ tabframe.Parent = main
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
 Tab.Position = UDim2.new(0.12, 0, 0.05, 0)
-Tab.BackgroundColor3 = Color3.fromRGB(42,14,73)
-Tab.BorderColor3 = Color3.new(0, 0, 0)
-Tab.BorderSizePixel = 0
+Tab.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
 Tab.TextSize = 15
 Tab.Text = "Tab 1"
-Tab.BackgroundTransparency = 1
-Tab.TextColor3 = Color3.fromRGB(126,126,126)
+Tab.BackgroundTransparency = 1 -- Make the button background transparent
+Tab.TextColor3 = Color3.fromRGB(255, 255, 255) -- Set the text color to white for better contrast
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
 
-local Tab1 = Instance.new("UIGradient")
-Tab1.ColorSequence = {Color3.fromRGB(42,14,73), Color3.fromRGB(42,14,73), Color3.fromRGB(0,0,0)}
-Tab1.Transparency = 0
-Tab1.Rotation = 90
-Tab1.Parent = Tab
+-- Add UIGradient to the Tab button
+local tabGradient = Instance.new("UIGradient")
+tabGradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(42, 14, 73)),  -- Start color
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 0, 0)),  -- Mid color
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(42, 14, 73))   -- End color
+}
+tabGradient.Transparency = NumberSequence.new(0) -- Optional: Adjust transparency
+tabGradient.Rotation = 90 -- Optional: Adjust the angle of the gradient
+tabGradient.Parent = Tab -- Parent the gradient to the Tab button
+
 
 Tab.MouseButton1Click:Connect(function()
 		contentframe1.Visible = true

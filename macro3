@@ -145,7 +145,13 @@ DropDownArrow.TextColor3 = Color3.fromRGB(126,126,126)
 DropDownArrow.Font = Enum.Font.Code
 DropDownArrow.Parent = DropDownFrame
 
-
+            local DropDownList = Instance.new("ScrollingFrame")
+            DropDownList.Size = UDim2.new(0.9, 0, 0.45, 0)
+            DropDownList.Position = UDim2.new(0.01, 0, 0.01, 0)
+            DropDownList.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            DropDownList.BorderSizePixel = 0
+					  DropDownList.ScrollingBarThickness = 0
+            DropDownList.Parent = DropDownFrame
 
 
     local close = Instance.new("TextButton")

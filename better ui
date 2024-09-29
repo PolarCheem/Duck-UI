@@ -140,19 +140,19 @@ function Library:Create(name, keybind)
         end
 
         Tab.MouseButton1Click:Connect(function()
-            -- Hide all other content frames except the current one
+            
             for _, v in pairs(main:GetChildren()) do
                 if v:IsA("ScrollingFrame") and v ~= contentframe1 then
                     v.Visible = false
                 end
             end
-            -- Reset all tab buttons except the current one
+            
             for _, z in pairs(tabframe:GetChildren()) do
                 if z:IsA("TextButton") and z ~= Tab then
                     z.TextTransparency = 0.5
                 end
             end
-            -- Show the selected tab's content and update the button
+            
             contentframe1.Visible = true
             Tab.TextTransparency = 0
         end)
@@ -251,7 +251,7 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
 		TextThing.TextSize = 12.5
     TextThing.AutoButtonColor = false
     TextThing.Active = false
-    TextThing.Text = text -- Use the provided text for the button
+    TextThing.Text = text 
     TextThing.BackgroundTransparency = 0
     TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
     TextThing.Font = Enum.Font.Code
@@ -263,16 +263,16 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
 
     local InputBox = Instance.new("TextBox")
     InputBox.Size = UDim2.new(0, 25, 0, 18)
-    InputBox.Position = UDim2.new(0.9, 0, 0.2, 0) -- Adjusted position for visibility
+    InputBox.Position = UDim2.new(0.9, 0, 0.2, 0) 
     InputBox.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
     InputBox.BorderColor3 = Color3.fromRGB(126, 126, 126)
     InputBox.BorderSizePixel = 0
-    InputBox.Text = placeholder or "..." -- Set the placeholder text
+    InputBox.Text = placeholder or "..."  
     InputBox.TextColor3 = Color3.fromRGB(126, 126, 126)
     InputBox.BackgroundTransparency = 0
     InputBox.Font = Enum.Font.Code
     InputBox.TextSize = 12
-    InputBox.ClearTextOnFocus = false -- Prevents clearing on focus
+    InputBox.ClearTextOnFocus = false 
     InputBox.Parent = TextThing
 
     local InpBox = Instance.new("UICorner")
@@ -282,7 +282,7 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     InputBox.FocusLost:Connect(function()
         pcall(callback, tostring(InputBox.Text))
         if clearonreturn then
-            InputBox.Text = "" -- Clear the input after callback
+            InputBox.Text = "" 
         end
     end)
 

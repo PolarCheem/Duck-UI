@@ -154,7 +154,7 @@ DropDownArrow.Parent = DropDownFrame
             DropDownList.Parent = contentframe1
 
             local Button = Instance.new("TextButton")
-            Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Button.Size = UDim2.new(0, 352, 0, 28)
             Button.Position = UDim2.new(0.01, 0, 0.01, 0)
             Button.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
             Button.BorderSizePixel = 0

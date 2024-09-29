@@ -75,9 +75,9 @@ jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(valu
     Config.JumpBoostEnabled = value
 end)
 
-jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", false, function(value)
+jumpBoostTab:input("Jump Boost Amount", "", false, function(value)
     local numValue = tonumber(value) or 0
-    Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
+    Config.JumpBoostAmount = math.clamp(numValue, 0, 500)
 end)
 
 -- angle tab

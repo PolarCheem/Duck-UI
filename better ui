@@ -242,9 +242,11 @@ end
 
 -- Example usage
 local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
-myLibrary:tab("Freak", true)
-tab:button("Hi", function()
-print("worked")
-end
+local freakTab = myLibrary:tab("Freak", true)
+
+-- Adding a button to the "Freak" tab
+freakTab:button("Click Me", function()
+    print("Button Clicked!")
+end)
 
 return Library

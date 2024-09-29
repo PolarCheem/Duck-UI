@@ -40,12 +40,12 @@ function Library:Create(name, keybind)
     open.Position = UDim2.new(0, 211, 0, 0)
     open.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
     open.ImageColor3 = Color3.new(1, 0, 0)
-    open.Image = "rbxassetid://0" -- Placeholder image ID
+    open.Image = "rbxassetid://0"
     open.Visible = false
     open.ImageTransparency = 0
     open.BackgroundTransparency = 0
     open.Parent = gui
-    open.Draggable = false -- ImageButton should not be draggable
+    open.Draggable = false
 
     local UICorner = Instance.new("UICorner")
     UICorner.CornerRadius = UDim.new(0, 10)
@@ -139,16 +139,19 @@ function Library:Create(name, keybind)
         end
 
         Tab.MouseButton1Click:Connect(function()
-            for _, v in pairs(contentframe1:GetChildren()) do
-                if v:IsA("Frame") or v:IsA("ScrollingFrame") then
+            -- Hide all other content frames except the current one
+            for _, v in pairs(main:GetChildren()) do
+                if v:IsA("ScrollingFrame") and v ~= contentframe1 then
                     v.Visible = false
                 end
             end
+            -- Reset all tab buttons except the current one
             for _, z in pairs(tabframe:GetChildren()) do
-                if z:IsA("TextButton") then
+                if z:IsA("TextButton") and z ~= Tab then
                     z.BackgroundTransparency = 1
                 end
             end
+            -- Show the selected tab's content and update the button
             contentframe1.Visible = true
             Tab.BackgroundTransparency = 0
         end)

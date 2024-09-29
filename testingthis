@@ -1,28 +1,177 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/better%20ui"))()
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/better%20ui"))()
 
-local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
-local freakTab = myLibrary:tab("Freak", true)
-local secTab = myLibrary:tab("second", false)
+local win = lib:Create("RobloxCoreGui", "FF2")
 
-freakTab:button("Click Me", function()
-    print("Button Clicked!")
+local Config = {
+    JumpBoostEnabled = false,
+    JumpBoostAmount = 0,
+    AngleEnhancerEnabled = false,
+    AngleEnhancerValue = 0,
+    MagnetEnabled = false,
+    FootballDistanceCatch = 10,
+    Pull_Vector = false,
+    Football_Vector = 0
+}
+
+-- functions
+local function applyJumpBoost(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local humanoid = character:WaitForChild("Humanoid")
+
+    humanoidRootPart.Touched:Connect(function(hit)
+        if Config.JumpBoostEnabled and hit:IsA("BasePart") and humanoid:GetState() == Enum.HumanoidStateType.Jumping then
+            task.wait(0.01)
+            humanoidRootPart.Velocity = Vector3.new(
+                humanoidRootPart.Velocity.X,
+                humanoidRootPart.Velocity.Y + Config.JumpBoostAmount,
+                humanoidRootPart.Velocity.Z
+            )
+        end
+    end)
+end
+
+local function enableMagnet()
+    local player = game:GetService("Players").LocalPlayer
+
+    while Config.MagnetEnabled do
+        task.wait(0.1)
+        for _, value in pairs(workspace:GetChildren()) do
+            if value.Name == "Football" and value:IsA("BasePart") then
+                local catchRight = player.Character:FindFirstChild("CatchRight")
+                if catchRight and (catchRight.Position - value.Position).Magnitude <= Config.FootballDistanceCatch then
+                    firetouchinterest(catchRight, value, 0)
+                    firetouchinterest(catchRight, value, 1)
+                    task.wait()
+                    firetouchinterest(catchRight, value, 0)
+                    firetouchinterest(catchRight, value, 1)
+                end
+            end
+        end
+    end
+end
+
+task.spawn(function()
+    game:GetService("RunService").Heartbeat:Connect(function()
+        for _, value in pairs(workspace:GetChildren()) do
+            if value.Name == "Football" and value:IsA("BasePart") then
+                local player = game:GetService("Players").LocalPlayer
+                local direction = (value.Position - player.Character.HumanoidRootPart.Position).Unit
+
+                if player:DistanceFromCharacter(value.Position) <= Config.Football_Vector and Config.Pull_Vector then
+                    player.Character.HumanoidRootPart.Velocity = direction * Config.Football_Vector
+                end
+            end
+        end
+    end)
 end)
 
-local toggle = false
+-- some tabs
+local magnetTab = win:tab("Catch", true)
+local angleEnhancerTab = win:tab("Angle Enhancer", false)
+local jumpBoostTab = win:tab("Player", false)
 
-freakTab:toggle("Enable toggle", false, function(toggled)
-    toggle = toggled
-    if toggle then
-        print("Toggle ON")
-        while toggle do
-            print("Toggle loop running")
-            wait(1)
-        end
-    else
-        print("Toggle OFF")
+-- jump tab
+jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
+    Config.JumpBoostEnabled = value
+end)
+
+jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", false, function(value)
+    local numValue = tonumber(value) or 0
+    Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
+end)
+
+-- angle tab
+
+angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
+    Config.AngleEnhancerEnabled = value
+end)
+
+angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...", false, function(value)
+    local numValue = tonumber(value) or 0
+    Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
+end)
+
+-- mag tab
+
+magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
+    Config.MagnetEnabled = value
+    if Config.MagnetEnabled then
+        enableMagnet()
     end
 end)
 
-secTab:button("second button", function()
-    print("Button Clicked!")
+magnetTab:input("Magnet Distance", "Enter catch distance...", false, function(value)
+    local numValue = tonumber(value) or 10
+    Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
 end)
+
+magnetTab:toggle("Vector Toggle", false, function(value)
+    Config.Pull_Vector = value
+end)
+
+magnetTab:input("Vector Distance", "Enter catch distance...", false, function(value)
+    local numValue = tonumber(value) or 0
+    Config.Football_Vector = math.clamp(numValue, 0, 100) -- Set a max value for clarity
+end)
+
+-- misc tab
+
+local MiscTab = win:tab("Misc", false)
+
+MiscTab:toggle("Anti Admin", true, function(v)
+    if v then
+        local moderators = {
+            "2618937233503944727",
+            "209187780079648778",
+            "265544447129812992",
+            "677964655821324329",
+            "469043698110562304",
+            "792145568586792979",
+            "490537796940070915",
+            "678699048844132362",
+            "837514415480897607",
+            "417141199564963840",
+            "580140563295109148",
+            "231225289718497281",
+            "719258236930228346",
+            "345362950380322829",
+            "513196564236468226",
+            "241945212463742986",
+            "153379470164623360",
+        }
+
+        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+            if table.find(moderators, player.UserId) then
+                game:GetService("Players").LocalPlayer:Kick("An Admin has joined! Make sure to keep this enabled for extra caution next time!")
+            end
+        end
+    end
+    print("Anti Admin loaded")
+end)
+
+local fullbright = false
+
+MiscTab:toggle("Fullbright Toggle", false, function(value)
+fullbright = v
+while fullbright do
+	Lighting.Brightness = 2
+	Lighting.ClockTime = 14
+	Lighting.FogEnd = 100000
+	Lighting.GlobalShadows = false
+	Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+wait(0)
+end
+end)
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function onCharacterAdded(character)
+    applyJumpBoost(character)
+end
+
+if player.Character then
+    onCharacterAdded(player.Character)
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)

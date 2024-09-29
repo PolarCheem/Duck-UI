@@ -157,6 +157,12 @@ DropDownArrow.Parent = DropDownFrame
 					  DropDownList.ScrollBarThickness = 0
             DropDownList.Parent = contentframe1
 
+        local UIListLayout2 = Instance.new("UIListLayout")
+        UIListLayout2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout2.Padding = UDim.new(0, 5)
+        UIListLayout2.Parent = DropDownList
+
 local UICorner5 = Instance.new("UICorner")
     UICorner5.CornerRadius = UDim.new(0, 10)
     UICorner5.Parent = DropDownList

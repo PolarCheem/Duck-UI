@@ -133,10 +133,10 @@ function Library:Create(name, keybind)
 
         if showonstartup then
             contentframe1.Visible = true
-            Tab.TextTransparency = 0
+            Tab.TextTransparency = 0.5
         else
             contentframe1.Visible = false
-            Tab.TextTransparency = 0.5
+            Tab.TextTransparency = 0
         end
 
         Tab.MouseButton1Click:Connect(function()
@@ -149,12 +149,12 @@ function Library:Create(name, keybind)
             -- Reset all tab buttons except the current one
             for _, z in pairs(tabframe:GetChildren()) do
                 if z:IsA("TextButton") and z ~= Tab then
-                    z.TextTransparency = 0
+                    z.TextTransparency = 0.5
                 end
             end
             -- Show the selected tab's content and update the button
             contentframe1.Visible = true
-            Tab.TextTransparency = 0.5
+            Tab.TextTransparency = 0
         end)
 
         local pageitems = {}

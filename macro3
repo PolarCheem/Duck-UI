@@ -150,7 +150,7 @@ DropDownArrow.Parent = DropDownFrame
             DropDownList.Position = UDim2.new(0.01, 0, 0.01, 0)
             DropDownList.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
             DropDownList.BorderSizePixel = 0
-					  DropDownList.ScrollingBarThickness = 0
+					  DropDownList.ScrollBarThickness = 0
             DropDownList.Parent = DropDownFrame
 
 

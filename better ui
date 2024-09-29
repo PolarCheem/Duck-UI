@@ -103,7 +103,7 @@ function Library:Create(name, keybind)
     function Window:tab(tabname, showonstartup)
         local contentframe1 = Instance.new("ScrollingFrame")
         contentframe1.Size = UDim2.new(0.745, 0, 0.725, 0)
-        contentframe1.Position = UDim2.new(0.255, 0, 0.137, 0)
+        contentframe1.Position = UDim2.new(0.255, 0, 0.14, 0)
         contentframe1.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
         contentframe1.BorderSizePixel = 0
         contentframe1.Parent = main

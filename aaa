@@ -202,39 +202,56 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     end)
 
 
-        function pageitems:CreateDropdown(parent, options)
-            -- Dropdown creation as per the fixed method
-            local DropDownOpen = Instance.new("TextButton")
-            DropDownOpen.Size = UDim2.new(0.9, 0, 0.05, 0)
-            DropDownOpen.Text = options.Title or "Dropdown"
-            DropDownOpen.Parent = parent
+        -- Existing code remains unchanged above this point
 
-            local DropDownList = Instance.new("ScrollingFrame")
-            DropDownList.Size = UDim2.new(0.9, 0, 0.25, 0)
-            DropDownList.Visible = false
-            DropDownList.Parent = parent
+function pageitems:CreateDropdown(title, options, callback)
+    local Dropdown = Instance.new("Frame")
+    Dropdown.Size = UDim2.new(0.9, 0, 0.05, 0)
+    Dropdown.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+    Dropdown.Parent = contentframe1
 
-            DropDownOpen.MouseButton1Click:Connect(function()
-                DropDownList.Visible = not DropDownList.Visible
-            end)
+    local DropDownOpen = Instance.new("TextButton")
+    DropDownOpen.Size = UDim2.new(1, 0, 1, 0)
+    DropDownOpen.Text = title or "Dropdown"
+    DropDownOpen.BackgroundTransparency = 1
+    DropDownOpen.Parent = Dropdown
 
-            for _, option in pairs(options.Items or {}) do
-                local DropButton = Instance.new("TextButton")
-                DropButton.Size = UDim2.new(1, 0, 0.1, 0)
-                DropButton.Text = option
-                DropButton.Parent = DropDownList
+    local DropDownList = Instance.new("ScrollingFrame")
+    DropDownList.Size = UDim2.new(1, 0, 0.5, 0)
+    DropDownList.Position = UDim2.new(0, 0, 1, 0)
+    DropDownList.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+    DropDownList.Visible = false
+    DropDownList.Parent = Dropdown
 
-                DropButton.MouseButton1Click:Connect(function()
-                    options.Callback(option)
-                    DropDownList.Visible = false
-                end)
-            end
-        end
+    local UIListLayout = Instance.new("UIListLayout")
+    UIListLayout.Parent = DropDownList
 
-        return pageitems
+    DropDownOpen.MouseButton1Click:Connect(function()
+        DropDownList.Visible = not DropDownList.Visible
+    end)
+
+    for _, option in ipairs(options) do
+        local DropButton = Instance.new("TextButton")
+        DropButton.Size = UDim2.new(1, 0, 0.1, 0)
+        DropButton.Text = option
+        DropButton.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+        DropButton.Parent = DropDownList
+
+        DropButton.MouseButton1Click:Connect(function()
+            pcall(callback, option)  -- Call the provided callback with the selected option
+            DropDownList.Visible = false  -- Hide the dropdown after selection
+        end)
     end
-
-    return Window
 end
+
+-- Existing code remains unchanged below this point
+
+local myWindow = Library:Create("MyWindow", Enum.KeyCode.E)
+local myTab = myWindow:tab("My Tab", true)
+
+myTab:CreateDropdown("Select Option", {"Option 1", "Option 2", "Option 3"}, function(selected)
+    print("You selected: " .. selected)
+end)
+
 
 return Library

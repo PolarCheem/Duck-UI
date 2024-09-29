@@ -151,7 +151,7 @@ DropDownArrow.Parent = DropDownFrame
             DropDownList.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
             DropDownList.BorderSizePixel = 0
 					  DropDownList.ScrollBarThickness = 0
-            DropDownList.Parent = DropDownFrame
+            DropDownList.Parent = contentframe1
 
 
     local close = Instance.new("TextButton")

@@ -98,16 +98,16 @@ local contentframe1 = Instance.new("ScrollingFrame")
             TextThing.Parent = contentframe1
 
 local InputBox = Instance.new("TextBox")
-InputBox.Size = UDim2.new(0, 23, 0, 18)
-InputBox.Position = UDim2.new(0.915, 0, 0.2, 0)
+InputBox.Size = UDim2.new(0, 25, 0, 18)
+InputBox.Position = UDim2.new(0.9, 0, 0.2, 0)
 InputBox.BackgroundColor3 = Color3.fromRGB(9,9,9)
 InputBox.BorderColor3 = Color3.fromRGB(126,126,126)
 InputBox.BorderSizePixel = 1
-InputBox.Text = "Text"
+InputBox.Text = "..."
 InputBox.TextColor3 = Color3.fromRGB(126,126,126)
 InputBox.BackgroundTransparency = 0
 InputBox.Font = Enum.Font.Code
-InputBox.TextSize = 15
+InputBox.TextSize = 12
 InputBox.Parent = TextThing
 
 

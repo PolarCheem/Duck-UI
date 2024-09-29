@@ -1,7 +1,6 @@
 local Library = {}
 
 local Player = game:GetService("Players").LocalPlayer
-local TS, UIS, mouse = game:GetService("TweenService"), game:GetService("UserInputService"), Player:GetMouse()
 
 
 function Library:Create(name,keybind)
@@ -113,75 +112,6 @@ UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 3)
 UIListLayout.Parent = tabframe
 
-local ui2 = Instance.new("UICorner")
-ui2.CornerRadius = UDim.new(0, 5)
-ui2.Parent = Tab
-
-
-local function spamPrintOn()
-    while toggle do
-        print("on")
-        task.wait(0)  
-    end
-end
-
-toggle1.MouseButton1Click:Connect(function()
-    toggle1.Visible = false
-    toggle2.Visible = true
-    toggle = true
-    spamPrintOn()  
-end)
-
-toggle2.MouseButton1Click:Connect(function()
-    toggle1.Visible = true
-    toggle2.Visible = false
-    toggle = false
-    print("off")  
-end)
-
-function dragify(Frame)
-		dragToggle = nil
-		local dragSpeed = 0
-		dragInput = nil
-		dragStart = nil
-		local dragPos = nil
-		function updateInput(input)
-			local Delta = input.Position - dragStart
-			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-		end
-		Frame.InputBegan:Connect(function(input)
-			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-				dragToggle = true
-				dragStart = input.Position
-				startPos = Frame.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragToggle = false
-					end
-				end)
-			end
-		end)
-		Frame.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-		game:GetService("UserInputService").InputChanged:Connect(function(input)
-			if input == dragInput and dragToggle then
-				updateInput(input)
-			end
-		end)
-	end
-	
-	dragify(main)
-	UIS.InputBegan:Connect(function(key,gp)
-		if not gp then
-			if key == Enum.KeyCode.RightShift then
-				main.Visible = not main.Visible
-			end
-		end
-	end)
 	
 local Window = {}
 function Window:tab(tabname,showonstartup)
@@ -213,6 +143,10 @@ Tab.BackgroundTransparency = 1
 Tab.TextColor3 = Color3.fromRGB(126,126,126) 
 Tab.Font = Enum.Font.Code
 Tab.Parent = tabframe
+
+local ui2 = Instance.new("UICorner")
+ui2.CornerRadius = UDim.new(0, 5)
+ui2.Parent = Tab
 
 if showonstartup then
 			contentframe1.Visible = true

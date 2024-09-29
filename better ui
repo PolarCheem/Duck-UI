@@ -202,6 +202,7 @@ function Library:Create(name, keybind)
             toggleOn.TextColor3 = Color3.fromRGB(42, 14, 73)
             toggleOn.BackgroundTransparency = 0
             toggleOn.Parent = Toggle
+						toggleOn.AutoButtonColor = false
 
             local toggleOff = Instance.new("TextButton")
             toggleOff.Size = UDim2.new(0, 18, 0, 18)
@@ -213,6 +214,7 @@ function Library:Create(name, keybind)
             toggleOff.BackgroundTransparency = 0
             toggleOff.Visible = false
             toggleOff.Parent = Toggle
+						toggleOff.AutoButtonColor = false
 
             local toggleUICornerOn = Instance.new("UICorner")
             toggleUICornerOn.CornerRadius = UDim.new(0, 5)

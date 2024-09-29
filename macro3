@@ -135,13 +135,13 @@ local InpBox = Instance.new("UICorner")
 
 local DropDownArrow = Instance.new("TextLabel")
 DropDownArrow.Size = UDim2.new(0, 18, 0, 18)
-DropDownArrow.Position = UDim2.new(0.9, 0, 0.2, 0)
+DropDownArrow.Position = UDim2.new(0.92, 0, 0.2, 0)
 DropDownArrow.BackgroundColor3 = Color3.new(0, 0, 0)
 DropDownArrow.BorderSizePixel = 0
 DropDownArrow.Text = "^"
-DropDownArrow.TextSize = 23
+DropDownArrow.TextSize = 20
 DropDownArrow.BackgroundTransparency = 1
-DropDownArrow.TextColor3 = Color3.new(255, 255, 255)
+DropDownArrow.TextColor3 = Color3.fromRGB(126,126,126)
 DropDownArrow.Font = Enum.Font.Code
 DropDownArrow.Parent = DropDownFrame
 

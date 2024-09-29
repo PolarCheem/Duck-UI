@@ -146,12 +146,24 @@ DropDownArrow.Font = Enum.Font.Code
 DropDownArrow.Parent = DropDownFrame
 
             local DropDownList = Instance.new("ScrollingFrame")
-            DropDownList.Size = UDim2.new(0.9, 0, 0.45, 0)
+            DropDownList.Size = UDim2.new(0.9, 0, 0.25, 0)
             DropDownList.Position = UDim2.new(0.01, 0, 0.01, 0)
             DropDownList.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
             DropDownList.BorderSizePixel = 0
 					  DropDownList.ScrollBarThickness = 0
             DropDownList.Parent = contentframe1
+
+            local Button = Instance.new("TextButton")
+            Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Button.Position = UDim2.new(0.01, 0, 0.01, 0)
+            Button.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            Button.BorderSizePixel = 0
+            Button.TextSize = 12.5
+            Button.Text = "Dropdown button"
+            Button.BackgroundTransparency = 0
+            Button.TextColor3 = Color3.fromRGB(126, 126, 126)
+            Button.Font = Enum.Font.Code
+            Button.Parent = DropDownList
 
 
     local close = Instance.new("TextButton")

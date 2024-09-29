@@ -121,6 +121,19 @@ local InpBox = Instance.new("UICorner")
             InpBox.CornerRadius = UDim.new(0, 10)
             InpBox.Parent = InputBox
 
+            local DropDownFrams = Instance.new("TextButton")
+            DropDownFrams.Size = UDim2.new(0.9, 0, 0.05, 0)
+            DropDownFrams.Position = UDim2.new(0.01, 0, 0.01, 0)
+            DropDownFrams.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            DropDownFrams.BorderSizePixel = 0
+            DropDownFrams.TextSize = 12.5
+            DropDownFrams.Text = "DropDown"
+            DropDownFrams.BackgroundTransparency = 0
+            DropDownFrams.TextColor3 = Color3.fromRGB(126, 126, 126)
+            DropDownFrams.Font = Enum.Font.Code
+            DropDownFrams.Parent = contentframe1
+
+
     local close = Instance.new("TextButton")
     close.Size = UDim2.new(0, 25, 0, 25)
     close.Position = UDim2.new(0.92, 0, 0.017, 0)

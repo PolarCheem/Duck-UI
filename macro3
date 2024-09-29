@@ -20,7 +20,7 @@ local contentframe1 = Instance.new("ScrollingFrame")
         contentframe1.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
         contentframe1.BorderSizePixel = 0
         contentframe1.Parent = main
-        contentframe1.Visible = false
+        contentframe1.Visible = true
         contentframe1.ScrollBarThickness = 0
 
         local UIListLayout = Instance.new("UIListLayout")

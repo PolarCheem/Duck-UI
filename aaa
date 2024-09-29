@@ -319,4 +319,36 @@ function Library:Create(name, subname, keybind)
 	return Window
 end
 
+-- Create the main window
+local MainWindow = Library:Create("My GUI", "This is a sample GUI", Enum.KeyCode.RightShift)
+
+-- Create tabs
+local Tab1 = MainWindow:tab("Tab 1", true)  -- This tab is shown on startup
+local Tab2 = MainWindow:tab("Tab 2", false) -- This tab is hidden on startup
+
+Tab1:button("Click Me!", function()
+    print("Button clicked in Tab 1!")
+end)
+
+Tab1:toggle("Enable Feature", false, function(state)
+    print("Feature enabled:", state)
+end)
+
+Tab1:input("Enter Text", "Type here...", true, function(input)
+    print("You entered:", input)
+end)
+
+Tab2:button("Press Here!", function()
+    print("Button clicked in Tab 2!")
+end)
+
+Tab2:toggle("Toggle Feature", true, function(state)
+    print("Feature toggled:", state)
+end)
+
+Tab2:input("Input Text", "Type something...", false, function(input)
+    print("Input received:", input)
+end)
+
+
 return Library

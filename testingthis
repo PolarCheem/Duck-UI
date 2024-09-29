@@ -1,1 +1,17 @@
-k
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/better%20ui"))()
+
+local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
+local freakTab = myLibrary:tab("Freak", true)
+
+freakTab:button("Click Me", function()
+    print("Button Clicked!")
+end)
+
+local toggle = false
+
+freakTab:toggle("Enable toggle", false, function(toggled)
+    toggle = toggled
+if toggled then
+    print("on")
+end
+end)

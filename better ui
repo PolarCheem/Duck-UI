@@ -133,10 +133,10 @@ function Library:Create(name, keybind)
 
         if showonstartup then
             contentframe1.Visible = true
-            Tab.BackgroundTransparency = 0
+            Tab.TextTransparency = 0
         else
             contentframe1.Visible = false
-            Tab.BackgroundTransparency = 1
+            Tab.TextTransparency = 0.5
         end
 
         Tab.MouseButton1Click:Connect(function()

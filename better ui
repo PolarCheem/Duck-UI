@@ -46,7 +46,7 @@ function Library:Create(name, keybind)
     open.ImageTransparency = 0
     open.BackgroundTransparency = 0
     open.Parent = gui
-    open.Draggable = false
+    open.Draggable = true
 
     local UICorner = Instance.new("UICorner")
     UICorner.CornerRadius = UDim.new(0, 10)

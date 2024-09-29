@@ -2,6 +2,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Polar
 
 local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
 local freakTab = myLibrary:tab("Freak", true)
+local secTab = myLibrary:tab("second", false)
 
 freakTab:button("Click Me", function()
     print("Button Clicked!")
@@ -11,8 +12,17 @@ local toggle = false
 
 freakTab:toggle("Enable toggle", false, function(toggled)
     toggle = toggled
-if toggle then
-    print("on")
-wait(0)
-end
+    if toggle then
+        print("Toggle ON")
+        while toggle do
+            print("Toggle loop running")
+            wait(1)
+        end
+    else
+        print("Toggle OFF")
+    end
+end)
+
+secTab:button("second button", function()
+    print("Button Clicked!")
 end)

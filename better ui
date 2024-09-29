@@ -248,6 +248,7 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     TextThing.Position = UDim2.new(0.01, 0, 0.01, 0)
     TextThing.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
     TextThing.BorderSizePixel = 0
+		TextThing.TextSize = 12.5
     TextThing.AutoButtonColor = false
     TextThing.Active = false
     TextThing.Text = text -- Use the provided text for the button

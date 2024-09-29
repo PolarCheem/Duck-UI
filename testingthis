@@ -11,7 +11,7 @@ local toggle = false
 
 freakTab:toggle("Enable toggle", false, function(toggled)
     toggle = toggled
-if toggled then
+if toggle then
     print("on")
 wait(0)
 end

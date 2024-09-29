@@ -121,17 +121,31 @@ local InpBox = Instance.new("UICorner")
             InpBox.CornerRadius = UDim.new(0, 10)
             InpBox.Parent = InputBox
 
-            local DropDownFrams = Instance.new("TextButton")
-            DropDownFrams.Size = UDim2.new(0.9, 0, 0.05, 0)
-            DropDownFrams.Position = UDim2.new(0.01, 0, 0.01, 0)
-            DropDownFrams.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
-            DropDownFrams.BorderSizePixel = 0
-            DropDownFrams.TextSize = 12.5
-            DropDownFrams.Text = "DropDown"
-            DropDownFrams.BackgroundTransparency = 0
-            DropDownFrams.TextColor3 = Color3.fromRGB(126, 126, 126)
-            DropDownFrams.Font = Enum.Font.Code
-            DropDownFrams.Parent = contentframe1
+            local DropDownFrame = Instance.new("TextButton")
+            DropDownFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
+            DropDownFrame.Position = UDim2.new(0.01, 0, 0.01, 0)
+            DropDownFrame.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            DropDownFrame.BorderSizePixel = 0
+            DropDownFrame.TextSize = 12.5
+            DropDownFrame.Text = "DropDown"
+            DropDownFrame.BackgroundTransparency = 0
+            DropDownFrame.TextColor3 = Color3.fromRGB(126, 126, 126)
+            DropDownFrame.Font = Enum.Font.Code
+            DropDownFrame.Parent = contentframe1
+
+local DropDownArrow = Instance.new("TextLabel")
+DropDownArrow.Size = UDim2.new(0, 18, 0, 18)
+DropDownArrow.Position = UDim2.new(0.915, 0, 0.2, 0)
+DropDownArrow.BackgroundColor3 = Color3.new(0, 0, 0)
+DropDownArrow.BorderSizePixel = 0
+DropDownArrow.Text = "^"
+DropDownArrow.TextSize = 18
+DropDownArrow.BackgroundTransparency = 1
+DropDownArrow.TextColor3 = Color3.new(255, 255, 255)
+DropDownArrow.Font = Enum.Font.Code
+DropDownArrow.Parent = DropDownFrame
+
+
 
 
     local close = Instance.new("TextButton")

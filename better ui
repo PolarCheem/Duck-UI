@@ -190,11 +190,11 @@ Tab.Parent = tabframe
 local tabGradient = Instance.new("UIGradient")
 tabGradient.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(0, Color3.fromRGB(42, 14, 73)),  -- Start color
-    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 0, 0)),  -- Mid color
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(42, 14, 73))   -- End color
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(42,14,73)),  -- Mid color
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(13,13,13))   -- End color
 }
 tabGradient.Transparency = NumberSequence.new(0) -- Optional: Adjust transparency
-tabGradient.Rotation = 90 -- Optional: Adjust the angle of the gradient
+tabGradient.Rotation = 180 -- Optional: Adjust the angle of the gradient
 tabGradient.Parent = Tab -- Parent the gradient to the Tab button
 
 

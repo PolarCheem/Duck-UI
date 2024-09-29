@@ -96,6 +96,65 @@ function Library:Create(name, keybind)
             end)
         end
 
+        function pageitems:toggle(text, state, callback)
+            local toggled = state or false
+            local Toggle = Instance.new("TextButton")
+            Toggle.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Toggle.Position = UDim2.new(0.01, 0, 0.01, 0)
+            Toggle.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            Toggle.BorderSizePixel = 0
+            Toggle.TextSize = 12.5
+            Toggle.AutoButtonColor = false
+            Toggle.Active = false
+            Toggle.Text = text
+            Toggle.BackgroundTransparency = 0
+            Toggle.TextColor3 = Color3.fromRGB(126, 126, 126)
+            Toggle.Font = Enum.Font.Code
+            Toggle.Parent = contentframe1
+
+            local toggleOn = Instance.new("TextButton")
+            toggleOn.Size = UDim2.new(0, 18, 0, 18)
+            toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.Text = "."
+            toggleOn.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOn.BackgroundTransparency = 0
+            toggleOn.Parent = Toggle
+						toggleOn.AutoButtonColor = false
+
+            local toggleOff = Instance.new("TextButton")
+            toggleOff.Size = UDim2.new(0, 18, 0, 18)
+            toggleOff.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOff.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOff.Text = "."
+            toggleOff.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BackgroundTransparency = 0
+            toggleOff.Visible = false
+            toggleOff.Parent = Toggle
+						toggleOff.AutoButtonColor = false
+
+            local toggleUICornerOn = Instance.new("UICorner")
+            toggleUICornerOn.CornerRadius = UDim.new(0, 5)
+            toggleUICornerOn.Parent = toggleOn
+
+            local toggleUICornerOff = Instance.new("UICorner")
+            toggleUICornerOff.CornerRadius = UDim.new(0, 5)
+            toggleUICornerOff.Parent = toggleOff
+
+            -- Set initial toggle state
+            toggleOn.Visible = not toggled
+            toggleOff.Visible = toggled
+
+            Toggle.MouseButton1Click:Connect(function()
+                toggled = not toggled
+                toggleOn.Visible = not toggled
+                toggleOff.Visible = toggled
+                pcall(callback, toggled)
+            end)
+        end
+
         function pageitems:CreateDropdown(parent, options)
             -- Dropdown creation as per the fixed method
             local DropDownOpen = Instance.new("TextButton")

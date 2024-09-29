@@ -60,6 +60,7 @@ local contentframe1 = Instance.new("ScrollingFrame")
             Toggle.Font = Enum.Font.Code
             Toggle.Parent = contentframe1
 
+
             local toggleOn = Instance.new("TextButton")
             toggleOn.Size = UDim2.new(0, 18, 0, 18)
             toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
@@ -70,6 +71,7 @@ local contentframe1 = Instance.new("ScrollingFrame")
             toggleOn.BackgroundTransparency = 0
             toggleOn.Parent = Toggle
 						toggleOn.AutoButtonColor = false
+
 
             local toggleOff = Instance.new("TextButton")
             toggleOff.Size = UDim2.new(0, 18, 0, 18)
@@ -82,7 +84,8 @@ local contentframe1 = Instance.new("ScrollingFrame")
             toggleOff.Visible = false
             toggleOff.Parent = Toggle
 						toggleOff.AutoButtonColor = false
-            
+           
+
 					local TextThing = Instance.new("TextButton")
             TextThing.Size = UDim2.new(0.9, 0, 0.05, 0)
             TextThing.Position = UDim2.new(0.01, 0, 0.01, 0)
@@ -97,12 +100,16 @@ local contentframe1 = Instance.new("ScrollingFrame")
             TextThing.Font = Enum.Font.Code
             TextThing.Parent = contentframe1
 
+local TextB = Instance.new("UICorner")
+            TextB.CornerRadius = UDim.new(0, 10)
+            TextB.Parent = TextThing
+
 local InputBox = Instance.new("TextBox")
 InputBox.Size = UDim2.new(0, 25, 0, 18)
 InputBox.Position = UDim2.new(0.9, 0, 0.2, 0)
-InputBox.BackgroundColor3 = Color3.fromRGB(9,9,9)
+InputBox.BackgroundColor3 = Color3.fromRGB(13,13,13)
 InputBox.BorderColor3 = Color3.fromRGB(126,126,126)
-InputBox.BorderSizePixel = 1
+InputBox.BorderSizePixel = 0
 InputBox.Text = "..."
 InputBox.TextColor3 = Color3.fromRGB(126,126,126)
 InputBox.BackgroundTransparency = 0
@@ -110,6 +117,9 @@ InputBox.Font = Enum.Font.Code
 InputBox.TextSize = 12
 InputBox.Parent = TextThing
 
+local InpBox = Instance.new("UICorner")
+            InpBox.CornerRadius = UDim.new(0, 10)
+            InpBox.Parent = InputBox
 
     local close = Instance.new("TextButton")
     close.Size = UDim2.new(0, 25, 0, 25)

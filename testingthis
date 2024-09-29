@@ -34,7 +34,7 @@ local function enableMagnet()
     local player = game:GetService("Players").LocalPlayer
 
     while Config.MagnetEnabled do
-        task.wait(0.1)
+        task.wait(0)
         for _, value in pairs(workspace:GetChildren()) do
             if value.Name == "Football" and value:IsA("BasePart") then
                 local catchRight = player.Character:FindFirstChild("CatchRight")
@@ -77,7 +77,7 @@ end)
 
 jumpBoostTab:input("Jump Boost Amount", "", false, function(value)
     local numValue = tonumber(value) or 0
-    Config.JumpBoostAmount = math.clamp(numValue, 0, 500)
+    Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
 end)
 
 -- angle tab

@@ -16,7 +16,6 @@ function Library:Create(name, keybind)
     main.Size = UDim2.new(0.7, 0, 0.8, 0)
     main.Position = UDim2.new(0.3, 0, 0, 0)
     main.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
-    main.BorderColor3 = Color3.new(0, 0, 0)
     main.BorderSizePixel = 0
     main.Active = true
     main.BackgroundTransparency = 0
@@ -27,12 +26,11 @@ function Library:Create(name, keybind)
     close.Size = UDim2.new(0, 25, 0, 25)
     close.Position = UDim2.new(0.92, 0, 0.017, 0)
     close.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
-    close.BorderColor3 = Color3.new(0, 0, 0)
     close.BorderSizePixel = 0
-    close.Text = "."
-    close.TextSize = 0
+    close.Text = "X"
+    close.TextSize = 15
     close.BackgroundTransparency = 0
-    close.TextColor3 = Color3.fromRGB(42, 14, 73)
+    close.TextColor3 = Color3.fromRGB(255, 255, 255)
     close.Font = Enum.Font.Code
     close.Parent = main
 
@@ -48,9 +46,9 @@ function Library:Create(name, keybind)
     open.Parent = gui
     open.Draggable = false
 
-    local UICorner = Instance.new("UICorner")
-    UICorner.CornerRadius = UDim.new(0, 10)
-    UICorner.Parent = open
+    local UICornerOpen = Instance.new("UICorner")
+    UICornerOpen.CornerRadius = UDim.new(0, 10)
+    UICornerOpen.Parent = open
 
     local UICornerClose = Instance.new("UICorner")
     UICornerClose.CornerRadius = UDim.new(0, 5)
@@ -110,11 +108,11 @@ function Library:Create(name, keybind)
         contentframe1.Visible = false
         contentframe1.ScrollBarThickness = 0
 
-        local UIListLayout = Instance.new("UIListLayout")
-        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-        UIListLayout.Padding = UDim.new(0, 5)
-        UIListLayout.Parent = contentframe1
+        local UIListLayoutContent = Instance.new("UIListLayout")
+        UIListLayoutContent.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayoutContent.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayoutContent.Padding = UDim.new(0, 5)
+        UIListLayoutContent.Parent = contentframe1
 
         local Tab = Instance.new("TextButton")
         Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
@@ -190,7 +188,7 @@ function Library:Create(name, keybind)
             Toggle.BorderSizePixel = 0
             Toggle.TextSize = 12.5
             Toggle.AutoButtonColor = false
-            Toggle.Active = false
+            Toggle.Active = true
             Toggle.Text = text
             Toggle.BackgroundTransparency = 0
             Toggle.TextColor3 = Color3.fromRGB(126, 126, 126)
@@ -198,27 +196,27 @@ function Library:Create(name, keybind)
             Toggle.Parent = contentframe1
 
             local toggleOn = Instance.new("TextButton")
-            toggleOn.Size = UDim2.new(0, 18, 0, 18)
+            toggleOn.Size = UDim2.new(0, 18, 0, 18)  -- Set size for the toggleOn button
             toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
             toggleOn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
             toggleOn.BorderColor3 = Color3.fromRGB(80, 80, 80)
-            toggleOn.Text = "."
+            toggleOn.Text = ""
             toggleOn.TextColor3 = Color3.fromRGB(42, 14, 73)
             toggleOn.BackgroundTransparency = 0
             toggleOn.Parent = Toggle
-						toggleOn.AutoButtonColor = false
+            toggleOn.AutoButtonColor = false
 
             local toggleOff = Instance.new("TextButton")
-            toggleOff.Size = UDim2.new(0, 18, 0, 18)
+            toggleOff.Size = UDim2.new(0, 18, 0, 18)  -- Set size for the toggleOff button
             toggleOff.Position = UDim2.new(0.915, 0, 0.2, 0)
             toggleOff.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
             toggleOff.BorderColor3 = Color3.fromRGB(80, 80, 80)
-            toggleOff.Text = "."
+            toggleOff.Text = ""
             toggleOff.TextColor3 = Color3.fromRGB(42, 14, 73)
             toggleOff.BackgroundTransparency = 0
             toggleOff.Visible = false
             toggleOff.Parent = Toggle
-						toggleOff.AutoButtonColor = false
+            toggleOff.AutoButtonColor = false
 
             local toggleUICornerOn = Instance.new("UICorner")
             toggleUICornerOn.CornerRadius = UDim.new(0, 5)
@@ -240,58 +238,55 @@ function Library:Create(name, keybind)
             end)
         end
 
-function pageitems:input(text, placeholder, clearonreturn, callback)
-    local callback = callback or function() end
+        function pageitems:input(text, placeholder, clearonreturn, callback)
+            local callback = callback or function() end
 
-    local TextThing = Instance.new("TextButton")
-    TextThing.Size = UDim2.new(0.9, 0, 0.05, 0)
-    TextThing.Position = UDim2.new(0.01, 0, 0.01, 0)
-    TextThing.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
-    TextThing.BorderSizePixel = 0
-    TextThing.AutoButtonColor = false
-    TextThing.Active = false
-    TextThing.Text = text or "TextBox" -- Use the provided text for the button
-    TextThing.BackgroundTransparency = 0
-    TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
-    TextThing.Font = Enum.Font.Code
-    TextThing.Parent = contentframe1
+            local TextThing = Instance.new("TextButton")
+            TextThing.Size = UDim2.new(0.9, 0, 0.05, 0)
+            TextThing.Position = UDim2.new(0.01, 0, 0.01, 0)
+            TextThing.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            TextThing.BorderSizePixel = 0
+            TextThing.AutoButtonColor = false
+            TextThing.Active = false
+            TextThing.Text = text or "TextBox" -- Use the provided text for the button
+            TextThing.BackgroundTransparency = 0
+            TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
+            TextThing.Font = Enum.Font.Code
+            TextThing.Parent = contentframe1
 
-    local TextB = Instance.new("UICorner")
-    TextB.CornerRadius = UDim.new(0, 10)
-    TextB.Parent = TextThing
+            local TextB = Instance.new("UICorner")
+            TextB.CornerRadius = UDim.new(0, 10)
+            TextB.Parent = TextThing
 
-    local InputBox = Instance.new("TextBox")
-    InputBox.Size = UDim2.new(0.9, 0, 0.8, 0)
-    InputBox.Position = UDim2.new(0.05, 0, 0.2, 0) -- Adjusted position for visibility
-    InputBox.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
-    InputBox.BorderColor3 = Color3.fromRGB(126, 126, 126)
-    InputBox.BorderSizePixel = 0
-    InputBox.Text = placeholder or "..." -- Set the placeholder text
-    InputBox.TextColor3 = Color3.fromRGB(126, 126, 126)
-    InputBox.BackgroundTransparency = 0
-    InputBox.Font = Enum.Font.Code
-    InputBox.TextSize = 12
-    InputBox.ClearTextOnFocus = false -- Prevents clearing on focus
-    InputBox.Parent = TextThing
+            local InputBox = Instance.new("TextBox")
+            InputBox.Size = UDim2.new(0.9, 0, 0.8, 0)
+            InputBox.Position = UDim2.new(0.05, 0, 0.2, 0) -- Adjusted position for visibility
+            InputBox.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+            InputBox.BorderColor3 = Color3.fromRGB(126, 126, 126)
+            InputBox.BorderSizePixel = 0
+            InputBox.Text = placeholder or "..." -- Set the placeholder text
+            InputBox.TextColor3 = Color3.fromRGB(126, 126, 126)
+            InputBox.BackgroundTransparency = 0
+            InputBox.Font = Enum.Font.Code
+            InputBox.TextSize = 12
+            InputBox.ClearTextOnFocus = false -- Prevents clearing on focus
+            InputBox.Parent = TextThing
 
-    local InpBox = Instance.new("UICorner")
-    InpBox.CornerRadius = UDim.new(0, 10)
-    InpBox.Parent = InputBox
+            local InpBox = Instance.new("UICorner")
+            InpBox.CornerRadius = UDim.new(0, 10)
+            InpBox.Parent = InputBox
 
-    InputBox.FocusLost:Connect(function()
-        pcall(callback, tostring(InputBox.Text))
-        if clearonreturn then
-            InputBox.Text = "" -- Clear the input after callback
+            InputBox.FocusLost:Connect(function()
+                pcall(callback, tostring(InputBox.Text))
+                if clearonreturn then
+                    InputBox.Text = "" -- Clear the input after callback
+                end
+            end)
+
+            return pageitems
         end
-    end)
-
-    return pageitems
-end
-
 
     return Window
 end
-
-
 
 return Library

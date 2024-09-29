@@ -2,7 +2,7 @@ local Library = {}
 local Player = game:GetService("Players").LocalPlayer
 
 function Library:Create(name, keybind)
-    -- Remove existing GUI if it exists
+    
     if game.CoreGui:FindFirstChild(name) then
         game.CoreGui:FindFirstChild(name):Destroy()
     end
@@ -239,14 +239,3 @@ function Library:Create(name, keybind)
 
     return Window
 end
-
--- Example usage
-local myLibrary = Library:Create("MyLibrary", Enum.KeyCode.F)
-local freakTab = myLibrary:tab("Freak", true)
-
--- Adding a button to the "Freak" tab
-freakTab:button("Click Me", function()
-    print("Button Clicked!")
-end)
-
-return Library

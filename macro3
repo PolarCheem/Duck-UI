@@ -1,1 +1,205 @@
-{"53":{"type":"UpgradeUnit","money":"1800","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","wave":13,"unit":"Roku (Dark)"},"43":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"51":{"type":"UpgradeUnit","money":"1150","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","wave":12,"unit":"Roku (Dark)"},"41":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"47":{"type":"UpgradeUnit","money":"900","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","wave":11,"unit":"Roku (Dark)"},"37":{"type":"ChangeTargeting","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","unit":"Roku (Dark)"},"45":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"35":{"type":"ChangeTargeting","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","unit":"Roku (Dark)"},"59":{"type":"UpgradeUnit","money":"1800","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","wave":15,"unit":"Roku (Dark)"},"49":{"type":"UpgradeUnit","money":"1150","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","wave":12,"unit":"Roku (Dark)"},"39":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"29":{"type":"SpawnUnit","money":"850","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","wave":11,"unit":"Roku (Dark)"},"1":{"type":"SpawnUnit","money":"850","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","wave":1,"unit":"Roku (Dark)"},"10":{"type":"UpgradeUnit","money":"800","cframe":"-221.53285217285156, 1.6285772323608398, -147.10903930664062","wave":5,"unit":"Kinaru"},"3":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"2":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"5":{"type":"SpawnUnit","money":"850","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","wave":3,"unit":"Roku (Dark)"},"4":{"type":"SpawnUnit","money":"850","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","wave":2,"unit":"Roku (Dark)"},"7":{"type":"UpgradeUnit","money":"900","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","wave":4,"unit":"Roku (Dark)"},"6":{"type":"UpgradeUnit","money":"900","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","wave":3,"unit":"Roku (Dark)"},"9":{"type":"SpawnUnit","money":"750","cframe":"-221.53285217285156, 1.6285772323608398, -147.10903930664062","wave":5,"unit":"Kinaru"},"8":{"type":"UpgradeUnit","money":"900","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","wave":4,"unit":"Roku (Dark)"},"27":{"type":"UpgradeUnit","money":"800","cframe":"-308.80670166015625, 1.6285772323608398, -145.63677978515625","wave":10,"unit":"Kinaru"},"17":{"type":"SpawnUnit","money":"750","cframe":"-232.74618530273438, 1.7980493307113647, -31.82866859436035","wave":8,"unit":"Goi"},"13":{"type":"SpawnUnit","money":"888","cframe":"-199.93707275390625, 1.6872777938842773, -118.38805389404297","wave":6,"unit":"Itochi"},"21":{"type":"SpawnUnit","money":"750","cframe":"-324.8204650878906, 1.6285772323608398, -58.98784637451172","wave":9,"unit":"Kinaru"},"11":{"type":"UpgradeUnit","money":"1200","cframe":"-221.53285217285156, 1.6285772323608398, -147.10903930664062","wave":5,"unit":"Kinaru"},"23":{"type":"UpgradeUnit","money":"1200","cframe":"-324.8204650878906, 1.6285772323608398, -58.98784637451172","wave":9,"unit":"Kinaru"},"42":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"52":{"type":"UpgradeUnit","money":"1600","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","wave":12,"unit":"Roku (Dark)"},"40":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"36":{"type":"ChangeTargeting","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","unit":"Roku (Dark)"},"46":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"34":{"type":"ChangeTargeting","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","unit":"Roku (Dark)"},"44":{"type":"ChangeTargeting","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","unit":"Roku (Dark)"},"48":{"type":"UpgradeUnit","money":"1150","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","wave":12,"unit":"Roku (Dark)"},"58":{"type":"UpgradeUnit","money":"1600","cframe":"-280.9459533691406, 1.948999047279358, -130.79986572265625","wave":15,"unit":"Roku (Dark)"},"28":{"type":"UpgradeUnit","money":"1200","cframe":"-308.80670166015625, 1.6285772323608398, -145.63677978515625","wave":10,"unit":"Kinaru"},"38":{"type":"ChangeTargeting","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","unit":"Roku (Dark)"},"56":{"type":"UpgradeUnit","money":"1600","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","wave":14,"unit":"Roku (Dark)"},"12":{"type":"SpawnUnit","money":"750","cframe":"-198.94735717773438, 1.7980493307113647, -115.2135238647461","wave":6,"unit":"Goi"},"54":{"type":"UpgradeUnit","money":"1600","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","wave":13,"unit":"Roku (Dark)"},"50":{"type":"UpgradeUnit","money":"1150","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","wave":12,"unit":"Roku (Dark)"},"33":{"type":"ChangeTargeting","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","unit":"Roku (Dark)"},"57":{"type":"UpgradeUnit","money":"1800","cframe":"-278.5824279785156, 1.9492210149765015, -130.76943969726562","wave":14,"unit":"Roku (Dark)"},"31":{"type":"ChangeTargeting","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","unit":"Roku (Dark)"},"25":{"type":"SpawnUnit","money":"750","cframe":"-329.2857666015625, 1.7980493307113647, -117.11077117919922","wave":10,"unit":"Goi"},"19":{"type":"SpawnUnit","money":"888","cframe":"-295.0549621582031, 1.6872776746749878, -31.059654235839844","wave":8,"unit":"Itochi"},"18":{"type":"SpawnUnit","money":"888","cframe":"-230.06365966796875, 1.6872776746749878, -34.0025749206543","wave":8,"unit":"Itochi"},"15":{"type":"UpgradeUnit","money":"800","cframe":"-204.17030334472656, 1.6285772323608398, -58.68981170654297","wave":7,"unit":"Kinaru"},"55":{"type":"UpgradeUnit","money":"1800","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","wave":14,"unit":"Roku (Dark)"},"14":{"type":"SpawnUnit","money":"750","cframe":"-204.17030334472656, 1.6285772323608398, -58.68981170654297","wave":7,"unit":"Kinaru"},"24":{"type":"SpawnUnit","money":"888","cframe":"-330.46331787109375, 1.6872776746749878, -113.80900573730469","wave":10,"unit":"Itochi"},"16":{"type":"UpgradeUnit","money":"1200","cframe":"-204.17030334472656, 1.6285772323608398, -58.68981170654297","wave":7,"unit":"Kinaru"},"26":{"type":"SpawnUnit","money":"750","cframe":"-308.80670166015625, 1.6285772323608398, -145.63677978515625","wave":10,"unit":"Kinaru"},"20":{"type":"SpawnUnit","money":"750","cframe":"-298.4690246582031, 1.7980493307113647, -32.51435852050781","wave":9,"unit":"Goi"},"30":{"type":"ChangeTargeting","cframe":"-273.5784912109375, 1.9495978355407715, -131.12823486328125","unit":"Roku (Dark)"},"22":{"type":"UpgradeUnit","money":"800","cframe":"-324.8204650878906, 1.6285772323608398, -58.98784637451172","wave":9,"unit":"Kinaru"},"32":{"type":"ChangeTargeting","cframe":"-275.7791748046875, 1.9494025707244873, -131.10446166992188","unit":"Roku (Dark)"}}
+print("update")
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "ui"
+    gui.Parent = game.CoreGui
+
+    local main = Instance.new("Frame")
+    main.Size = UDim2.new(0.7, 0, 0.8, 0)
+    main.Position = UDim2.new(0.3, 0, 0, 0)
+    main.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+    main.BorderColor3 = Color3.new(0, 0, 0)
+    main.BorderSizePixel = 0
+    main.Active = true
+    main.BackgroundTransparency = 0
+    main.Draggable = true
+    main.Parent = gui
+
+local contentframe1 = Instance.new("ScrollingFrame")
+        contentframe1.Size = UDim2.new(0.745, 0, 0.725, 0)
+        contentframe1.Position = UDim2.new(0.255, 0, 0.137, 0)
+        contentframe1.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+        contentframe1.BorderSizePixel = 0
+        contentframe1.Parent = main
+        contentframe1.Visible = false
+        contentframe1.ScrollBarThickness = 0
+
+        local UIListLayout = Instance.new("UIListLayout")
+        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.Padding = UDim.new(0, 5)
+        UIListLayout.Parent = contentframe1
+
+
+            local Button = Instance.new("TextButton")
+            Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Button.Position = UDim2.new(0.01, 0, 0.01, 0)
+            Button.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            Button.BorderSizePixel = 0
+            Button.TextSize = 12.5
+            Button.Text = "button"
+            Button.BackgroundTransparency = 0
+            Button.TextColor3 = Color3.fromRGB(126, 126, 126)
+            Button.Font = Enum.Font.Code
+            Button.Parent = contentframe1
+
+            local ui3 = Instance.new("UICorner")
+            ui3.CornerRadius = UDim.new(0, 10)
+            ui3.Parent = Button
+
+            local Toggle = Instance.new("TextButton")
+            Toggle.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Toggle.Position = UDim2.new(0.01, 0, 0.01, 0)
+            Toggle.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            Toggle.BorderSizePixel = 0
+            Toggle.TextSize = 12.5
+            Toggle.AutoButtonColor = false
+            Toggle.Active = false
+            Toggle.Text = "toggle"
+            Toggle.BackgroundTransparency = 0
+            Toggle.TextColor3 = Color3.fromRGB(126, 126, 126)
+            Toggle.Font = Enum.Font.Code
+            Toggle.Parent = contentframe1
+
+            local toggleOn = Instance.new("TextButton")
+            toggleOn.Size = UDim2.new(0, 18, 0, 18)
+            toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.Text = "."
+            toggleOn.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOn.BackgroundTransparency = 0
+            toggleOn.Parent = Toggle
+						toggleOn.AutoButtonColor = false
+
+            local toggleOff = Instance.new("TextButton")
+            toggleOff.Size = UDim2.new(0, 18, 0, 18)
+            toggleOff.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOff.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOff.Text = "."
+            toggleOff.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BackgroundTransparency = 0
+            toggleOff.Visible = false
+            toggleOff.Parent = Toggle
+						toggleOff.AutoButtonColor = false
+            
+					local TextThing = Instance.new("TextButton")
+            TextThing.Size = UDim2.new(0.9, 0, 0.05, 0)
+            TextThing.Position = UDim2.new(0.01, 0, 0.01, 0)
+            TextThing.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            TextThing.BorderSizePixel = 0
+            TextThing.TextSize = 12.5
+            TextThing.AutoButtonColor = false
+            TextThing.Active = false
+            TextThing.Text = "TextBox"
+            TextThing.BackgroundTransparency = 0
+            TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
+            TextThing.Font = Enum.Font.Code
+            TextThing.Parent = contentframe1
+
+local InputBox = Instance.new("TextBox")
+InputBox.Size = UDim2.new(0.65, 0, 0.2, 0)
+InputBox.Position = UDim2.new(0.85, 0, 0.35, 0)
+InputBox.BackgroundColor3 = Color3.fromRGB(13,13,13)
+InputBox.BorderColor3 = Color3.fromRGB(126,126,126)
+InputBox.BorderSizePixel = 1
+InputBox.Text = "Text"
+InputBox.TextColor3 = Color3.fromRGB(126,126,126)
+InputBox.BackgroundTransparency = 0
+InputBox.Font = Enum.Font.Code
+InputBox.TextSize = 15
+InputBox.Parent = TextThing
+
+
+    local close = Instance.new("TextButton")
+    close.Size = UDim2.new(0, 25, 0, 25)
+    close.Position = UDim2.new(0.92, 0, 0.017, 0)
+    close.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
+    close.BorderColor3 = Color3.new(0, 0, 0)
+    close.BorderSizePixel = 0
+    close.Text = "."
+    close.TextSize = 0
+    close.BackgroundTransparency = 0
+    close.TextColor3 = Color3.fromRGB(42, 14, 73)
+    close.Font = Enum.Font.Code
+    close.Parent = main
+
+    local open = Instance.new("ImageButton")
+    open.Size = UDim2.new(0, 40, 0, 40)
+    open.Position = UDim2.new(0, 211, 0, 0)
+    open.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+    open.ImageColor3 = Color3.new(1, 0, 0)
+    open.Image = "rbxassetid://0"
+    open.Visible = false
+    open.ImageTransparency = 0
+    open.BackgroundTransparency = 0
+    open.Parent = gui
+    open.Draggable = false
+
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0, 10)
+    UICorner.Parent = open
+
+    local UICornerClose = Instance.new("UICorner")
+    UICornerClose.CornerRadius = UDim.new(0, 5)
+    UICornerClose.Parent = close
+
+    close.MouseButton1Click:Connect(function()
+        open.Visible = true
+        main.Visible = false
+    end)
+
+    open.MouseButton1Click:Connect(function()
+        open.Visible = false
+        main.Visible = true
+    end)
+
+    local line1 = Instance.new("Frame")
+    line1.Size = UDim2.new(1, 0, 0.005, 0)
+    line1.Position = UDim2.new(0, 0, 0.135, 0)
+    line1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    line1.BorderSizePixel = 0
+    line1.Parent = main
+
+    local line2 = Instance.new("Frame")
+    line2.Size = UDim2.new(1, 0, 0.005, 0)
+    line2.Position = UDim2.new(0, 0, 0.865, 0)
+    line2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    line2.BorderSizePixel = 0
+    line2.Parent = main
+
+    local line3 = Instance.new("Frame")
+    line3.Size = UDim2.new(0.005, 0, 0.73, 0)
+    line3.Position = UDim2.new(0.25, 0, 0.135, 0)
+    line3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    line3.BorderSizePixel = 0
+    line3.Parent = main
+
+    local tabframe = Instance.new("Frame")
+    tabframe.Size = UDim2.new(0.25, 0, 0.73, 0)
+    tabframe.Position = UDim2.new(0, 0, 0.135, 0)
+    tabframe.BackgroundTransparency = 1
+    tabframe.Parent = main
+
+        local Tab = Instance.new("TextButton")
+        Tab.Size = UDim2.new(0.9, 0, 0.11, 0)
+        Tab.Position = UDim2.new(0.12, 0, 0.05, 0)
+        Tab.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
+        Tab.TextSize = 15
+        Tab.Text = "Tab"
+        Tab.BackgroundTransparency = 1
+        Tab.TextColor3 = Color3.fromRGB(126, 126, 126)
+        Tab.Font = Enum.Font.Code
+        Tab.Parent = tabframe
+
+        local ui2 = Instance.new("UICorner")
+        ui2.CornerRadius = UDim.new(0, 5)
+        ui2.Parent = Tab
+
+    local UIListLayout = Instance.new("UIListLayout")
+    UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout.Padding = UDim.new(0, 3)
+    UIListLayout.Parent = tabframe
+
+        

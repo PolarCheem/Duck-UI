@@ -56,7 +56,7 @@ end)
 
 magnetTab:input("Magnet Distance", "", false, function(value)
     local numValue = tonumber(value) or 10
-    Config.FootballDistanceCatch = math.clamp(numValue, 0, 100)
+    Config.FootballDistanceCatch = math.clamp(numValue, 0, 20)
 end)
 
 magnetTab:toggle("Vector Toggle", false, function(value)

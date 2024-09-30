@@ -7,9 +7,7 @@ local UICorner = Instance.new("UICorner")
 local Line = Instance.new("Frame")
 local UICorner2 = Instance.new("UICorner")
 local TabFrame = Instance.new("ScrollingFrame")
-local UICorner3 = Instance.new("UICorner")
 local Content = Instance.new("ScrollingFrame")  
-local UICorner4 = Instance.new("UICorner")
 local GuiName = Instance.new("TextLabel")
 
 --Main
@@ -64,7 +62,8 @@ TabFrame.BackgroundTransparency = 1
 TabFrame.ScrollBarThickness = 2
 
 -- UICORNER
-local UICorner3 = Instance.new("UICorner") UICorner3.CornerRadius = UDim.new(0, 15)
+local UICorner3 = Instance.new("UICorner") 
+UICorner3.CornerRadius = UDim.new(0, 15)
 UICorner3.Parent = TabFrame
 
 -- Content frame
@@ -85,22 +84,24 @@ UIListLayout.Padding = UDim.new(0, 8)
 UIListLayout.Parent = Content
 
 -- UICORNER
-local UICorner4 = Instance.new("UICorner") UICorner4.CornerRadius = UDim.new(0, 15)
+
+local UICorner4 = Instance.new("UICorner") 
+UICorner4.CornerRadius = UDim.new(0, 15)
 UICorner4.Parent = Content
 
 --Tab
 local Tab = Instance.new("TextButton")
 Tab.Size = UDim2.new(0.95, 0, 0.05, 0)
 Tab.Position = UDim2.new(0.025, 0, 0, 0)
-Tab.BackgroundColor3 = Color3.new(0, 0, 0)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.Text = "Tab"
-Tab.BackgroundTransparency = 0 
+Tab.TextSize = 15
 Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
 Tab.Font = Enum.Font.Code
 Tab.Parent = TabFrame
-Tab.TextSize = 15
+Tab.BackgroundTransparency = 0 
+Tab.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 
 local UIGradient = Instance.new("UIGradient")
 
@@ -113,3 +114,7 @@ UIGradient.Color = ColorSequence.new({
 UIGradient.Transparency = NumberSequence.new(0) -- Set transparency for the gradient
 UIGradient.Rotation = 0
 UIGradient.Parent = Tab -- Ensure it's parented to the Tab button
+
+local UICornerTab = Instance.new("UICorner") 
+UICornerTab.CornerRadius = UDim.new(0, 15)
+UICornerTab.Parent = Tab

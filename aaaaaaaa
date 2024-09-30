@@ -26,8 +26,8 @@ Main.Parent = gui
 UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = Main
 -- Line1
-Line.Size = UDim2.new(0.005, 0, 0.92, 0)
-Line.Position = UDim2.new(0.27, 0, 0.08, 0)
+Line.Size = UDim2.new(0.005, 0, 0.7, 0)
+Line.Position = UDim2.new(0.27, 0, 0.15, 0)
 Line.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
 Line.BorderColor3 = Color3.new(0, 0, 0)
 Line.BorderSizePixel = 0

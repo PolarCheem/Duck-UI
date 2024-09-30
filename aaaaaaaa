@@ -7,7 +7,9 @@ local UICorner = Instance.new("UICorner")
 local Line = Instance.new("Frame")
 local UICorner2 = Instance.new("UICorner")
 local TabFrame = Instance.new("ScrollingFrame")
+local UICorner3 = Instance.new("UICorner")
 local Content = Instance.new("ScrollingFrame")  
+local UICorner4 = Instance.new("UICorner")
 
 --Main
 Main.Size = UDim2.new(0.65, 0, 0.8, 0)
@@ -42,6 +44,9 @@ TabFrame.BorderSizePixel = 0
 TabFrame.Parent = Main
 TabFrame.BackgroundTransparency = 0
 TabFrame.ScrollBarThickness = 2
+-- UICORNER
+UICorner3.CornerRadius = UDim.new(0, 15)
+UICorner3.Parent = TabFrame
 -- Content frame
 Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
 Content.Position = UDim2.new(0.29, 0, 0.1, 0)
@@ -51,7 +56,8 @@ Content.BorderSizePixel = 0
 Content.Parent = Main
 Content.BackgroundTransparency = 0
 Content.ScrollBarThickness = 2
-
-
+-- UICORNER
+UICorner4.CornerRadius = UDim.new(0, 15)
+UICorner4.Parent = Content
 
 

@@ -109,7 +109,7 @@ UICornerTab.Parent = Tab
 
 local UIGradient = Instance.new("UIGradient")
 
-UIGradient.ColorSequence = ColorSequence.new({
+UIGradient.Color = ColorSequence.new({
     ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
     ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
     ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
@@ -118,6 +118,7 @@ UIGradient.ColorSequence = ColorSequence.new({
 UIGradient.Transparency = NumberSequence.new(0.5) -- Use NumberSequence for transparency
 UIGradient.Rotation = 0
 UIGradient.Parent = Tab
+
 
 
 

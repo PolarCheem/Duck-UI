@@ -5,7 +5,7 @@ gui.Parent = game.CoreGui
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local Line = Instance.new("Frame")
-local Line2 = Instance.new("Frame")
+local UICorner2 = Instance.new("UICorner")
 local TabFrame = Instance.new("ScrollingFrame")
 local Content = Instance.new("ScrollingFrame")  
 
@@ -31,8 +31,8 @@ Line.BorderColor3 = Color3.new(0, 0, 0)
 Line.BorderSizePixel = 0
 Line.Parent = Main
 -- UICorner
-UICorner.CornerRadius = UDim.new(0, 15)
-UICorner.Parent = Line
+UICorner2.CornerRadius = UDim.new(0, 15)
+UICorner2.Parent = Line
 -- TabFrame
 TabFrame.Size = UDim2.new(0.27, 0, 0.9, 0)
 TabFrame.Position = UDim2.new(0, 0, 0.1, 0)

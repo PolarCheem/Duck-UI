@@ -3,21 +3,21 @@ local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarChee
 local win = lib:Create("RobloxCoreGui", "FF2")
 
 local Config = {
-    MagnetEnabled = false,
-    FootballDistanceCatch = 10,
+    MagsOn = false,
+    MagDistance = 10,
     Pull_Vector = false,
     Football_Vector = 0
 }
 
-local function enableMagnet()
+local function enableMags()
     local player = game:GetService("Players").LocalPlayer
 
-    while Config.MagnetEnabled do
+    while Config.MagsOn do
         task.wait(0)
         for _, value in pairs(workspace:GetChildren()) do
             if value.Name == "Football" and value:IsA("BasePart") then
                 local catchRight = player.Character:FindFirstChild("CatchRight")
-                if catchRight and (catchRight.Position - value.Position).Magnitude <= Config.FootballDistanceCatch then
+                if catchRight and (catchRight.Position - value.Position).Magnitude <= Config.MagDistance then
                     firetouchinterest(catchRight, value, 0)
                     firetouchinterest(catchRight, value, 1)
                     task.wait()
@@ -44,10 +44,8 @@ task.spawn(function()
     end)
 end)
 
--- some tabs
+
 local magnetTab = win:tab("Catch", true)
-local angleEnhancerTab = win:tab("Angle Enhancer", false)
-local jumpBoostTab = win:tab("Player", false)
 
 magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     Config.MagnetEnabled = value

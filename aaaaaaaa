@@ -10,6 +10,7 @@ local TabFrame = Instance.new("ScrollingFrame")
 local UICorner3 = Instance.new("UICorner")
 local Content = Instance.new("ScrollingFrame")  
 local UICorner4 = Instance.new("UICorner")
+local GuiName = Instance.new("TextLabel")
 
 --Main
 Main.Size = UDim2.new(0.65, 0, 0.8, 0)
@@ -22,6 +23,19 @@ Main.Active = true
 Main.BackgroundTransparency = 0
 Main.Draggable = true
 Main.Parent = gui
+
+-- Gui Name
+GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
+GuiName.Position = UDim2.new(0.01, 0, 0, 0)
+GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
+GuiName.BorderColor3 = Color3.new(0, 0, 0)
+GuiName.BorderSizePixel = 0
+GuiName.Text = "Text"
+GuiName.BackgroundTransparency = 1 
+GuiName.TextColor3 = Color3.fromRGB(255, 255, 255)
+GuiName.Font = Enum.Font.Code
+GuiName.Parent = Main
+GuiName.TextSize = 15
 
 --UiCorner
 UICorner.CornerRadius = UDim.new(0, 15)
@@ -50,7 +64,7 @@ TabFrame.BackgroundTransparency = 1
 TabFrame.ScrollBarThickness = 2
 
 -- UICORNER
-UICorner3.CornerRadius = UDim.new(0, 15)
+local UICorner3 = Instance.new("UICorner") UICorner3.CornerRadius = UDim.new(0, 15)
 UICorner3.Parent = TabFrame
 
 -- Content frame
@@ -63,8 +77,37 @@ Content.Parent = Main
 Content.BackgroundTransparency = 1
 Content.ScrollBarThickness = 2
 
+--Ui layout
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 8)
+UIListLayout.Parent = Content
+
 -- UICORNER
-UICorner4.CornerRadius = UDim.new(0, 15)
+local UICorner4 = Instance.new("UICorner") UICorner4.CornerRadius = UDim.new(0, 15)
 UICorner4.Parent = Content
+
+--Tab
+local Tab = Instance.new("TextButton")
+Tab.Size = UDim2.new(0.95, 0, 0.05, 0)
+Tab.Position = UDim2.new(0.025, 0, 0, 0)
+Tab.BackgroundColor3 = Color3.new(0, 0, 0)
+Tab.BorderColor3 = Color3.new(0, 0, 0)
+Tab.BorderSizePixel = 0
+Tab.Text = "Tab"
+Tab.BackgroundTransparency = 0 
+Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.Font = Enum.Font.Code
+Tab.Parent = TabFrame
+Tab.TextSize = 15
+
+-- UiCorner
+local UICornerTab = Instance.new("UICorner")
+UICornerTab.CornerRadius = UDim.new(0, 15)
+UICornerTab.Parent = Tab
+
+
+
 
 

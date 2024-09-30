@@ -97,11 +97,11 @@ Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.Text = "Tab"
 Tab.TextSize = 15
-Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Tab.TextColor3 = Color3.new(255, 255, 255)
 Tab.Font = Enum.Font.Code
 Tab.Parent = TabFrame
 Tab.BackgroundTransparency = 0 
-Tab.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 
 local UIGradient = Instance.new("UIGradient")
 

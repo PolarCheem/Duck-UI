@@ -107,6 +107,12 @@ local UICornerTab = Instance.new("UICorner")
 UICornerTab.CornerRadius = UDim.new(0, 15)
 UICornerTab.Parent = Tab
 
+local UIGradient = Instance.new("UIGradient")
+UIGradient.ColorSequence = {Color3.fromRGB(75,69,245), Color3.fromRGB(75,0,245), Color3.fromRGB(17,19,22)}
+UIGradient.Transparency = 0.5
+UIGradient.Rotation = 0
+UIGradient.Parent = Tab
+
 
 
 

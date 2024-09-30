@@ -102,11 +102,6 @@ Tab.Font = Enum.Font.Code
 Tab.Parent = TabFrame
 Tab.TextSize = 15
 
--- UiCorner
-local UICornerTab = Instance.new("UICorner")
-UICornerTab.CornerRadius = UDim.new(0, 15)
-UICornerTab.Parent = Tab
-
 local UIGradient = Instance.new("UIGradient")
 
 UIGradient.Color = ColorSequence.new({
@@ -115,12 +110,6 @@ UIGradient.Color = ColorSequence.new({
     ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
 })
 
-UIGradient.Transparency = NumberSequence.new(0.5) -- Use NumberSequence for transparency
+UIGradient.Transparency = NumberSequence.new(0) -- Set transparency for the gradient
 UIGradient.Rotation = 0
-UIGradient.Parent = Tab
-
-
-
-
-
-
+UIGradient.Parent = Tab -- Ensure it's parented to the Tab button

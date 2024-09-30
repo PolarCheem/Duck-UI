@@ -21,7 +21,7 @@ Main.BackgroundTransparency = 0
 Main.Draggable = true
 Main.Parent = gui
 --UiCorner
-UICorner.CornerRadius = UDim.new(15, 15)
+UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = Main
 -- Line1
 Line.Size = UDim2.new(0.005, 0, 0.92, 0)
@@ -31,7 +31,7 @@ Line.BorderColor3 = Color3.new(0, 0, 0)
 Line.BorderSizePixel = 0
 Line.Parent = Main
 -- UICorner
-UICorner2.CornerRadius = UDim.new(15, 15)
+UICorner2.CornerRadius = UDim.new(0, 15)
 UICorner2.Parent = Line
 -- TabFrame
 TabFrame.Size = UDim2.new(0.27, 0, 0.9, 0)

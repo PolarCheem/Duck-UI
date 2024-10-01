@@ -120,7 +120,7 @@ GuiName.TextSize = 15
 local UIGradient = Instance.new("UIGradient")
         UIGradient.Transparency = NumberSequence.new(0)
         UIGradient.Rotation = 0
-        UIGradient.Parent = nill
+        UIGradient.Parent = nil
 
         if showonstartup then
 						UIGradient.Parent = Tab
@@ -333,12 +333,12 @@ local test = false
 tab1:toggle("toggle test", false, function(v)
 test = v
 
-while test == true then
-print("working")
-else
-print("off")
-wait(0)
+while test do
+    print("working")
+    wait(0) 
 end
+print("off")
+
 end)
 
 tab2:button("My Button 2", function()

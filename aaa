@@ -312,6 +312,13 @@ ToggleName.TextXAlignment = Enum.TextXAlignment.Left
                 pcall(callback, toggled)
             end)
 end
+
+function pageitems:input(text, placeholder, clearonreturn, callback)
+    local callback = callback or function() end
+
+
+
+
         return pageitems
     end
 

@@ -124,34 +124,35 @@ local UIGradient = Instance.new("UIGradient")
             Tab.BackgroundTransparency = 1
         end
 
-        Tab.MouseButton1Click:Connect(function()
-            
-            for _, child in pairs(Main:GetChildren()) do
-                if child:IsA("ScrollingFrame") and child.Name == "ContentFrame" then
-                    child.Visible = false
-                end
-            end
+Tab.MouseButton1Click:Connect(function()
+    for _, child in pairs(Main:GetChildren()) do
+        if child:IsA("ScrollingFrame") and child.Name == "ContentFrame" then
+            child.Visible = false
+        end
+    end
 
-            
-            Content.Visible = true
-						UIGradient.Parent = Tab
-        UIGradient.Color = ColorSequence.new({
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
-            ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
-        })
-            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-            Tab.BackgroundTransparency = 0
+    Content.Visible = true
+    UIGradient.Parent = Tab
+    UIGradient.Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
+    })
+    Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Tab.BackgroundTransparency = 0
 
-            
-            for _, z in pairs(TabFrame:GetChildren()) do
-                if z:IsA("TextButton") and z ~= Tab then
-                     UIGradient.Parent = nill
-										z.BackgroundTransparency = 1
-                    z.TextColor3 = Color3.fromRGB(255, 255, 255)
-                end
+    for _, z in pairs(TabFrame:GetChildren()) do
+        if z:IsA("TextButton") and z ~= Tab then
+            local existingGradient = z:FindFirstChildOfClass("UIGradient")
+            if existingGradient then
+                existingGradient:Destroy()
             end
-        end)
+            z.BackgroundTransparency = 1
+            z.TextColor3 = Color3.fromRGB(255, 255, 255)
+        end
+    end
+end)
+
 
         local pageitems = {}
 

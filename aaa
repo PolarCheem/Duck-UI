@@ -191,7 +191,18 @@ end)
 
 function pageitems:section(text)
 
-
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Size = UDim2.new(0.1, 0, 0.05, 0)
+TextLabel.Position = UDim2.new(0, 0, 0, 0)
+TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Text = text
+TextLabel.BackgroundTransparency = 1 
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Parent = Content
+TextLabel.TextSize = 14
 
 end
         return pageitems

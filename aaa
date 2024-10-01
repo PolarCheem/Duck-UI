@@ -103,11 +103,7 @@ function Library:Create(name, keybind)
         UICornerTab.CornerRadius = UDim.new(0, 15)
         UICornerTab.Parent = Tab
 
-        if showonstartup then
-            Content.Visible = true
-            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-            Tab.BackgroundTransparency = 0
-						        local UIGradient = Instance.new("UIGradient")
+local UIGradient = Instance.new("UIGradient")
         UIGradient.Color = ColorSequence.new({
             ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
             ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
@@ -115,33 +111,38 @@ function Library:Create(name, keybind)
         })
         UIGradient.Transparency = NumberSequence.new(0)
         UIGradient.Rotation = 0
-        UIGradient.Parent = Tab
+        UIGradient.Parent = nill
+
+        if showonstartup then
+						UIGradient.Parent = Tab
+            Content.Visible = true
+            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
         else
-						UIGradient:Destroy()
             Content.Visible = false
             Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
             Tab.BackgroundTransparency = 1
         end
 
         Tab.MouseButton1Click:Connect(function()
-            -- Hide all other content frames
+            
             for _, child in pairs(Main:GetChildren()) do
                 if child:IsA("ScrollingFrame") and child.Name == "ContentFrame" then
                     child.Visible = false
                 end
             end
 
-            -- Show the content of the clicked tab
+            
             Content.Visible = true
-
-            -- Update visuals for the clicked tab
+						UIGradient.Parent = Tab
             Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
             Tab.BackgroundTransparency = 0
 
-            -- Reset other tabs' visuals
+            
             for _, z in pairs(TabFrame:GetChildren()) do
                 if z:IsA("TextButton") and z ~= Tab then
-                    z.BackgroundTransparency = 1
+                     UIGradient.Parent = nill
+										z.BackgroundTransparency = 1
                     z.TextColor3 = Color3.fromRGB(255, 255, 255)
                 end
             end

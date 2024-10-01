@@ -76,36 +76,10 @@ local UICorner3 = Instance.new("UICorner")
 UICorner3.CornerRadius = UDim.new(0, 15)
 UICorner3.Parent = TabFrame
 
--- Button
-local Button = Instance.new("TextButton")
-Button.Name = "Button"
-Button.Parent = Content
-Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-Button.BorderSizePixel = 0
-Button.Size = UDim2.new(0.9, 0, 0.05, 0)
-Button.TextTransparency = 1
-
-local ButtonName = Instance.new("TextLabel")
-ButtonName.Size = UDim2.new(0.1, 0, 0.1, 0)
-ButtonName.Position = UDim2.new(0.03, 0, 0.45, 0)
-ButtonName.BackgroundColor3 = Color3.new(0, 0, 0)
-ButtonName.BorderColor3 = Color3.new(0, 0, 0)
-ButtonName.BorderSizePixel = 0
-ButtonName.Text = "Button"
-ButtonName.BackgroundTransparency = 1 
-ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
-ButtonName.Font = Enum.Font.Gotham
-ButtonName.Parent = Button
-ButtonName.TextSize = 14
-ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
-
-local UICorner_Button = Instance.new("UICorner")
-UICorner_Button.CornerRadius = UDim.new(0, 10)
-UICorner_Button.Parent = Button
-
 -- UI Library stuff
 local Window = {}
-    function Window:tab(tabname, showonstartup)
+function Window:tab(tabname, showonstartup)
+
 Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
 Content.Position = UDim2.new(0.29, 0, 0.1, 0)
 Content.BackgroundColor3 = Color3.fromRGB(17,19,22)
@@ -185,4 +159,37 @@ UICornerTab.Parent = Tab
 						Tab.BackgroundTransparency = 1
         end)
 
-      
+       local pageitems = {}
+
+        function pageitems:button(text, callback)
+-- Button
+local Button = Instance.new("TextButton")
+Button.Name = "Button"
+Button.Parent = Content
+Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+Button.BorderSizePixel = 0
+Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+Button.TextTransparency = 1
+
+local ButtonName = Instance.new("TextLabel")
+ButtonName.Size = UDim2.new(0.1, 0, 0.1, 0)
+ButtonName.Position = UDim2.new(0.03, 0, 0.45, 0)
+ButtonName.BackgroundColor3 = Color3.new(0, 0, 0)
+ButtonName.BorderColor3 = Color3.new(0, 0, 0)
+ButtonName.BorderSizePixel = 0
+ButtonName.Text = "Button"
+ButtonName.BackgroundTransparency = 1 
+ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ButtonName.Font = Enum.Font.Gotham
+ButtonName.Parent = Button
+ButtonName.TextSize = 14
+ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
+
+local UICorner_Button = Instance.new("UICorner")
+UICorner_Button.CornerRadius = UDim.new(0, 10)
+UICorner_Button.Parent = Button
+
+            Button.MouseButton1Click:Connect(function()
+                pcall(callback)
+            end)
+        end

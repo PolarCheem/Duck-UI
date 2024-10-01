@@ -34,7 +34,7 @@ function Library:Create(name, keybind)
 
     -- Gui Name
     GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
-    GuiName.Position = UDim2.new(0.01, 0, 0, 0)
+    GuiName.Position = UDim2.new(0.5, 0, 0, 0)
     GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
     GuiName.BorderColor3 = Color3.new(0, 0, 0)
     GuiName.BorderSizePixel = 0
@@ -44,6 +44,7 @@ function Library:Create(name, keybind)
     GuiName.Font = Enum.Font.Code
     GuiName.Parent = Main
     GuiName.TextSize = 15
+		GuiName.TextXAlignment = Enum.TextXAlignment.Left 
 
     -- UiCorner
     UICorner.CornerRadius = UDim.new(0, 15)
@@ -141,23 +142,25 @@ function Library:Create(name, keybind)
 
         Tab.MouseButton1Click:Connect(function()
             
-            for _, v in pairs(Main:GetChildren()) do
-                if v:IsA("ScrollingFrame") and v ~= Content then
-                    v.Visible = false
-                end
-            end
             
-            for _, z in pairs(TabFrame:GetChildren()) do
-                if z:IsA("TextButton") and z ~= Tab then
-                    z.BackgroundTransparency = 0
-                    z.TextColor3 = Color3.fromRGB(0, 0, 0)
-                end
-            end
-            
-            Content.Visible = true
-            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-            Tab.BackgroundTransparency = 1
-        end)
+    for _, v in pairs(Main:GetChildren()) do
+        if v:IsA("ScrollingFrame") then
+            v.Visible = false
+        end
+    end
+    
+    for _, z in pairs(TabFrame:GetChildren()) do
+        if z:IsA("TextButton") then
+            z.BackgroundTransparency = 1
+            z.TextColor3 = Color3.fromRGB(255, 255, 255)
+        end
+    end
+    
+    Content.Visible = true
+    Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Tab.BackgroundTransparency = 0
+end)
+
 
         local pageitems = {}
 
@@ -204,7 +207,13 @@ end
 local myUI = Library:Create("gay ass name")
 
 local tab1 = myUI:tab("Tab 1", true) 
-tab1:button("My Button", function()
+local tab2 = myUI:tab("Tab 2", false) 
+
+tab1:button("My Button 1", function()
+    print("works")
+end) 
+
+tab2:button("My Button 2", function()
     print("works")
 end) 
 

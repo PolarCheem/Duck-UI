@@ -191,9 +191,17 @@ end)
 
 function pageitems:section(text)
 
+local LabelFrame = Instance.new("TextButton")
+LabelFrame.Name = "Label"
+LabelFrame.Parent = Content
+LabelFrame.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+LabelFrame.BorderSizePixel = 0
+LabelFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
+LabelFrame.TextTransparency = 1
+
 local TextLabel = Instance.new("TextLabel")
 TextLabel.Size = UDim2.new(0.1, 0, 0.05, 0)
-TextLabel.Position = UDim2.new(0, 0, 0, 0)
+TextLabel.Position = UDim2.new(0.45, 0, 0.45, 0)
 TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
 TextLabel.BorderColor3 = Color3.new(0, 0, 0)
 TextLabel.BorderSizePixel = 0
@@ -201,7 +209,7 @@ TextLabel.Text = text
 TextLabel.BackgroundTransparency = 1 
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.Font = Enum.Font.Gotham
-TextLabel.Parent = Content
+TextLabel.Parent = LabelFrame
 TextLabel.TextSize = 14
 
 end

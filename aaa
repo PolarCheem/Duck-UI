@@ -158,7 +158,7 @@ end)
         local pageitems = {}
 
         function pageitems:button(text, callback)
-            local Button = Instance.new("TextButton")
+			      local Button = Instance.new("TextButton")
             Button.Name = "Button"
             Button.Parent = Content
             Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
@@ -192,6 +192,9 @@ end)
 function pageitems:section(text)
 
 local LabelFrame = Instance.new("TextButton")
+local UICorner_Label = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+
 LabelFrame.Name = "Label"
 LabelFrame.Parent = Content
 LabelFrame.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
@@ -199,12 +202,12 @@ LabelFrame.BorderSizePixel = 0
 LabelFrame.BackgroundTransparency = 0.25
 LabelFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
 LabelFrame.TextTransparency = 1
+LabelFrame.Active = false
+LabelFrame.AutoButtonColor = false
 
-local UICorner_Label = Instance.new("UICorner")
 UICorner_Label.CornerRadius = UDim.new(0, 10)
 UICorner_Label.Parent = LabelFrame
 
-local TextLabel = Instance.new("TextLabel")
 TextLabel.Size = UDim2.new(0.1, 0, 0.05, 0)
 TextLabel.Position = UDim2.new(0.45, 0, 0.45, 0)
 TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)

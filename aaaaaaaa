@@ -236,7 +236,7 @@ ToggleName.TextXAlignment = Enum.TextXAlignment.Left
     TextThing.BackgroundTransparency = 0
     TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
     TextThing.Font = Enum.Font.Code
-    TextThing.Parent = contentframe1
+    TextThing.Parent = Content
 
     local TextB = Instance.new("UICorner")
     TextB.CornerRadius = UDim.new(0, 10)

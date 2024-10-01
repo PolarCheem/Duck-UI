@@ -239,7 +239,67 @@ end
 function pageitems:toggle(text, state, callback)
             local toggled = state or false
 
+local Toggle = Instance.new("TextButton")
+            Toggle.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Toggle.Position = UDim2.new(0, 0, 0, 0)
+            Toggle.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+            Toggle.BorderSizePixel = 0
+            Toggle.TextSize = 14
+            Toggle.Text = "."
+            Toggle.BackgroundTransparency = 0
+            Toggle.TextColor3 = Color3.fromRGB(126, 126, 126)
+            Toggle.Font = Enum.Font.Code
+						Toggle.TextTransparency = 1
+            Toggle.Parent = Content
 
+local ToggleName = Instance.new("TextLabel")
+ToggleName.Size = UDim2.new(0.1, 0, 0.1, 0)
+ToggleName.Position = UDim2.new(0.03, 0, 0.45, 0)
+ToggleName.BackgroundColor3 = Color3.new(0, 0, 0)
+ToggleName.BorderColor3 = Color3.new(0, 0, 0)
+ToggleName.BorderSizePixel = 0
+ToggleName.Text = text
+ToggleName.BackgroundTransparency = 1 
+ToggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleName.Font = Enum.Font.Gotham
+ToggleName.Parent = Toggle
+ToggleName.TextSize = 14
+ToggleName.TextXAlignment = Enum.TextXAlignment.Left 
+
+            local toggleOn = Instance.new("TextButton")
+            toggleOn.Size = UDim2.new(0, 18, 0, 18)
+            toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOn.Text = "."
+            toggleOn.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOn.BackgroundTransparency = 0
+            toggleOn.Parent = Toggle
+						toggleOn.AutoButtonColor = false
+
+            local toggleUICorner = Instance.new("UICorner")
+            toggleUICorner.CornerRadius = UDim.new(0, 10)
+            toggleUICorner.Parent = Toggle
+
+            local toggleOff = Instance.new("TextButton")
+            toggleOff.Size = UDim2.new(0, 18, 0, 18)
+            toggleOff.Position = UDim2.new(0.915, 0, 0.2, 0)
+            toggleOff.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BorderColor3 = Color3.fromRGB(80, 80, 80)
+            toggleOff.Text = "."
+            toggleOff.TextColor3 = Color3.fromRGB(42, 14, 73)
+            toggleOff.BackgroundTransparency = 0
+            toggleOff.Visible = false
+            toggleOff.Parent = Toggle
+						toggleOff.AutoButtonColor = false
+
+            local toggleUICornerOn = Instance.new("UICorner")
+            toggleUICornerOn.CornerRadius = UDim.new(0, 5)
+            toggleUICornerOn.Parent = toggleOn
+
+            local toggleUICornerOff = Instance.new("UICorner")
+            toggleUICornerOff.CornerRadius = UDim.new(0, 5)
+            toggleUICornerOff.Parent = toggleOff
 
             toggleOn.Visible = not toggled
             toggleOff.Visible = toggled
@@ -267,6 +327,19 @@ tab1:section("Sus")
 tab1:button("My Button 1", function()
     print("works from tab 1")
 end) 
+
+local test = false
+
+tab1:toggle("toggle test", false, function(v)
+test = v
+
+while test == true then
+print("working")
+else
+print("off")
+wait(0)
+end
+end)
 
 tab2:button("My Button 2", function()
     print("works from tab 2")

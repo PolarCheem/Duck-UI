@@ -138,6 +138,8 @@ ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonName.Font = Enum.Font.Gotham
 ButtonName.Parent = Main
 ButtonName.TextSize = 14
+ButtonName.TextXAlignment = Enum.TextXAlignment.Left -- Added this line for left alignment
+
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 10)

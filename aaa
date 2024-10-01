@@ -239,6 +239,17 @@ end
 function pageitems:toggle(text, state, callback)
             local toggled = state or false
 
+
+
+            toggleOn.Visible = not toggled
+            toggleOff.Visible = toggled
+
+            Toggle.MouseButton1Click:Connect(function()
+                toggled = not toggled
+                toggleOn.Visible = not toggled
+                toggleOff.Visible = toggled
+                pcall(callback, toggled)
+            end)
 end
         return pageitems
     end

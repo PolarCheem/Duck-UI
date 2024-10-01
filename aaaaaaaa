@@ -146,6 +146,8 @@ Button_2.Position = UDim2.new(0.935000002, 0, 0.125, 0)
 Button_2.Size = UDim2.new(0, 24, 0, 24)
 Button_2.Image = "rbxassetid://14196351688"
 Button_2.ImageTransparency = 0
+Button_2.BackgroundTransparency = 1
+Button_2.BorderSizePixel = 0
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 10)

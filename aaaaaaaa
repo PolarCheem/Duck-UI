@@ -139,7 +139,7 @@ ButtonName.Parent = Button
 ButtonName.TextSize = 14
 ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
 
-local Toggle_2 = Instance.new("ImageLabel")
+local Button_2 = Instance.new("ImageLabel")
 Button_2.Parent = Button
 Button_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 Button_2.Position = UDim2.new(0.935000002, 0, 0.125, 0)

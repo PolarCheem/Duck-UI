@@ -139,12 +139,13 @@ ButtonName.Parent = Button
 ButtonName.TextSize = 14
 ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
 
-			Button_2.Parent = Button
-			Button_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-			Button_2.Position = UDim2.new(0.935000002, 0, 0.125, 0)
-			Button_2.Size = UDim2.new(0, 24, 0, 24)
-			Button_2.Image = "rbxassetid://10449228819"
-			Button_2.ImageTransparency = 0
+local Toggle_2 = Instance.new("ImageLabel")
+Button_2.Parent = Button
+Button_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+Button_2.Position = UDim2.new(0.935000002, 0, 0.125, 0)
+Button_2.Size = UDim2.new(0, 24, 0, 24)
+Button_2.Image = "rbxassetid://14196351688"
+Button_2.ImageTransparency = 0
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 10)

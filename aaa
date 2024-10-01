@@ -1,4 +1,5 @@
-print("update")
+ 
+                print("update")
 local Library = {}
 local Player = game:GetService("Players").LocalPlayer
 
@@ -76,7 +77,6 @@ function Library:Create(name, keybind)
     UIListLayoutTab.Padding = UDim.new(0, 8)
     UIListLayoutTab.Parent = TabFrame
 
-
     local Window = {}
     function Window:tab(tabname, showonstartup)
 
@@ -137,21 +137,21 @@ function Library:Create(name, keybind)
 
         Tab.MouseButton1Click:Connect(function()
             for _, v in pairs(Main:GetChildren()) do
-                if v:IsA("ScrollingFrame") and v ~= Content then
+                if v:IsA("ScrollingFrame") then
                     v.Visible = false
-                end
-            end
-            
-            for _, z in pairs(TabFrame:GetChildren()) do
-                if z:IsA("TextButton") then
-                    z.BackgroundTransparency = 1
-                    z.TextColor3 = Color3.fromRGB(255, 255, 255)
                 end
             end
             
             Content.Visible = true
             Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
             Tab.BackgroundTransparency = 0
+            
+            for _, z in pairs(TabFrame:GetChildren()) do
+                if z:IsA("TextButton") and z ~= Tab then
+                    z.BackgroundTransparency = 1
+                    z.TextColor3 = Color3.fromRGB(255, 255, 255)
+                end
+            end
         end)
 
         local pageitems = {}

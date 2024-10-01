@@ -408,8 +408,9 @@ tab2:button("My Button 2", function()
     print("works from tab 2")
 end) 
 
-tab2:input("test", "", true, function(v)
-print(v)
+tab2:input("Enter text:", "Placeholder text", true, function(v)
+    print("User entered: " .. v)
 end)
+
 
 return Library

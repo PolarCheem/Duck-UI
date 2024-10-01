@@ -317,7 +317,12 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     local callback = callback or function() end
 
 
-
+InputBox.FocusLost:Connect(function()
+        pcall(callback, tostring(InputBox.Text))
+        if clearonreturn then
+            InputBox.Text = "" 
+        end
+    end)
 
         return pageitems
     end

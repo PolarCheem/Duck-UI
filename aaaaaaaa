@@ -140,6 +140,17 @@ ButtonName.Parent = Button
 ButtonName.TextSize = 14
 ButtonName.TextXAlignment = Enum.TextXAlignment.Left -- Added this line for left alignment
 
+local ButtonIcon = Instance.new("ImageLabel")
+ButtonIcon.Size = UDim2.new(0.3, 0, 0.2, 0)
+ButtonIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
+ButtonIcon.BackgroundColor3 = Color3.new(0, 0, 0)
+ButtonIcon.ImageColor3 = Color3.fromRGB(255,255,255)
+ButtonIcon.Image = "rbxassetid://9468220174"
+ButtonIcon.ImageTransparency = 0
+ButtonIcon.ScaleType = Enum.ScaleType.Sliced
+ButtonIcon.Parent = Button
+ButtonIcon.BackgroundTransparency = 1 
+
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 10)

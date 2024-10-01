@@ -188,7 +188,7 @@ ToggleName.TextSize = 14
 ToggleName.TextXAlignment = Enum.TextXAlignment.Left 
 
             local toggleOn = Instance.new("TextButton")
-            toggleOn.Size = UDim2.new(0.18, 0, 0.7, 0)
+            toggleOn.Size = UDim2.new(0.9, 0, 0.7, 0)
             toggleOn.Position = UDim2.new(0.915, 0, 0.2, 0)
             toggleOn.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
             toggleOn.BorderColor3 = Color3.fromRGB(80, 80, 80)
@@ -203,7 +203,7 @@ ToggleName.TextXAlignment = Enum.TextXAlignment.Left
             toggleUICorner.Parent = Toggle
 
             local toggleOff = Instance.new("TextButton")
-            toggleOff.Size = UDim2.new(0.18, 0, 0.7, 0)
+            toggleOff.Size = UDim2.new(0.9, 0, 0.7, 0)
             toggleOff.Position = UDim2.new(0.915, 0, 0.2, 0)
             toggleOff.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
             toggleOff.BorderColor3 = Color3.fromRGB(80, 80, 80)

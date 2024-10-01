@@ -17,9 +17,7 @@ function Library:Create(name, keybind)
     local Line = Instance.new("Frame")
     local UICorner2 = Instance.new("UICorner")
     local TabFrame = Instance.new("ScrollingFrame")
-    local Content = Instance.new("ScrollingFrame")  
-    local GuiName = Instance.new("TextLabel")
-
+    
     Main.Size = UDim2.new(0.65, 0, 0.8, 0)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -30,19 +28,6 @@ function Library:Create(name, keybind)
     Main.BackgroundTransparency = 0
     Main.Draggable = true
     Main.Parent = gui
-
-    GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
-    GuiName.Position = UDim2.new(0.5, 0, 0, 0)
-    GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
-    GuiName.BorderColor3 = Color3.new(0, 0, 0)
-    GuiName.BorderSizePixel = 0
-    GuiName.Text = name
-    GuiName.BackgroundTransparency = 1 
-    GuiName.TextColor3 = Color3.fromRGB(255, 255, 255)
-    GuiName.Font = Enum.Font.Code
-    GuiName.Parent = Main
-    GuiName.TextSize = 15
-    GuiName.TextXAlignment = Enum.TextXAlignment.Left 
 
     UICorner.CornerRadius = UDim.new(0, 15)
     UICorner.Parent = Main
@@ -77,8 +62,11 @@ function Library:Create(name, keybind)
     UIListLayoutTab.Parent = TabFrame
 
     local Window = {}
+    
     function Window:tab(tabname, showonstartup)
 
+        -- Create a new content frame for this tab
+        local Content = Instance.new("ScrollingFrame")
         Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
         Content.Position = UDim2.new(0.29, 0, 0.1, 0)
         Content.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
@@ -87,6 +75,7 @@ function Library:Create(name, keybind)
         Content.Parent = Main
         Content.BackgroundTransparency = 1
         Content.ScrollBarThickness = 2
+				Content.Name = "ContentFrame"
 
         local UIListLayout = Instance.new("UIListLayout")
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -134,32 +123,29 @@ function Library:Create(name, keybind)
             Tab.BackgroundTransparency = 1
         end
 
-Tab.MouseButton1Click:Connect(function()
-    -- Hide the content of the currently active tab
-    for _, v in pairs(Content:GetChildren()) do
-        if v:IsA("ScrollingFrame") then
-            v.Visible = false
-        end
-    end
+        Tab.MouseButton1Click:Connect(function()
+            -- Hide all other content frames
+            for _, child in pairs(Main:GetChildren()) do
+                if child:IsA("ScrollingFrame") and child.Name == "ContentFrame" then
+                    child.Visible = false
+                end
+            end
 
-    -- Show the content of the clicked tab
-    Content.Visible = true
-    Content.Parent = Main -- Ensure Content is still a child of Main
+            -- Show the content of the clicked tab
+            Content.Visible = true
 
-    -- Update visuals for the clicked tab
-    Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-    Tab.BackgroundTransparency = 0
+            -- Update visuals for the clicked tab
+            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
 
-    -- Reset other tabs' visuals
-    for _, z in pairs(TabFrame:GetChildren()) do
-        if z:IsA("TextButton") and z ~= Tab then
-            z.BackgroundTransparency = 1
-            z.TextColor3 = Color3.fromRGB(255, 255, 255)
-        end
-    end
-end)
-
-
+            -- Reset other tabs' visuals
+            for _, z in pairs(TabFrame:GetChildren()) do
+                if z:IsA("TextButton") and z ~= Tab then
+                    z.BackgroundTransparency = 1
+                    z.TextColor3 = Color3.fromRGB(255, 255, 255)
+                end
+            end
+        end)
 
         local pageitems = {}
 
@@ -207,11 +193,11 @@ local tab1 = myUI:tab("Tab 1", true)
 local tab2 = myUI:tab("Tab 2", false) 
 
 tab1:button("My Button 1", function()
-    print("works")
+    print("works from tab 1")
 end) 
 
 tab2:button("My Button 2", function()
-    print("works")
+    print("works from tab 2")
 end) 
 
 return Library

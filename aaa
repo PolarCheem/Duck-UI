@@ -1,5 +1,15 @@
+print("update")
+local Library = {}
+local Player = game:GetService("Players").LocalPlayer
+
+function Library:Create(name, keybind)
+    
+    if game.CoreGui:FindFirstChild(name) then
+        game.CoreGui:FindFirstChild(name):Destroy()
+    end
+
 local gui = Instance.new("ScreenGui")
-gui.Name = "patrickGui"
+gui.Name = name
 gui.Parent = game.CoreGui
 
 local Main = Instance.new("Frame")
@@ -28,7 +38,7 @@ GuiName.Position = UDim2.new(0.01, 0, 0, 0)
 GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
 GuiName.BorderColor3 = Color3.new(0, 0, 0)
 GuiName.BorderSizePixel = 0
-GuiName.Text = "Text"
+GuiName.Text = name
 GuiName.BackgroundTransparency = 1 
 GuiName.TextColor3 = Color3.fromRGB(255, 255, 255)
 GuiName.Font = Enum.Font.Code

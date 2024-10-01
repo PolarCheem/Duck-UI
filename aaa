@@ -34,7 +34,7 @@ function Library:Create(name, keybind)
     UICorner.Parent = Main
 
 GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
-GuiName.Position = UDim2.new(0, 0, 0.05, 0)
+GuiName.Position = UDim2.new(0.03, 0, 0, 0)
 GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
 GuiName.BorderColor3 = Color3.new(0, 0, 0)
 GuiName.BorderSizePixel = 0

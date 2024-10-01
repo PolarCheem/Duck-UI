@@ -3,7 +3,7 @@ local Library = {}
 local Player = game:GetService("Players").LocalPlayer
 
 function Library:Create(name, keybind)
-    
+
     if game.CoreGui:FindFirstChild(name) then
         game.CoreGui:FindFirstChild(name):Destroy()
     end
@@ -20,7 +20,6 @@ function Library:Create(name, keybind)
     local Content = Instance.new("ScrollingFrame")  
     local GuiName = Instance.new("TextLabel")
 
-    -- Main
     Main.Size = UDim2.new(0.65, 0, 0.8, 0)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -32,7 +31,6 @@ function Library:Create(name, keybind)
     Main.Draggable = true
     Main.Parent = gui
 
-    -- Gui Name
     GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
     GuiName.Position = UDim2.new(0.5, 0, 0, 0)
     GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -44,13 +42,11 @@ function Library:Create(name, keybind)
     GuiName.Font = Enum.Font.Code
     GuiName.Parent = Main
     GuiName.TextSize = 15
-		GuiName.TextXAlignment = Enum.TextXAlignment.Left 
+    GuiName.TextXAlignment = Enum.TextXAlignment.Left 
 
-    -- UiCorner
     UICorner.CornerRadius = UDim.new(0, 15)
     UICorner.Parent = Main
 
-    -- Line1
     Line.Size = UDim2.new(0.005, 0, 0.7, 0)
     Line.Position = UDim2.new(0.27, 0, 0.15, 0)
     Line.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
@@ -58,11 +54,9 @@ function Library:Create(name, keybind)
     Line.BorderSizePixel = 0
     Line.Parent = Main
 
-    -- UICorner
     UICorner2.CornerRadius = UDim.new(0, 15)
     UICorner2.Parent = Line
 
-    -- TabFrame
     TabFrame.Size = UDim2.new(0.27, 0, 0.9, 0)
     TabFrame.Position = UDim2.new(0, 0, 0.1, 0)
     TabFrame.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
@@ -72,12 +66,17 @@ function Library:Create(name, keybind)
     TabFrame.BackgroundTransparency = 1
     TabFrame.ScrollBarThickness = 2
 
-    -- UICORNER
     local UICorner3 = Instance.new("UICorner") 
     UICorner3.CornerRadius = UDim.new(0, 15)
     UICorner3.Parent = TabFrame
 
-    -- UI Library stuff
+    local UIListLayoutTab = Instance.new("UIListLayout")
+    UIListLayoutTab.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayoutTab.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayoutTab.Padding = UDim.new(0, 8)
+    UIListLayoutTab.Parent = TabFrame
+
+
     local Window = {}
     function Window:tab(tabname, showonstartup)
 
@@ -90,19 +89,16 @@ function Library:Create(name, keybind)
         Content.BackgroundTransparency = 1
         Content.ScrollBarThickness = 2
 
-        -- Ui layout
         local UIListLayout = Instance.new("UIListLayout")
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
         UIListLayout.Padding = UDim.new(0, 8)
         UIListLayout.Parent = Content
 
-        -- UICORNER
         local UICorner4 = Instance.new("UICorner") 
         UICorner4.CornerRadius = UDim.new(0, 15)
         UICorner4.Parent = Content
 
-        -- Tab
         local Tab = Instance.new("TextButton")
         Tab.Size = UDim2.new(0.95, 0, 0.05, 0)
         Tab.Position = UDim2.new(0.025, 0, 0, 0)
@@ -113,7 +109,6 @@ function Library:Create(name, keybind)
         Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
         Tab.Font = Enum.Font.Gotham
         Tab.BackgroundTransparency = 1
-        Tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Tab.Parent = TabFrame
 
         local UIGradient = Instance.new("UIGradient")
@@ -132,40 +127,36 @@ function Library:Create(name, keybind)
 
         if showonstartup then
             Content.Visible = true
-            Tab.BackgroundTransparency = 0
             Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
         else
             Content.Visible = false
-            Tab.BackgroundTransparency = 1
             Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Tab.BackgroundTransparency = 1
         end
 
         Tab.MouseButton1Click:Connect(function()
+            for _, v in pairs(Main:GetChildren()) do
+                if v:IsA("ScrollingFrame") and v ~= Content then
+                    v.Visible = false
+                end
+            end
             
+            for _, z in pairs(TabFrame:GetChildren()) do
+                if z:IsA("TextButton") then
+                    z.BackgroundTransparency = 1
+                    z.TextColor3 = Color3.fromRGB(255, 255, 255)
+                end
+            end
             
-    for _, v in pairs(Main:GetChildren()) do
-        if v:IsA("ScrollingFrame") then
-            v.Visible = false
-        end
-    end
-    
-    for _, z in pairs(TabFrame:GetChildren()) do
-        if z:IsA("TextButton") then
-            z.BackgroundTransparency = 1
-            z.TextColor3 = Color3.fromRGB(255, 255, 255)
-        end
-    end
-    
-    Content.Visible = true
-    Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
-    Tab.BackgroundTransparency = 0
-end)
-
+            Content.Visible = true
+            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
+        end)
 
         local pageitems = {}
 
         function pageitems:button(text, callback)
-            -- Button
             local Button = Instance.new("TextButton")
             Button.Name = "Button"
             Button.Parent = Content
@@ -203,8 +194,7 @@ end)
     return Window
 end
 
-
-local myUI = Library:Create("gay ass name")
+local myUI = Library:Create("My UI")
 
 local tab1 = myUI:tab("Tab 1", true) 
 local tab2 = myUI:tab("Tab 2", false) 

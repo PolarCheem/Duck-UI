@@ -162,15 +162,15 @@ UICorner_Button.Parent = Button
 
             local Toggle = Instance.new("TextButton")
             Toggle.Size = UDim2.new(0.9, 0, 0.05, 0)
-            Toggle.Position = UDim2.new(0.01, 0, 0.01, 0)
-            Toggle.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+            Toggle.Position = UDim2.new(0, 0, 0, 0)
+            Toggle.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
             Toggle.BorderSizePixel = 0
             Toggle.TextSize = 14
-            Toggle.Text = "Toggle"
+            Toggle.Text = "."
             Toggle.BackgroundTransparency = 0
             Toggle.TextColor3 = Color3.fromRGB(126, 126, 126)
             Toggle.Font = Enum.Font.Code
-						Toggle.TextXAlignment = Enum.TextXAlignment.Left 
+						Toggle.TextTransparency = 1
             Toggle.Parent = Content
 
             local toggleOn = Instance.new("TextButton")

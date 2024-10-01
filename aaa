@@ -118,7 +118,11 @@ GuiName.TextSize = 15
         UICornerTab.Parent = Tab
 
 local UIGradient = Instance.new("UIGradient")
-        UIGradient.Transparency = NumberSequence.new(0)
+    UIGradient.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0),   
+    NumberSequenceKeypoint.new(0.5, 0), 
+    NumberSequenceKeypoint.new(1, 1)    
+})
         UIGradient.Rotation = 0
         UIGradient.Parent = nil
 
@@ -126,7 +130,7 @@ local UIGradient = Instance.new("UIGradient")
 						UIGradient.Parent = Tab
         UIGradient.Color = ColorSequence.new({
             ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
-            ColorSequenceKeypoint.new(0.75, Color3.fromRGB(75, 0, 245)),
+            ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
             ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
         })
             Content.Visible = true
@@ -149,7 +153,7 @@ Tab.MouseButton1Click:Connect(function()
     UIGradient.Parent = Tab
     UIGradient.Color = ColorSequence.new({
         ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
-        ColorSequenceKeypoint.new(0.75, Color3.fromRGB(75, 0, 245)),
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
 				ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
     })
     Tab.TextColor3 = Color3.fromRGB(0, 0, 0)

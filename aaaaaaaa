@@ -128,7 +128,7 @@ Button.TextTransparency = 1
 
 local ButtonName = Instance.new("TextLabel")
 ButtonName.Size = UDim2.new(0.1, 0, 0.1, 0)
-ButtonName.Position = UDim2.new(0, 0, 0, 0)
+ButtonName.Position = UDim2.new(0.03, 0, 0.2, 0)
 ButtonName.BackgroundColor3 = Color3.new(0, 0, 0)
 ButtonName.BorderColor3 = Color3.new(0, 0, 0)
 ButtonName.BorderSizePixel = 0

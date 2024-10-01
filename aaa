@@ -199,6 +199,8 @@ LabelFrame.BorderSizePixel = 0
 LabelFrame.BackgroundTransparency = 0.25
 LabelFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
 LabelFrame.TextTransparency = 1
+LabelFrame.Enabled = false
+LabelFrame.AutoButtonColor = false
 
 local UICorner_Label = Instance.new("UICorner")
 UICorner_Label.CornerRadius = UDim.new(0, 10)

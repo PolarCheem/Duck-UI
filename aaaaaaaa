@@ -221,3 +221,55 @@ ToggleName.TextXAlignment = Enum.TextXAlignment.Left
             local toggleUICornerOff = Instance.new("UICorner")
             toggleUICornerOff.CornerRadius = UDim.new(0, 5)
             toggleUICornerOff.Parent = toggleOff
+
+-- input
+
+    local TextThing = Instance.new("TextButton")
+    TextThing.Size = UDim2.new(0.9, 0, 0.05, 0)
+    TextThing.Position = UDim2.new(0, 0, 0, 0)
+    TextThing.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+    TextThing.BorderSizePixel = 0
+		TextThing.TextSize = 12.5
+    TextThing.AutoButtonColor = false
+    TextThing.Active = false
+    TextThing.Text = "." 
+    TextThing.BackgroundTransparency = 0
+    TextThing.TextColor3 = Color3.fromRGB(126, 126, 126)
+    TextThing.Font = Enum.Font.Code
+    TextThing.Parent = contentframe1
+
+    local TextB = Instance.new("UICorner")
+    TextB.CornerRadius = UDim.new(0, 10)
+    TextB.Parent = TextThing
+
+    local InputBox = Instance.new("TextBox")
+    InputBox.Size = UDim2.new(0.15, 0, 0.35, 0)
+    InputBox.Position = UDim2.new(0.9, 0, 0.2, 0) 
+    InputBox.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
+    InputBox.BorderColor3 = Color3.fromRGB(126, 126, 126)
+    InputBox.BorderSizePixel = 0
+    InputBox.Text = placeholder or "..."  
+    InputBox.TextColor3 = Color3.fromRGB(126, 126, 126)
+    InputBox.BackgroundTransparency = 0
+    InputBox.Font = Enum.Font.Code
+    InputBox.TextSize = 12
+    InputBox.ClearTextOnFocus = false 
+    InputBox.Parent = TextThing
+
+    local InpBox = Instance.new("UICorner")
+    InpBox.CornerRadius = UDim.new(0, 10)
+    InpBox.Parent = InputBox
+
+local InputName = Instance.new("TextLabel")
+InputName.Size = UDim2.new(0.1, 0, 0.1, 0)
+InputName.Position = UDim2.new(0.03, 0, 0.45, 0)
+InputName.BackgroundColor3 = Color3.new(0, 0, 0)
+InputName.BorderColor3 = Color3.new(0, 0, 0)
+InputName.BorderSizePixel = 0
+InputName.Text = "Input"
+InputName.BackgroundTransparency = 1 
+InputName.TextColor3 = Color3.fromRGB(255, 255, 255)
+InputName.Font = Enum.Font.Gotham
+InputName.Parent = TextThing
+InputName.TextSize = 14
+InputName.TextXAlignment = Enum.TextXAlignment.Left

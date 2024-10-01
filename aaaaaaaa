@@ -123,12 +123,8 @@ Button.Name = "Button"
 Button.Parent = Content
 Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
 Button.BorderSizePixel = 0
-Button.Size = UDim2.new(0.9, 0, 0.1, 0)
-Button.Font = Enum.Font.Gotham
-Button.Text = "Button"
-Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button.TextSize = 14
-
+Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+Button.TextTransparecy = 1
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 4)

@@ -14,6 +14,7 @@ function Library:Create(name, keybind)
 
     local Main = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
+		local GuiName = Instance.new("TextButton")
     local Line = Instance.new("Frame")
     local UICorner2 = Instance.new("UICorner")
     local TabFrame = Instance.new("ScrollingFrame")
@@ -31,6 +32,19 @@ function Library:Create(name, keybind)
 
     UICorner.CornerRadius = UDim.new(0, 15)
     UICorner.Parent = Main
+
+GuiName.Size = UDim2.new(0.1, 0, 0.1, 0)
+GuiName.Position = UDim2.new(0, 0, 0.05, 0)
+GuiName.BackgroundColor3 = Color3.new(0, 0, 0)
+GuiName.BorderColor3 = Color3.new(0, 0, 0)
+GuiName.BorderSizePixel = 0
+GuiName.Text = name
+GuiName.BackgroundTransparency = 1 
+GuiName.TextColor3 = Color3.fromRGB(255, 255, 255)
+GuiName.Font = Enum.Font.Gotham
+GuiName.TextXAlignment = Enum.TextXAlignment.Left
+GuiName.Parent = Main
+GuiName.TextSize = 15
 
     Line.Size = UDim2.new(0.005, 0, 0.7, 0)
     Line.Position = UDim2.new(0.27, 0, 0.15, 0)

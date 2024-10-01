@@ -76,7 +76,36 @@ local UICorner3 = Instance.new("UICorner")
 UICorner3.CornerRadius = UDim.new(0, 15)
 UICorner3.Parent = TabFrame
 
--- Content frame
+-- Button
+local Button = Instance.new("TextButton")
+Button.Name = "Button"
+Button.Parent = Content
+Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+Button.BorderSizePixel = 0
+Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+Button.TextTransparency = 1
+
+local ButtonName = Instance.new("TextLabel")
+ButtonName.Size = UDim2.new(0.1, 0, 0.1, 0)
+ButtonName.Position = UDim2.new(0.03, 0, 0.45, 0)
+ButtonName.BackgroundColor3 = Color3.new(0, 0, 0)
+ButtonName.BorderColor3 = Color3.new(0, 0, 0)
+ButtonName.BorderSizePixel = 0
+ButtonName.Text = "Button"
+ButtonName.BackgroundTransparency = 1 
+ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ButtonName.Font = Enum.Font.Gotham
+ButtonName.Parent = Button
+ButtonName.TextSize = 14
+ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
+
+local UICorner_Button = Instance.new("UICorner")
+UICorner_Button.CornerRadius = UDim.new(0, 10)
+UICorner_Button.Parent = Button
+
+-- UI Library stuff
+local Window = {}
+    function Window:tab(tabname, showonstartup)
 Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
 Content.Position = UDim2.new(0.29, 0, 0.1, 0)
 Content.BackgroundColor3 = Color3.fromRGB(17,19,22)
@@ -104,11 +133,11 @@ Tab.Size = UDim2.new(0.95, 0, 0.05, 0)
 Tab.Position = UDim2.new(0.025, 0, 0, 0)
 Tab.BorderColor3 = Color3.new(0, 0, 0)
 Tab.BorderSizePixel = 0
-Tab.Text = "Tab"
+Tab.Text = tabname
 Tab.TextSize = 15
-Tab.TextColor3 = Color3.fromRGB(0,0,0)
+Tab.TextColor3 = Color3.fromRGB(255,255,255)
 Tab.Font = Enum.Font.Gotham
-Tab.BackgroundTransparency = 0
+Tab.BackgroundTransparency = 1
 Tab.BackgroundColor3 = Color3.fromRGB(255,255,255)
 Tab.Parent = TabFrame
 
@@ -126,29 +155,34 @@ local UICornerTab = Instance.new("UICorner")
 UICornerTab.CornerRadius = UDim.new(0, 15)
 UICornerTab.Parent = Tab
 
--- Button
-local Button = Instance.new("TextButton")
-Button.Name = "Button"
-Button.Parent = Content
-Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-Button.BorderSizePixel = 0
-Button.Size = UDim2.new(0.9, 0, 0.05, 0)
-Button.TextTransparency = 1
+        if showonstartup then
+            Content.Visible = true
+            Tab.BackgroundTransparency = 0
+					  Tab.TextColor3 = Color3.fromRGB(0,0,0)
+        else
+            Content.Visible = false
+            Tab.BackgroundTransparency = 1
+						Tab.TextColor3 = Color3.fromRGB(255,255,255)
+        end
 
-local ButtonName = Instance.new("TextLabel")
-ButtonName.Size = UDim2.new(0.1, 0, 0.1, 0)
-ButtonName.Position = UDim2.new(0.03, 0, 0.45, 0)
-ButtonName.BackgroundColor3 = Color3.new(0, 0, 0)
-ButtonName.BorderColor3 = Color3.new(0, 0, 0)
-ButtonName.BorderSizePixel = 0
-ButtonName.Text = "Button"
-ButtonName.BackgroundTransparency = 1 
-ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
-ButtonName.Font = Enum.Font.Gotham
-ButtonName.Parent = Button
-ButtonName.TextSize = 14
-ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
+        Tab.MouseButton1Click:Connect(function()
+            
+            for _, v in pairs(Main:GetChildren()) do
+                if v:IsA("ScrollingFrame") and v ~= Content then
+                    v.Visible = false
+                end
+            end
+            
+            for _, z in pairs(TabFrame:GetChildren()) do
+                if z:IsA("TextButton") and z ~= Tab then
+                    z.BackgroundTransparency = 0
+										z.TextColor3 = Color3.fromRGB(0,0,0)
+                end
+            end
+            
+            Content.Visible = true
+		        Tab.TextColor3 = Color3.fromRGB(0,0,0)
+						Tab.BackgroundTransparency = 1
+        end)
 
-local UICorner_Button = Instance.new("UICorner")
-UICorner_Button.CornerRadius = UDim.new(0, 10)
-UICorner_Button.Parent = Button
+      

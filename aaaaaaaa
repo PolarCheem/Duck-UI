@@ -116,6 +116,21 @@ local UICornerTab = Instance.new("UICorner")
 UICornerTab.CornerRadius = UDim.new(0, 15)
 UICornerTab.Parent = Tab
 
+-- Label
+
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Size = UDim2.new(0.1, 0, 0.05, 0)
+TextLabel.Position = UDim2.new(0, 0, 0, 0)
+TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Text = "Label"
+TextLabel.BackgroundTransparency = 1 
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Parent = Content
+TextLabel.TextSize = 14
+
 -- Button
 local Button = Instance.new("TextButton")
 Button.Name = "Button"
@@ -138,16 +153,6 @@ ButtonName.Font = Enum.Font.Gotham
 ButtonName.Parent = Button
 ButtonName.TextSize = 14
 ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
-
-local Button_2 = Instance.new("ImageLabel")
-Button_2.Parent = Button
-Button_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Button_2.Position = UDim2.new(0.935000002, 0, 0.125, 0)
-Button_2.Size = UDim2.new(0, 24, 0, 24)
-Button_2.Image = "rbxassetid://14196351688"
-Button_2.ImageTransparency = 0
-Button_2.BackgroundTransparency = 1
-Button_2.BorderSizePixel = 0
 
 local UICorner_Button = Instance.new("UICorner")
 UICorner_Button.CornerRadius = UDim.new(0, 10)

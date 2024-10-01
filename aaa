@@ -235,6 +235,11 @@ TextLabel.Parent = LabelFrame
 TextLabel.TextSize = 14
 
 end
+
+function pageitems:toggle(text, state, callback)
+            local toggled = state or false
+
+end
         return pageitems
     end
 

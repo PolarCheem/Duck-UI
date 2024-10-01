@@ -99,16 +99,6 @@ function Library:Create(name, keybind)
         Tab.BackgroundTransparency = 1
         Tab.Parent = TabFrame
 
-        local UIGradient = Instance.new("UIGradient")
-        UIGradient.Color = ColorSequence.new({
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
-            ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
-        })
-        UIGradient.Transparency = NumberSequence.new(0)
-        UIGradient.Rotation = 0
-        UIGradient.Parent = Tab
-
         local UICornerTab = Instance.new("UICorner") 
         UICornerTab.CornerRadius = UDim.new(0, 15)
         UICornerTab.Parent = Tab
@@ -117,7 +107,17 @@ function Library:Create(name, keybind)
             Content.Visible = true
             Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
             Tab.BackgroundTransparency = 0
+						        local UIGradient = Instance.new("UIGradient")
+        UIGradient.Color = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(75, 69, 245)),
+            ColorSequenceKeypoint.new(0.5, Color3.fromRGB(75, 0, 245)),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 19, 22))
+        })
+        UIGradient.Transparency = NumberSequence.new(0)
+        UIGradient.Rotation = 0
+        UIGradient.Parent = Tab
         else
+						UIGradient:Destroy()
             Content.Visible = false
             Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
             Tab.BackgroundTransparency = 1

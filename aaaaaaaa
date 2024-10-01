@@ -98,7 +98,7 @@ Tab.BorderSizePixel = 0
 Tab.Text = "Tab"
 Tab.TextSize = 15
 Tab.TextColor3 = Color3.fromRGB(0,0,0)
-Tab.Font = Enum.Font.Code
+Tab.Font = Enum.Font.Gotham
 Tab.BackgroundTransparency = 0
 Tab.BackgroundColor3 = Color3.fromRGB(255,255,255)
 Tab.Parent = TabFrame
@@ -118,3 +118,17 @@ UICornerTab.CornerRadius = UDim.new(0, 15)
 UICornerTab.Parent = Tab
 
 -- Button
+local Button = Instance.new("TextButton")
+Button.Name = "Button"
+Button.Parent = Content
+Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+Button.BorderSizePixel = 0
+Button.Size = UDim2.new(1, 0, 0, 30)
+Button.Font = Enum.Font.Gotham
+Button.Text = "Button"
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextSize = 14
+
+local UICorner_Button = Instance.new("UICorner")
+UICorner_Button.CornerRadius = UDim.new(0, 4)
+UICorner_Button.Parent = Button

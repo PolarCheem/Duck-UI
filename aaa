@@ -65,7 +65,7 @@ function Library:Create(name, keybind)
     
     function Window:tab(tabname, showonstartup)
 
-        -- Create a new content frame for this tab
+        
         local Content = Instance.new("ScrollingFrame")
         Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
         Content.Position = UDim2.new(0.29, 0, 0.1, 0)

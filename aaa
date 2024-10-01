@@ -145,13 +145,14 @@ Tab.MouseButton1Click:Connect(function()
         if z:IsA("TextButton") and z ~= Tab then
             local existingGradient = z:FindFirstChildOfClass("UIGradient")
             if existingGradient then
-                existingGradient:Destroy()
+                existingGradient.Parent = nil
             end
             z.BackgroundTransparency = 1
             z.TextColor3 = Color3.fromRGB(255, 255, 255)
         end
     end
 end)
+
 
 
         local pageitems = {}

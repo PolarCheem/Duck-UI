@@ -136,7 +136,7 @@ ButtonName.Text = "Button"
 ButtonName.BackgroundTransparency = 1 
 ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonName.Font = Enum.Font.Gotham
-ButtonName.Parent = Main
+ButtonName.Parent = Button
 ButtonName.TextSize = 14
 ButtonName.TextXAlignment = Enum.TextXAlignment.Left -- Added this line for left alignment
 

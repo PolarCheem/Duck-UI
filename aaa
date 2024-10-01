@@ -216,6 +216,8 @@ local myUI = Library:Create("My UI")
 local tab1 = myUI:tab("Tab 1", true) 
 local tab2 = myUI:tab("Tab 2", false) 
 
+tab1:section("Sus")
+
 tab1:button("My Button 1", function()
     print("works from tab 1")
 end) 

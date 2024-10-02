@@ -428,6 +428,6 @@ end
     return Window
 end
 
-Mobile:Create()
-
 return Library
+
+Mobile:Create()

@@ -75,6 +75,46 @@ GuiName.TextSize = 15
     UIListLayoutTab.Padding = UDim.new(0, 8)
     UIListLayoutTab.Parent = TabFrame
 
+local close = Instance.new("TextButton")
+    close.Size = UDim2.new(0.05, 0, 0.075, 0)
+    close.Position = UDim2.new(0.92, 0, 0.017, 0)
+    close.BackgroundColor3 = Color3.fromRGB(75, 69, 245)
+    close.BorderColor3 = Color3.new(0, 0, 0)
+    close.BorderSizePixel = 0
+		close.TextTransparency = 1
+    close.BackgroundTransparency = 0
+    close.Parent = Main
+
+    local open = Instance.new("ImageButton")
+    open.Size = UDim2.new(0.05, 0, 0.1, 0)
+    open.Position = UDim2.new(0, 211, 0, 0)
+    open.BackgroundColor3 = Color3.fromRGB(17,19,22)
+    open.ImageColor3 = Color3.new(1, 0, 0)
+    open.Image = "rbxassetid://0"
+    open.Visible = false
+    open.ImageTransparency = 0
+    open.BackgroundTransparency = 0
+    open.Parent = gui
+    open.Draggable = true
+
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0, 10)
+    UICorner.Parent = open
+
+    local UICornerClose = Instance.new("UICorner")
+    UICornerClose.CornerRadius = UDim.new(0, 5)
+    UICornerClose.Parent = close
+
+    close.MouseButton1Click:Connect(function()
+        open.Visible = true
+        Main.Visible = false
+    end)
+
+    open.MouseButton1Click:Connect(function()
+        open.Visible = false
+        Main.Visible = true
+    end)
+
     local Window = {}
     
     function Window:tab(tabname, showonstartup)

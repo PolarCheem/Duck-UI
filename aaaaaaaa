@@ -283,7 +283,7 @@ InputName.TextXAlignment = Enum.TextXAlignment.Left
     close.BackgroundColor3 = Color3.fromRGB(75, 69, 245)
     close.BorderColor3 = Color3.new(0, 0, 0)
     close.BorderSizePixel = 0
-		Close.TextTransparency = 1
+		close.TextTransparency = 1
     close.BackgroundTransparency = 0
     close.Parent = Main
 

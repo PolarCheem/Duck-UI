@@ -278,7 +278,7 @@ InputName.TextXAlignment = Enum.TextXAlignment.Left
 -- open and close
 
     local close = Instance.new("TextButton")
-    close.Size = UDim2.new(0.05, 0, 0.05, 0)
+    close.Size = UDim2.new(0.05, 0, 0.1, 0)
     close.Position = UDim2.new(0.92, 0, 0.017, 0)
     close.BackgroundColor3 = Color3.fromRGB(75, 69, 245)
     close.BorderColor3 = Color3.new(0, 0, 0)
@@ -288,7 +288,7 @@ InputName.TextXAlignment = Enum.TextXAlignment.Left
     close.Parent = Main
 
     local open = Instance.new("ImageButton")
-    open.Size = UDim2.new(0.05, 0, 0.05, 0)
+    open.Size = UDim2.new(0.05, 0, 0.1, 0)
     open.Position = UDim2.new(0, 211, 0, 0)
     open.BackgroundColor3 = Color3.fromRGB(17,19,22)
     open.ImageColor3 = Color3.new(1, 0, 0)

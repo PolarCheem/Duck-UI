@@ -1,13 +1,9 @@
 local games = {
-    3840352284, -- volleyball
-    9847297509, -- MPS MATCH PITCH
-		14165106859, -- trs
-		5783581, -- tps ult
-		7473772280 -- mps soccer park
+    859247, -- sex condo irl
 }
 
 if table.find(games, game.PlaceId) then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/tuff"))()
+-- skid
 else
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/testingthis"))()
+print("skids")
 end

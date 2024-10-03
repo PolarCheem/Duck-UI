@@ -1,138 +1,73 @@
---> Luraph Macros | LPH_NO_VIRTUALIZE >>
-if not LPH_OBFUSCATED then
-    getfenv().LPH_NO_VIRTUALIZE = function(f) return f end
-  end
-  
-  --<< Services >>--
-  local ReplicatedStorage = game:GetService("ReplicatedStorage")
-  
-  --<< Variables >>--
-  local Handshake = ReplicatedStorage.Remotes.CharacterSoundEvent
-  local Hooks = {}
-  local HandshakeInts = {}
-  
-  LPH_NO_VIRTUALIZE(function()
-    for i, v in getgc() do
-        if typeof(v) == "function" and islclosure(v) then
-            if (#getprotos(v) == 1) and table.find(getconstants(getproto(v, 1)), 4000001) then
-                hookfunction(v, function() end)
-            end
-        end
-    end
-  end)()
-  
-  Hooks.__namecall = hookmetamethod(game, "__namecall", LPH_NO_VIRTUALIZE(function(self, ...)
-    local Method = getnamecallmethod()
-    local Args = {...}
-  
-    if not checkcaller() and (self == Handshake) and (Method == "fireServer") and (string.find(Args[1], "AC")) then
-        if (#HandshakeInts == 0) then
-            HandshakeInts = {table.unpack(Args[2], 2, 18)}
-        else
-            for i, v in HandshakeInts do
-                Args[2][i + 1] = v
-            end
-        end
-    end
-  
-    return Hooks.__namecall(self, ...)
-  end))
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Universal", "Default")
 
-print("vpn made the bypass!")  
-task.wait(1)
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/better%20ui"))()
+local tab = DrRayLibrary.newTab("Misc", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Reach", "ImageIdHere")
 
-local win = lib:Create("RobloxCoreGui", "FF2")
+tab.newButton("DarkDex", "PC/Mobile", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
 
-local Config = {
-    MagsOn = false,
-    MagDistance = 10,
-    Pull_Vector = false,
-    Football_Vector = 0
-}
+tab.newButton("DarkDex", "mobile", function()
+    getgenv().Key = "Bash"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/crceck123/roblox-script/main/MC_IY%20Dex.txt"))()
+end)
 
-local function enableMags()
-    local player = game:GetService("Players").LocalPlayer
+tab.newButton("Inf Yield", "Executes infinite yield", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
 
-    while Config.MagsOn do
-        task.wait(0)
-        for _, value in pairs(workspace:GetChildren()) do
-            if value.Name == "Football" and value:IsA("BasePart") then
-                local catchRight = player.Character:FindFirstChild("CatchRight")
-                if catchRight and (catchRight.Position - value.Position).Magnitude <= Config.MagDistance then
-                    firetouchinterest(catchRight, value, 0)
-                    firetouchinterest(catchRight, value, 1)
-                    task.wait()
-                    firetouchinterest(catchRight, value, 0)
-                    firetouchinterest(catchRight, value, 1)
+tab2.newSlider("Players Hitbox", "Changes the hitbox of all the players", 100, false, function(num)
+local HeadSize = num
+local IsDisabled = true
+local IsTeamCheckEnabled = true 
+
+game:GetService('RunService').RenderStepped:Connect(function()
+    if IsDisabled then
+        local localPlayer = game:GetService('Players').LocalPlayer
+        if not localPlayer then return end
+        
+        local localPlayerTeam = localPlayer.Team
+        
+        for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
+            if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
+                local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+                if humanoidRootPart then
+                    humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
+                    humanoidRootPart.Transparency = 1
+                    humanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    humanoidRootPart.Material = Enum.Material.Neon
+                    humanoidRootPart.CanCollide = false
                 end
             end
         end
     end
-end
+end)
+end)
 
-task.spawn(function()
-    game:GetService("RunService").Heartbeat:Connect(function()
-        for _, value in pairs(workspace:GetChildren()) do
-            if value.Name == "Football" and value:IsA("BasePart") then
-                local player = game:GetService("Players").LocalPlayer
-                local direction = (value.Position - player.Character.HumanoidRootPart.Position).Unit
+tab2.newDropdown("Players Transparency", "Changes the transpafency", {"0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local IsDisabled = true
+local IsTeamCheckEnabled = true 
 
-                if player:DistanceFromCharacter(value.Position) <= Config.Football_Vector and Config.Pull_Vector then
-                    player.Character.HumanoidRootPart.Velocity = direction * Config.Football_Vector
+game:GetService('RunService').RenderStepped:Connect(function()
+    if IsDisabled then
+        local localPlayer = game:GetService('Players').LocalPlayer
+        if not localPlayer then return end
+        
+        local localPlayerTeam = localPlayer.Team
+        
+        for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
+            if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
+                local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+                if humanoidRootPart then
+                    humanoidRootPart.Transparency = selectedOption
+                    humanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    humanoidRootPart.Material = Enum.Material.Neon
+                    humanoidRootPart.CanCollide = false
                 end
             end
         end
-    end)
-end)
-
-
-local magnetTab = win:tab("Catch", true)
-
-magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
-    Config.MagnetEnabled = value
-    if Config.MagnetEnabled then
-        enableMagnet()
     end
 end)
-
-magnetTab:input("Magnet Distance", "", false, function(value)
-    local numValue = tonumber(value) or 10
-    Config.FootballDistanceCatch = math.clamp(numValue, 0, 20)
 end)
 
-magnetTab:toggle("Vector Toggle", false, function(value)
-    Config.Pull_Vector = value
-end)
-
-magnetTab:input("Vector Distance", "", false, function(value)
-    local numValue = tonumber(value) or 0
-    Config.Football_Vector = math.clamp(numValue, 0, 100)
-end)
-
-local fullbright = false
-
-MiscTab:toggle("Fullbright Toggle", false, function(value)
-fullbright = v
-while fullbright do
-	Lighting.Brightness = 2
-	Lighting.ClockTime = 14
-	Lighting.FogEnd = 100000
-	Lighting.GlobalShadows = false
-	Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
-wait(0)
-end
-end)
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-local function onCharacterAdded(character)
-    applyJumpBoost(character)
-end
-
-if player.Character then
-    onCharacterAdded(player.Character)
-end
-
-player.CharacterAdded:Connect(onCharacterAdded)

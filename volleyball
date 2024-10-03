@@ -7,8 +7,7 @@ local games = {
 }
 
 if table.find(games, game.PlaceId) then
-    -- First script
-    print("Worked: First script")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/tuff"))()
 else
     -- Second script
     print("False: Second script")

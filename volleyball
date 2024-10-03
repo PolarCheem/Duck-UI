@@ -1,5 +1,15 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Best1scripts/VolleyBall-4.2/main/Made-By-Tevfn"))()
+local games = {
+    3840352284, -- volleyball
+    9847297509, -- MPS MATCH PITCH
+		14165106859, -- trs
+		5783581, -- tps ult
+		7473772280 -- mps soccer park
+}
 
-wait(0)
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/main/curve%20serve"))()
+if table.find(games, game.PlaceId) then
+    -- First script
+    print("Worked: First script")
+else
+    -- Second script
+    print("False: Second script")
+end

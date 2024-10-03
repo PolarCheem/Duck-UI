@@ -11,7 +11,7 @@ local found = false
 
 for _, v in pairs(HWIDTable) do
     if v:lower() == HWID:lower() then
-        loadstring(game:HttpGet("https://pastebin.com/raw/jrVdTE7E"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/volleyball"))()
         found = true
         break
     end

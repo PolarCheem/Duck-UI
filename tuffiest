@@ -1,0 +1,22 @@
+local HWIDTable = {
+    "c8476104-296b-4def-9ed7-450a805e5d47", -- me
+    "FB38CA66-F7C2-4AAB-8906-E78F0656D887", -- kai
+    "65caa746-e2d0-4e21-be2d-c672d823816d", -- giveaway winner
+    "D81AE440-4160-4F32-B3A7-4104ADF760A8"  -- chainz
+}
+
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local found = false
+
+for _, v in pairs(HWIDTable) do
+    if v:lower() == HWID:lower() then
+        loadstring(game:HttpGet("https://pastebin.com/raw/jrVdTE7E"))()
+        found = true
+        break
+    end
+end
+
+if not found then
+    game.Players.LocalPlayer:Kick("HWID not found.")
+end

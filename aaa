@@ -417,59 +417,49 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     end)
 end
 
-function pageitems:dropdown(text, options, callback)
-    local selected = options[1] or ""
-
-    local Dropdown = Instance.new("TextButton")
-    Dropdown.Size = UDim2.new(0.9, 0, 0.05, 0)
-    Dropdown.Position = UDim2.new(0, 0, 0, 0)
-    Dropdown.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-    Dropdown.BorderSizePixel = 0
-    Dropdown.Text = selected
-    Dropdown.TextSize = 14
-    Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Dropdown.Font = Enum.Font.Gotham
-    Dropdown.Parent = Content
-    Dropdown.ClipsDescendants = true
-
-    local UICorner_Dropdown = Instance.new("UICorner")
-    UICorner_Dropdown.CornerRadius = UDim.new(0, 10)
-    UICorner_Dropdown.Parent = Dropdown
-
-    local DropdownOptions = Instance.new("Frame")
-    DropdownOptions.Size = UDim2.new(1, 0, #options * 0.05, 0)
-    DropdownOptions.Position = UDim2.new(0, 0, 1, 0)
-    DropdownOptions.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-    DropdownOptions.BorderSizePixel = 0
-    DropdownOptions.Visible = false
-    DropdownOptions.Parent = Dropdown
-
-    local UIListLayout_Options = Instance.new("UIListLayout")
-    UIListLayout_Options.Parent = DropdownOptions
-    UIListLayout_Options.Padding = UDim.new(0, 2)
-
-    for _, option in ipairs(options) do
-        local OptionButton = Instance.new("TextButton")
-        OptionButton.Size = UDim2.new(1, 0, 0.05, 0)
-        OptionButton.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-        OptionButton.BorderSizePixel = 0
-        OptionButton.Text = option
-        OptionButton.TextSize = 14
-        OptionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        OptionButton.Font = Enum.Font.Gotham
-        OptionButton.Parent = DropdownOptions
-
-        OptionButton.MouseButton1Click:Connect(function()
+function tab:dropdown(title, options, callback, default)
+    local selected = default or options[1]
+    local dropdownVisible = false
+    
+    -- Create the dropdown UI elements
+    local dropdownFrame = Instance.new("Frame")
+    dropdownFrame.Name = title
+    dropdownFrame.Size = UDim2.new(0, 200, 0, 30) -- Adjust size as needed
+    
+    local dropdownButton = Instance.new("TextButton")
+    dropdownButton.Parent = dropdownFrame
+    dropdownButton.Size = UDim2.new(1, 0, 1, 0)
+    dropdownButton.Text = selected
+    
+    local optionsFrame = Instance.new("Frame")
+    optionsFrame.Size = UDim2.new(1, 0, 0, #options * 30)
+    optionsFrame.Position = UDim2.new(0, 0, 1, 0)
+    optionsFrame.Visible = false
+    optionsFrame.Parent = dropdownFrame
+    
+    -- Create the options buttons
+    for i, option in ipairs(options) do
+        local optionButton = Instance.new("TextButton")
+        optionButton.Parent = optionsFrame
+        optionButton.Size = UDim2.new(1, 0, 0, 30)
+        optionButton.Position = UDim2.new(0, 0, 0, (i - 1) * 30)
+        optionButton.Text = option
+        
+        optionButton.MouseButton1Click:Connect(function()
             selected = option
-            Dropdown.Text = option
-            DropdownOptions.Visible = false
-            pcall(callback, option)
+            dropdownButton.Text = selected
+            optionsFrame.Visible = false
+            callback(selected)
         end)
     end
-
-    Dropdown.MouseButton1Click:Connect(function()
-        DropdownOptions.Visible = not DropdownOptions.Visible
+    
+    dropdownButton.MouseButton1Click:Connect(function()
+        dropdownVisible = not dropdownVisible
+        optionsFrame.Visible = dropdownVisible
     end)
+    
+    -- Return the dropdown frame to be added to the UI
+    return dropdownFrame
 end
 
 

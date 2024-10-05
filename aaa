@@ -417,63 +417,6 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     end)
 end
 
-function pageitems:dropdown(title, options, callback, default)
-    local selected = default or options[1]
-    local dropdownVisible = false
-    
-    local dropdownFrame = Instance.new("Frame")
-    dropdownFrame.Name = title
-    dropdownFrame.Size = UDim2.new(0, 200, 0, 30)
-    dropdownFrame.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-    dropdownFrame.BorderSizePixel = 0
-    dropdownFrame.Parent = Content
-
-    local dropdownButton = Instance.new("TextButton")
-    dropdownButton.Size = UDim2.new(1, 0, 1, 0)
-    dropdownButton.BackgroundColor3 = Color3.fromRGB(42, 14, 73)
-    dropdownButton.Text = selected
-    dropdownButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    dropdownButton.Parent = dropdownFrame
-
-    local dropdownList = Instance.new("Frame")
-    dropdownList.Size = UDim2.new(1, 0, 0, 0)
-    dropdownList.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
-    dropdownList.BorderSizePixel = 0
-    dropdownList.Position = UDim2.new(0, 0, 1, 0)
-    dropdownList.Parent = dropdownFrame
-
-    local UIListLayout = Instance.new("UIListLayout")
-    UIListLayout.Parent = dropdownList
-
-    for _, option in ipairs(options) do
-        local optionButton = Instance.new("TextButton")
-        optionButton.Size = UDim2.new(1, 0, 0, 30)
-        optionButton.Text = option
-        optionButton.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
-        optionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        optionButton.Parent = dropdownList
-
-        optionButton.MouseButton1Click:Connect(function()
-            selected = option
-            dropdownButton.Text = selected
-            callback(selected)
-            dropdownList.Size = UDim2.new(1, 0, 0, 0) -- Hide dropdown list
-            dropdownVisible = false
-        end)
-    end
-
-    dropdownButton.MouseButton1Click:Connect(function()
-        dropdownVisible = not dropdownVisible
-        if dropdownVisible then
-            dropdownList.Size = UDim2.new(1, 0, 0, #options * 30) -- Show dropdown list
-        else
-            dropdownList.Size = UDim2.new(1, 0, 0, 0) -- Hide dropdown list
-        end
-    end)
-end
-
-
-
         return pageitems
     end
 

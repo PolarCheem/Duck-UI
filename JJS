@@ -1,1 +1,32 @@
-ma
+while true do
+local args = {
+    [1] = "Power Stat"
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendStat:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "Speed Stat"
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendStat:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "Defense Stat"
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendStat:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "Control Stat"
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendStat:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "Focus Stat"
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendStat:FireServer(unpack(args))
+wait(0)
+end

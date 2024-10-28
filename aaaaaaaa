@@ -1,1 +1,15 @@
-a
+while true do
+local args = {
+    [1] = "HALLOWEENUPDATESOON"
+}
+
+game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "5MVISITS"
+}
+
+game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
+wait(0)
+end
+-- put other codes too

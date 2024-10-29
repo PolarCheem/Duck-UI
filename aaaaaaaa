@@ -1,6 +1,24 @@
 while true do
 local args = {
-    [1] = "NEWEFFECTS"
+    [1] = "GOALREACHED"
+}
+
+game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "HALLOWEEN"
+}
+
+game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "6MVISITS"
+}
+
+game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = "SANS..?"
 }
 
 game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))

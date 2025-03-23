@@ -21,7 +21,7 @@ function Library:Create(name, keybind)
 		local close = Instance.new("TextButton")
 
 
-    Main.Size = UDim2.new(0, 450, 0, 255)
+    Main.Size = UDim2.new(0, 460, 0, 250)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(17, 19, 22)

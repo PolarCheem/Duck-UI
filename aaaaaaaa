@@ -1,27 +1,170 @@
-while true do
-local args = {
-    [1] = "GOALREACHED"
-}
+local Library = {}
+local Player = game:GetService("Players").LocalPlayer
 
-game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
-wait(0)
-local args = {
-    [1] = "HALLOWEEN"
-}
+function Library:Create(name, keybind)
+    if game.CoreGui:FindFirstChild(name) then
+        game.CoreGui:FindFirstChild(name):Destroy()
+    end
 
-game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
-wait(0)
-local args = {
-    [1] = "6MVISITS"
-}
+    local gui = Instance.new("ScreenGui")
+    gui.Name = name
+    gui.Parent = game.CoreGui
 
-game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
-wait(0)
-local args = {
-    [1] = "SANS..?"
-}
+    local Main = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local GuiName = Instance.new("TextButton")
+    local Line = Instance.new("Frame")
+    local UICorner2 = Instance.new("UICorner")
+    local TabFrame = Instance.new("ScrollingFrame")
+    
+    Main.Size = UDim2.new(0.6, 0, 0.75, 0)
+    Main.Position = UDim2.new(0.2, 0, 0.125, 0)  
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
+    Main.BorderSizePixel = 0
+    Main.Active = true
+    Main.Draggable = true
+    Main.Parent = gui
 
-game:GetService("ReplicatedStorage").Remotes.AttemptCode:FireServer(unpack(args))
-wait(0)
+    UICorner.CornerRadius = UDim.new(0.02, 0)
+    UICorner.Parent = Main
+
+    GuiName.Size = UDim2.new(0.15, 0, 0.1, 0)
+    GuiName.Position = UDim2.new(0.03, 0, 0, 0)
+    GuiName.BackgroundTransparency = 1 
+    GuiName.Text = name
+    GuiName.TextColor3 = Color3.fromRGB(255, 255, 255)
+    GuiName.Font = Enum.Font.Gotham
+    GuiName.TextSize = 20
+    GuiName.Parent = Main
+
+    Line.Size = UDim2.new(0.005, 0, 0.7, 0)
+    Line.Position = UDim2.new(0.27, 0, 0.15, 0)
+    Line.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+    Line.BorderSizePixel = 0
+    Line.Parent = Main
+
+    UICorner2.CornerRadius = UDim.new(0.02, 0)
+    UICorner2.Parent = Line
+
+    TabFrame.Size = UDim2.new(0.27, 0, 0.9, 0)
+    TabFrame.Position = UDim2.new(0, 0, 0.1, 0)
+    TabFrame.BackgroundTransparency = 1
+    TabFrame.ScrollBarThickness = 2
+    TabFrame.Parent = Main
+
+    local UIListLayoutTab = Instance.new("UIListLayout")
+    UIListLayoutTab.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayoutTab.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayoutTab.Padding = UDim.new(0.02, 0)
+    UIListLayoutTab.Parent = TabFrame
+
+    local close = Instance.new("TextButton")
+    close.Size = UDim2.new(0.05, 0, 0.075, 0)
+    close.Position = UDim2.new(0.92, 0, 0.017, 0)
+    close.BackgroundColor3 = Color3.fromRGB(75, 69, 245)
+    close.BorderSizePixel = 0
+    close.TextTransparency = 1
+    close.Parent = Main
+
+    local open = Instance.new("ImageButton")
+    open.Size = UDim2.new(0.05, 0, 0.1, 0)
+    open.Position = UDim2.new(0, 0.05, 0, 0)
+    open.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
+    open.Image = "rbxassetid://0"
+    open.Visible = false
+    open.Parent = gui
+    open.Draggable = true
+
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0.02, 0)
+    UICorner.Parent = open
+
+    close.MouseButton1Click:Connect(function()
+        open.Visible = true
+        Main.Visible = false
+    end)
+
+    open.MouseButton1Click:Connect(function()
+        open.Visible = false
+        Main.Visible = true
+    end)
+
+    local Window = {}
+    
+    function Window:tab(tabname, showonstartup)
+        local Content = Instance.new("ScrollingFrame")
+        Content.Size = UDim2.new(0.71, 0, 0.9, 0)  
+        Content.Position = UDim2.new(0.29, 0, 0.1, 0)
+        Content.BackgroundTransparency = 1
+        Content.ScrollBarThickness = 2
+        Content.Parent = Main
+
+        local UIListLayout = Instance.new("UIListLayout")
+        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.Padding = UDim.new(0.02, 0)
+        UIListLayout.Parent = Content
+
+        local Tab = Instance.new("TextButton")
+        Tab.Size = UDim2.new(0.95, 0, 0.05, 0)
+        Tab.Position = UDim2.new(0.025, 0, 0, 0)
+        Tab.BorderSizePixel = 0
+        Tab.Text = tabname
+        Tab.TextSize = 18
+        Tab.Font = Enum.Font.Gotham
+        Tab.BackgroundTransparency = 1
+        Tab.Parent = TabFrame
+
+        Tab.MouseButton1Click:Connect(function()
+            for _, child in pairs(Main:GetChildren()) do
+                if child:IsA("ScrollingFrame") then
+                    child.Visible = false
+                end
+            end
+            Content.Visible = true
+            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
+        end)
+
+        if showonstartup then
+            Content.Visible = true
+            Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
+            Tab.BackgroundTransparency = 0
+        else
+            Content.Visible = false
+            Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Tab.BackgroundTransparency = 1
+        end
+
+        local pageitems = {}
+
+        function pageitems:button(text, callback)
+            local Button = Instance.new("TextButton")
+            Button.Size = UDim2.new(0.9, 0, 0.05, 0)
+            Button.Parent = Content
+            Button.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+            Button.BorderSizePixel = 0
+            Button.TextTransparency = 1
+
+            local ButtonName = Instance.new("TextLabel")
+            ButtonName.Size = UDim2.new(0.9, 0, 1, 0)
+            ButtonName.BackgroundTransparency = 1
+            ButtonName.Text = text
+            ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
+            ButtonName.Font = Enum.Font.Gotham
+            ButtonName.TextSize = 14
+            ButtonName.Parent = Button
+
+            Button.MouseButton1Click:Connect(function()
+                pcall(callback)
+            end)
+        end
+
+        return pageitems
+    end
+
+    return Window
 end
--- put other codes too
+
+return Library

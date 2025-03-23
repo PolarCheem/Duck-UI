@@ -254,9 +254,9 @@ local TextLabel = Instance.new("TextLabel")
 
 LabelFrame.Name = "Label"
 LabelFrame.Parent = Content
-LabelFrame.BackgroundColor3 = Color3.fromRGB(23,23,23)
+LabelFrame.BackgroundColor3 = Color3.fromRGB(24,24,24)
 LabelFrame.BorderSizePixel = 0
-LabelFrame.BackgroundTransparency = 0.27
+LabelFrame.BackgroundTransparency = 0.25
 LabelFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
 LabelFrame.TextTransparency = 1
 LabelFrame.Active = false

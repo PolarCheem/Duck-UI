@@ -18,7 +18,7 @@ function Library:Create(name, keybind)
     local UICorner2 = Instance.new("UICorner")
     local TabFrame = Instance.new("ScrollingFrame")
     
-    Main.Size = UDim2.new(0, 400, 0, 800)
+    Main.Size = UDim2.new(0, 1000, 0, 800)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(17, 19, 22)

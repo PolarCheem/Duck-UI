@@ -21,7 +21,7 @@ function Library:Create(name, keybind)
 		local close = Instance.new("TextButton")
 
 
-    Main.Size = UDim2.new(0, 460, 0, 250)
+    Main.Size = UDim2.new(0.65, 0, 0.8, 0)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
@@ -47,6 +47,7 @@ GuiName.Font = Enum.Font.Gotham
 GuiName.TextXAlignment = Enum.TextXAlignment.Left
 GuiName.Parent = Main
 GuiName.TextSize = 15
+GuiName.TextScaled = true
 
     Line.Size = UDim2.new(0.005, 0, 0.7, 0)
     Line.Position = UDim2.new(0.27, 0, 0.15, 0)
@@ -98,6 +99,7 @@ OpenMain.Font = Enum.Font.Code
 OpenMain.Parent = gui
 OpenMain.TextSize = 20
 OpenMain.Visible = false
+OpenMain.TextScaled = true
 
 local UI1 = Instance.new("UICorner")
 UI1.CornerRadius = UDim.new(0, 8)
@@ -154,6 +156,7 @@ UI1.Parent = OpenMain
         Tab.Font = Enum.Font.Gotham
         Tab.BackgroundTransparency = 1
         Tab.Parent = TabFrame
+				Tab.TextScaled = true
 
         local UICornerTab = Instance.new("UICorner") 
         UICornerTab.CornerRadius = UDim.new(0, 15)
@@ -239,6 +242,7 @@ end)
             ButtonName.Parent = Button
             ButtonName.TextSize = 14
             ButtonName.TextXAlignment = Enum.TextXAlignment.Left 
+						ButtonName.TextScaled = true
 
             local UICorner_Button = Instance.new("UICorner")
             UICorner_Button.CornerRadius = UDim.new(0, 10)
@@ -279,6 +283,7 @@ TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.Font = Enum.Font.Gotham
 TextLabel.Parent = LabelFrame
 TextLabel.TextSize = 14
+TextLabel.TextScaled = true
 
 end
 
@@ -311,6 +316,7 @@ ToggleName.Font = Enum.Font.Gotham
 ToggleName.Parent = Toggle
 ToggleName.TextSize = 14
 ToggleName.TextXAlignment = Enum.TextXAlignment.Left 
+ToggleName.TextScaled = true
 
             local toggleOn = Instance.new("TextButton")
             toggleOn.Size = UDim2.new(0.065, 0, 0.7, 0)
@@ -411,6 +417,7 @@ function pageitems:input(text, placeholder, clearonreturn, callback)
     InputName.TextSize = 14
     InputName.TextXAlignment = Enum.TextXAlignment.Left
     InputName.Parent = TextThing
+		InputName.TextScaled = true
 
     InputBox.FocusLost:Connect(function()
         pcall(callback, tostring(InputBox.Text))

@@ -18,7 +18,7 @@ function Library:Create(name, keybind)
     local UICorner2 = Instance.new("UICorner")
     local TabFrame = Instance.new("ScrollingFrame")
     
-    Main.Size = UDim2.new(0, 450, 0, 250)
+    Main.Size = UDim2.new(0, 450, 0, 260)
     Main.Position = UDim2.new(0.3, 0, 0.5, 0)  
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
@@ -254,9 +254,9 @@ local TextLabel = Instance.new("TextLabel")
 
 LabelFrame.Name = "Label"
 LabelFrame.Parent = Content
-LabelFrame.BackgroundColor3 = Color3.fromRGB(23,23,23)
+LabelFrame.BackgroundColor3 = Color3.fromRGB(20,20,20)
 LabelFrame.BorderSizePixel = 0
-LabelFrame.BackgroundTransparency = 0.3
+LabelFrame.BackgroundTransparency = 0.45
 LabelFrame.Size = UDim2.new(0.9, 0, 0.05, 0)
 LabelFrame.TextTransparency = 1
 LabelFrame.Active = false

@@ -149,7 +149,7 @@ function Library:new()
 	Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Shadow.BorderSizePixel = 0
 	Shadow.Position = UDim2.new(0.508668244, 0, 0.5, 0)
-	Shadow.Size = UDim2.new(0, 776, 0, 509)
+	Shadow.Size = UDim2.new(0, 1, 0, 1)
 	Shadow.ZIndex = 0
 	Shadow.Image = "rbxassetid://17290899982"
 

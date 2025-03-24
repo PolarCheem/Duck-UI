@@ -1,4 +1,4 @@
-getgenv().namehub = "NYX - Beta"
+getgenv().namehub = "Blue Lock: Rivals - Beta"
 local UserInputService = game:GetService('UserInputService')
 local LocalPlayer = game:GetService('Players').LocalPlayer
 local TweenService = game:GetService('TweenService')

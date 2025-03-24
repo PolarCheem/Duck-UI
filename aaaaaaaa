@@ -69,12 +69,22 @@ Library.clear()
 
 function Library:open()
 	self.Container.Visible = true
+	self.Shadow.Visible = true
 	self.Mobile.Modal = true
 
 	TweenService:Create(self.Container, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
 		Size = UDim2.new(0, 699, 0, 426)
 	}):Play()
+
+	TweenService:Create(self.Shadow, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
+		Size = UDim2.new(0, 776, 0, 509)
+	}):Play()
 end
+
+function Library:close()
+	TweenService:Create(self.Shadow, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
+		Size = UDim2.new(0, 0, 0, 0)
+	}):Play()
 
 	local main_tween = TweenService:Create(self.Container, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
 		Size = UDim2.new(0, 0, 0, 0)
@@ -87,6 +97,7 @@ end
 		end
 
 		self.Container.Visible = false
+		self.Shadow.Visible = false
 		self.Mobile.Modal = false
 	end)
 end
@@ -104,6 +115,10 @@ function Library:drag()
 	local position = UDim2.new(Library.start_position.X.Scale, Library.start_position.X.Offset + delta.X, Library.start_position.Y.Scale, Library.start_position.Y.Offset + delta.Y)
 
 	TweenService:Create(self.container.Container, TweenInfo.new(0.2), {
+		Position = position
+	}):Play()
+
+    TweenService:Create(self.container.Shadow, TweenInfo.new(0.2), {
 		Position = position
 	}):Play()
 end
@@ -125,6 +140,19 @@ function Library:new()
 
      Library.core = container
 
+	local Shadow = Instance.new("ImageLabel")
+	Shadow.Name = "Shadow"
+	Shadow.Parent = container
+	Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Shadow.BackgroundTransparency = 1.000
+	Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Shadow.BorderSizePixel = 0
+	Shadow.Position = UDim2.new(0.508668244, 0, 0.5, 0)
+	Shadow.Size = UDim2.new(0, 776, 0, 509)
+	Shadow.ZIndex = 0
+	Shadow.Image = "rbxassetid://17290899982"
+
 	local Container = Instance.new("Frame")
 	Container.Name = "Container"
 	Container.Parent = container
@@ -134,7 +162,7 @@ function Library:new()
 	Container.BorderSizePixel = 0
 	Container.ClipsDescendants = true
 	Container.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Container.Size = UDim2.new(0, 350, 0, 250)
+	Container.Size = UDim2.new(0, 450, 0, 250)
 
 	local ContainerCorner = Instance.new("UICorner")
 	ContainerCorner.CornerRadius = UDim.new(0, 20)
@@ -233,6 +261,20 @@ function Library:new()
 	local UICorner = Instance.new("UICorner")
 	UICorner.CornerRadius = UDim.new(0, 13)
 	UICorner.Parent = mobile_button
+
+	local shadowMobile = Instance.new("ImageLabel")
+	shadowMobile.Name = "Shadow"
+	shadowMobile.Parent = mobile_button
+	shadowMobile.AnchorPoint = Vector2.new(0.5, 0.5)
+	shadowMobile.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	shadowMobile.BackgroundTransparency = 1.000
+	shadowMobile.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	shadowMobile.BorderSizePixel = 0
+	shadowMobile.Position = UDim2.new(0.5, 0, 0.5, 0)
+	shadowMobile.Size = UDim2.new(0, 144, 0, 58)
+	shadowMobile.ZIndex = 0
+	shadowMobile.Image = "rbxassetid://17183270335"
+	shadowMobile.ImageTransparency = 0.200
 
 	local State = Instance.new("TextLabel")
 	State.Name = "State"

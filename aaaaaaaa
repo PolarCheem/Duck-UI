@@ -35,7 +35,7 @@ end
 
 function Library:clear()
 	for _, object in CoreGui:GetChildren() do
-		if object.Name ~= "Frostware" then
+		if object.Name ~= "NYX" then
 			continue
 		end
 	

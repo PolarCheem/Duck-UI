@@ -1,3 +1,4 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/main/aaaaaaaa"))()
 
 local win = lib:new("Blue Lock: Rivals - Beta")
+local tab1 = win:create_tab("Tab 1")

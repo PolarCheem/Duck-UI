@@ -1,4 +1,106 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/main/aaaaaaaa"))()
 
-local win = lib:new("Blue Lock: Rivals - Beta")
-local tab1 = win:create_tab("Tab 1")
+-- Create Window
+getgenv().namehub = "example ui lib"
+local Window = lib.__init()
+
+-- Create a new tab
+local MainTab = Window:create_tab("Main")
+
+-- Create a toggle in the left section
+MainTab:create_toggle({
+    name = "Toggle Example",
+    flag = "myToggle",
+    enabled = false,
+    callback = function(value)
+        print("Toggle is now:", value)
+    end,
+    section = "left"
+})
+
+-- Create a button in the right section
+MainTab:create_button({
+    name = "Button Example",
+    callback = function()
+        print("Button clicked!")
+    end,
+    section = "right"
+})
+
+-- Create a slider
+MainTab:create_slider({
+    name = "Slider Example",
+    flag = "mySlider",
+    minimum_value = 0,
+    maximum_value = 100,
+    value = 50,
+    callback = function(value)
+        print("Slider value:", value)
+    end,
+    section = "left"
+})
+
+-- Create a dropdown
+MainTab:create_dropdown({
+    name = "Dropdown Example",
+    flag = "myDropdown",
+    options = {"Option 1", "Option 2", "Option 3"},
+    option = "Option 1",
+    callback = function(selected)
+        print("Selected option:", selected)
+    end,
+    section = "right"
+})
+
+-- Create a textbox
+MainTab:create_textbox({
+    name = "Textbox Example",
+    flag = "myTextbox",
+    value = "",
+    callback = function(text)
+        print("Textbox content:", text)
+    end,
+    section = "left"
+})
+
+-- Create a keybind
+MainTab:create_keybind({
+    name = "Keybind Example",
+    flag = "myKeybind",
+    keycode = Enum.KeyCode.F,
+    callback = function(key)
+        print("Keybind pressed:", key)
+    end,
+    section = "right"
+})
+
+-- Create an image
+MainTab:create_image({
+    image = "rbxassetid://127155296199954",
+    section = "left"
+})
+
+-- Create a paragraph
+MainTab:create_paragraph({
+    name = "Paragraph Example",
+    title = "This is a paragraph description",
+    section = "right"
+})
+
+-- Create a toggle with description
+MainTab:create_description_toggle({
+    name = "Toggle with Description",
+    description = "This is a toggle with additional information",
+    flag = "myDescToggle",
+    enabled = true,
+    callback = function(value)
+        print("Description toggle is now:", value)
+    end,
+    section = "left"
+})
+
+-- Create a title
+MainTab:create_title({
+    name = "Section Title",
+    section = "right"
+})

@@ -1790,5 +1790,4 @@ function Library.__init()
     return Tab
 end
 
-]]
 return Library

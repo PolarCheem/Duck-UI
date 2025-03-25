@@ -69,7 +69,7 @@ Library.clear()
 
 function Library:open()
     self.Container.Visible = true
-    self.Shadow.Visible = true
+    self.Shadow.Visible = false
     self.Mobile.Modal = true
     
     TweenService:Create(self.Container, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
@@ -77,7 +77,7 @@ function Library:open()
         }):Play()
     
     TweenService:Create(self.Shadow, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
-        Size = UDim2.new(0, 776, 0, 509)
+        Size = UDim2.new(0, 1, 0, 1)
         }):Play()
 end
 
@@ -149,7 +149,7 @@ function Library.__init()
     Shadow.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Shadow.BorderSizePixel = 0
     Shadow.Position = UDim2.new(0.508668244, 0, 0.5, 0)
-    Shadow.Size = UDim2.new(0, 776, 0, 509)
+    Shadow.Size = UDim2.new(0, 1, 0, 1)
     Shadow.ZIndex = 0
     Shadow.Image = "rbxassetid://17290899982"
     
@@ -162,7 +162,7 @@ function Library.__init()
     Container.BorderSizePixel = 0
     Container.ClipsDescendants = true
     Container.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Container.Size = UDim2.new(0, 699, 0, 426)
+    Container.Size = UDim2.new(0, 375, 0, 275)
     
     local ContainerCorner = Instance.new("UICorner")
     ContainerCorner.CornerRadius = UDim.new(0, 20)

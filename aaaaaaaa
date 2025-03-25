@@ -73,7 +73,7 @@ function Library:open()
     self.Mobile.Modal = true
     
     TweenService:Create(self.Container, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
-        Size = UDim2.new(0, 699, 0, 426)
+        Size = UDim2.new(0, 375, 0, 275)
         }):Play()
     
     TweenService:Create(self.Shadow, TweenInfo.new(0.6, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
